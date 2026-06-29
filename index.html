@@ -8,24 +8,75 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/icon.png">
 <style>
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;font-family:'IBM Plex Sans',sans-serif;background:#eef1f6}
   @keyframes twinkle{0%,100%{opacity:.92}50%{opacity:.62}}
   @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+
+  /* ── Layout classes ── */
+  .nav-inner{max-width:1180px;margin:0 auto;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;position:relative}
+  .nav-links{display:flex;gap:26px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+  .hamburger span{display:block;width:22px;height:2px;border-radius:2px;transition:transform .3s,opacity .3s,background .45s}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#dfe5ee;border:1px solid #dfe5ee;border-radius:8px;overflow:hidden;margin:54px 0 70px}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+  .ai-card{grid-column:span 2}
+  .creds-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:64px;padding-top:54px;border-top:1px solid #e1e7ef}
+  .section-inner{max-width:1180px;margin:0 auto;padding:110px 40px}
+
+  /* ── Responsive ── */
+  @media(max-width:900px){
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .nav-inner{padding:14px 20px}
+    .hamburger{display:flex}
+    .nav-links{
+      display:none;flex-direction:column;gap:0;
+      position:absolute;top:100%;left:0;right:0;
+      background:rgba(238,241,246,.96);
+      backdrop-filter:saturate(160%) blur(12px);-webkit-backdrop-filter:saturate(160%) blur(12px);
+      border-bottom:1px solid #e2e7ee;padding:8px 0
+    }
+    .nav-links.open{display:flex}
+    .nav-links a{display:block;padding:12px 20px !important;font-size:13px !important;letter-spacing:.10em}
+    .nav-links.open a{color:#16202e !important}
+    #professional{padding-left:20px !important;padding-right:20px !important;padding-bottom:60px !important}
+    .section-inner{padding:70px 20px}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .about-grid{grid-template-columns:1fr !important;gap:36px !important}
+    .skills-grid{grid-template-columns:1fr !important}
+    .ai-card{grid-column:span 1 !important}
+    .creds-grid{grid-template-columns:1fr !important;gap:32px !important}
+    footer{padding-top:80px !important}
+    #contact .contact-inner{padding:0 20px !important}
+  }
+  @media(max-width:480px){
+    .section-inner{padding:50px 16px}
+    #professional{padding-left:16px !important;padding-right:16px !important}
+    #contact .contact-inner{padding:0 16px !important}
+    .stats-grid{grid-template-columns:1fr 1fr}
+  }
 </style>
 </head>
 <body>
 
 <header id="nav" style="position:fixed;top:0;left:0;right:0;z-index:50;transition:background .45s,box-shadow .45s,border-color .45s;border-bottom:1px solid transparent">
-  <div style="max-width:1180px;margin:0 auto;padding:16px 40px;display:flex;align-items:center;justify-content:space-between">
+  <div class="nav-inner">
     <a href="#hero" data-nav="1" data-brand="1" style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.22em;color:#eaf1ff;text-decoration:none;transition:color .45s">RCMB</a>
-    <nav style="display:flex;gap:26px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase">
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span id="hb1"></span><span id="hb2"></span><span id="hb3"></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
       <a href="#professional" data-nav="1" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Professional</a>
       <a href="#about" data-nav="1" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">About</a>
-      <a href="#books" data-nav="1" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Books</a>
       <a href="#skills" data-nav="1" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Skills</a>
+      <a href="#books" data-nav="1" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Books</a>
+      <a href="#horizon" data-nav="1" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Horizon</a>
       <a href="#contact" data-nav="1" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Contact</a>
     </nav>
   </div>
@@ -36,15 +87,12 @@
   <div id="heroStars" style="position:absolute;inset:0;background-image:radial-gradient(1.0px 1.0px at 366px 316px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 310px 102px, rgba(255,255,255,.6), transparent),radial-gradient(1.4px 1.4px at 426px 584px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 173px 522px, rgba(255,255,255,.6), transparent),radial-gradient(1.3px 1.3px at 58px 475px, rgba(255,255,255,.6), transparent),radial-gradient(1.2px 1.2px at 138px 182px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 290px 74px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 244px 517px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 151px 354px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 22px 538px, rgba(200,220,255,.5), transparent),radial-gradient(1.5px 1.5px at 64px 507px, rgba(200,220,255,.5), transparent),radial-gradient(1.3px 1.3px at 77px 412px, rgba(255,255,255,.6), transparent),radial-gradient(1.3px 1.3px at 444px 373px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 507px 418px, rgba(255,255,255,.6), transparent),radial-gradient(1.4px 1.4px at 285px 268px, rgba(255,255,255,.6), transparent),radial-gradient(1.3px 1.3px at 216px 152px, rgba(255,255,255,.6), transparent),radial-gradient(1.0px 1.0px at 160px 133px, rgba(200,220,255,.5), transparent),radial-gradient(1.0px 1.0px at 574px 422px, rgba(255,255,255,.6), transparent),radial-gradient(1.2px 1.2px at 533px 565px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 335px 99px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 296px 236px, rgba(255,255,255,.6), transparent),radial-gradient(1.4px 1.4px at 86px 145px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 422px 40px, rgba(255,255,255,.6), transparent),radial-gradient(1.0px 1.0px at 438px 315px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 192px 3px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 103px 210px, rgba(200,220,255,.5), transparent),radial-gradient(1.5px 1.5px at 94px 87px, rgba(200,220,255,.5), transparent),radial-gradient(1.3px 1.3px at 177px 196px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 172px 389px, rgba(200,220,255,.5), transparent),radial-gradient(1.3px 1.3px at 198px 59px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 221px 26px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 198px 404px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 332px 200px, rgba(255,255,255,.6), transparent),radial-gradient(1.0px 1.0px at 117px 149px, rgba(255,255,255,.6), transparent),radial-gradient(1.2px 1.2px at 409px 124px, rgba(200,220,255,.5), transparent),radial-gradient(1.3px 1.3px at 186px 136px, rgba(255,255,255,.6), transparent),radial-gradient(1.3px 1.3px at 107px 555px, rgba(255,255,255,.6), transparent),radial-gradient(1.0px 1.0px at 295px 307px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 82px 137px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 566px 467px, rgba(255,255,255,.6), transparent),radial-gradient(1.4px 1.4px at 426px 569px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 155px 271px, rgba(200,220,255,.5), transparent),radial-gradient(1.0px 1.0px at 377px 443px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 102px 227px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 396px 239px, rgba(200,220,255,.5), transparent),radial-gradient(1.0px 1.0px at 346px 583px, rgba(200,220,255,.5), transparent),radial-gradient(1.9px 1.9px at 420px 544px, rgba(255,255,255,.9), transparent),radial-gradient(1.6px 1.6px at 231px 235px, rgba(255,255,255,.9), transparent),radial-gradient(1.6px 1.6px at 480px 180px, rgba(210,225,255,.75), transparent),radial-gradient(1.5px 1.5px at 554px 97px, rgba(210,225,255,.75), transparent),radial-gradient(1.4px 1.4px at 387px 267px, rgba(210,225,255,.75), transparent),radial-gradient(1.4px 1.4px at 199px 467px, rgba(210,225,255,.75), transparent),radial-gradient(1.9px 1.9px at 433px 342px, rgba(210,225,255,.75), transparent),radial-gradient(1.6px 1.6px at 508px 562px, rgba(255,255,255,.9), transparent),radial-gradient(1.4px 1.4px at 543px 142px, rgba(255,255,255,.9), transparent),radial-gradient(1.5px 1.5px at 246px 48px, rgba(210,225,255,.75), transparent),radial-gradient(1.3px 1.3px at 328px 324px, rgba(255,255,255,.9), transparent),radial-gradient(1.4px 1.4px at 546px 50px, rgba(210,225,255,.75), transparent),radial-gradient(1.5px 1.5px at 125px 581px, rgba(210,225,255,.75), transparent),radial-gradient(1.5px 1.5px at 596px 81px, rgba(255,255,255,.9), transparent),radial-gradient(1.8px 1.8px at 358px 598px, rgba(210,225,255,.75), transparent),radial-gradient(1.7px 1.7px at 33px 94px, rgba(210,225,255,.75), transparent),radial-gradient(2.4px 2.4px at 310px 529px, #ffffff, transparent),radial-gradient(2.2px 2.2px at 201px 15px, #ffffff, transparent),radial-gradient(2.1px 2.1px at 387px 267px, rgba(220,235,255,.95), transparent),radial-gradient(2.1px 2.1px at 244px 287px, #ffffff, transparent),radial-gradient(2.0px 2.0px at 453px 183px, rgba(220,235,255,.95), transparent);background-size:600px 600px;background-repeat:repeat;animation:twinkle 6s ease-in-out infinite;will-change:transform"></div>
   <div style="position:absolute;left:-6%;right:-6%;top:calc(60vh - 54px);height:180px;background:radial-gradient(60% 130% at 50% 120%, rgba(120,175,255,.5),rgba(90,150,255,.12) 46%,transparent 72%);filter:blur(8px);pointer-events:none"></div>
   <div id="heroEarth" style="position:absolute;width:2600px;height:2600px;left:50%;top:60vh;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 50% 50%, #060c1c 0%, #0a1530 86%, rgba(64,120,220,.45) 93%, rgba(150,200,255,.95) 97%, rgba(130,185,255,.4) 99.4%, rgba(130,185,255,0) 100%);box-shadow:0 -4px 100px 10px rgba(90,150,255,.4);will-change:transform"></div>
-  <div style="position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 40px;min-height:100vh;display:flex;flex-direction:column;color:#eaf1ff">
-    <div style="display:flex;align-items:center;gap:14px;padding-top:110px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;color:rgba(170,200,245,.7)">
-      <span style="width:7px;height:7px;border-radius:50%;background:#5e9bff;box-shadow:0 0 9px #5e9bff;display:inline-block"></span>
-      <span style="color:rgba(210,225,255,.92)">portfolio</span>
-      <span style="opacity:.5">/web/@4.5709,-74.2973,2647a,35y,0h,0t,0r</span>
-    </div>
+  <div style="position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,40px);min-height:100vh;display:flex;flex-direction:column;color:#eaf1ff">
+    <div style="padding-top:110px"></div>
     <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding-bottom:70px">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:rgba(150,185,255,.9);margin-bottom:22px">// senior data engineer</div>
       <h1 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(54px,9vw,116px);line-height:.92;letter-spacing:-.02em;color:#eef4ff">Raúl Camilo<br>Martín Bernal</h1>
+      <div style="margin-top:20px;font-family:'IBM Plex Mono',monospace;font-size:clamp(11px,1.4vw,14px);letter-spacing:.18em;color:rgba(150,185,255,.55)">/ rah-OOL · kah-MEE-loh · mar-TEEN · ber-NAL /</div>
     </div>
     <div style="padding-bottom:30px;display:flex;justify-content:center">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.25em;color:rgba(190,210,245,.6);text-align:center;animation:floaty 2.4s ease-in-out infinite">SCROLL<div style="margin-top:6px;font-size:16px">⌄</div></div>
@@ -68,7 +116,7 @@
     </div>
 
     <!-- stats -->
-    <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1) .08s,transform .8s cubic-bezier(.2,.7,.2,1) .08s;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#dfe5ee;border:1px solid #dfe5ee;border-radius:8px;overflow:hidden;margin:54px 0 70px">
+    <div data-reveal class="stats-grid" style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1) .08s,transform .8s cubic-bezier(.2,.7,.2,1) .08s">
       <div style="background:#f7f9fc;padding:26px 24px">
         <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:40px;letter-spacing:-.02em;color:#16202e">5+</div>
         <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a93a3;margin-top:8px">Years engineering data</div>
@@ -172,8 +220,8 @@
 
   <!-- ============ ABOUT ============ -->
   <section id="about" style="scroll-margin-top:80px;border-top:1px solid #e1e7ef;background:#f4f6fa">
-    <div style="max-width:1180px;margin:0 auto;padding:110px 40px">
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
+    <div class="section-inner">
+      <div data-reveal class="about-grid" style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)">
         <div>
           <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">02 / About me</div>
           <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">Beyond the pipelines.</h2>
@@ -210,62 +258,14 @@
     </div>
   </section>
 
-  <!-- ============ BOOKS ============ -->
-  <section id="books" style="scroll-margin-top:80px;border-top:1px solid #e1e7ef">
-    <div style="max-width:1180px;margin:0 auto;padding:110px 40px">
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);margin-bottom:48px">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">03 / Reading</div>
-        <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">Books I recommend.</h2>
-        <p style="margin:20px 0 0;max-width:620px;font-size:16px;line-height:1.7;color:#465264">A short shelf on stoicism, mindset, and the practice of staying present.</p>
-      </div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1) .06s,transform .8s cubic-bezier(.2,.7,.2,1) .06s;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px">
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
-          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">01</span>
-          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Meditations</h3>
-          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Marcus Aurelius</div>
-          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Stoicism</span>
-        </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
-          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">02</span>
-          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Ego Is the Enemy</h3>
-          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Ryan Holiday</div>
-          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Humility</span>
-        </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
-          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">03</span>
-          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">The Power of Now</h3>
-          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Eckhart Tolle</div>
-          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Presence</span>
-        </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
-          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">04</span>
-          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Mindset</h3>
-          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Carol S. Dweck</div>
-          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Growth</span>
-        </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
-          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">05</span>
-          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">The Courage to Be Disliked</h3>
-          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Kishimi &amp; Koga</div>
-          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Freedom</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ SKILLS ============ -->
   <section id="skills" style="scroll-margin-top:80px;border-top:1px solid #e1e7ef;background:#f4f6fa">
-    <div style="max-width:1180px;margin:0 auto;padding:110px 40px">
+    <div class="section-inner">
       <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);margin-bottom:48px">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">04 / Skills</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">03 / Skills</div>
         <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">The stack I build on.</h2>
       </div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1) .06s,transform .8s cubic-bezier(.2,.7,.2,1) .06s;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px">
+      <div data-reveal class="skills-grid" style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1) .06s,transform .8s cubic-bezier(.2,.7,.2,1) .06s">
         <div style="background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:24px 24px 26px">
           <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">Data Engineering</div>
           <div style="display:flex;flex-wrap:wrap;gap:8px">
@@ -312,7 +312,7 @@
             <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Git</span>
           </div>
         </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:24px 24px 26px;grid-column:span 2">
+        <div class="ai-card" style="background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:24px 24px 26px">
           <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">AI / ML</div>
           <div style="display:flex;flex-wrap:wrap;gap:8px">
             <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Agentic AI — Claude (skills, agents, MCP)</span>
@@ -324,14 +324,79 @@
       </div>
 
       <!-- credentials -->
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:64px;padding-top:54px;border-top:1px solid #e1e7ef">
+      <div data-reveal class="creds-grid" style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)">
         <div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a93a3;margin-bottom:6px">Certifications</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a93a3;margin-bottom:14px">Certifications</div>
           <div style="display:flex;flex-direction:column">
-            <div style="display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-bottom:1px solid #e4e9f0"><span style="margin-top:5px;width:6px;height:6px;flex:0 0 6px;background:#2f6fe0;transform:rotate(45deg)"></span><span style="font-size:15px;color:#28323f">AWS Certified — Data Engineer, Associate</span></div>
-            <div style="display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-bottom:1px solid #e4e9f0"><span style="margin-top:5px;width:6px;height:6px;flex:0 0 6px;background:#2f6fe0;transform:rotate(45deg)"></span><span style="font-size:15px;color:#28323f">DeepLearning.AI — Data Engineering</span></div>
-            <div style="display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-bottom:1px solid #e4e9f0"><span style="margin-top:5px;width:6px;height:6px;flex:0 0 6px;background:#2f6fe0;transform:rotate(45deg)"></span><span style="font-size:15px;color:#28323f">Deep Learning Specialization</span></div>
-            <div style="display:flex;gap:12px;align-items:flex-start;padding:15px 0"><span style="margin-top:5px;width:6px;height:6px;flex:0 0 6px;background:#2f6fe0;transform:rotate(45deg)"></span><span style="font-size:15px;color:#28323f">Claude Certified Architect — Foundations</span></div>
+
+            <!-- Claude / Anthropic -->
+            <a href="https://verify.skilljar.com/c/i6dit8ytcfc9" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid #e4e9f0;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.72'" onmouseout="this.style.opacity='1'">
+              <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:8px"><rect width="44" height="44" rx="8" fill="#191919"/><path d="M16 30L22 14L28 30" stroke="#CC785C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><line x1="18.2" y1="25" x2="25.8" y2="25" stroke="#CC785C" stroke-width="2.2" stroke-linecap="round"/></svg>
+              <div style="flex:1;min-width:0">
+                <div style="font-size:13.5px;font-weight:500;color:#16202e;line-height:1.35">Claude Certified Architect — Foundations</div>
+                <div style="font-size:11px;color:#8a93a3;margin-top:3px;font-family:'IBM Plex Mono',monospace">Anthropic · Apr 2026</div>
+              </div>
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+
+            <!-- Astronomer -->
+            <a href="https://www.credly.com/badges/3c2ef8ec-fe45-4e38-9d30-ba26e6f722ef" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid #e4e9f0;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.72'" onmouseout="this.style.opacity='1'">
+              <img src="https://images.credly.com/images/6e9570ae-239f-47b9-85ff-0946c3844088/linkedin_thumb_blob" alt="Astronomer badge" width="44" height="44" style="flex-shrink:0;border-radius:8px;display:block;object-fit:cover">
+              <div style="flex:1;min-width:0">
+                <div style="font-size:13.5px;font-weight:500;color:#16202e;line-height:1.35">Astronomer Certification DAG Authoring for Apache Airflow 3</div>
+                <div style="font-size:11px;color:#8a93a3;margin-top:3px;font-family:'IBM Plex Mono',monospace">Astronomer · Oct 2025</div>
+              </div>
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+
+            <!-- SnowPro Architect -->
+            <a href="https://achieve.snowflake.com/c1849df5-78ad-4b27-bdc5-08a939c80b91" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid #e4e9f0;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.72'" onmouseout="this.style.opacity='1'">
+              <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:8px"><rect width="44" height="44" rx="8" fill="#29B5E8"/><g stroke="white" stroke-width="2.2" stroke-linecap="round"><line x1="22" y1="8" x2="22" y2="36"/><line x1="8" y1="22" x2="36" y2="22"/><line x1="12.5" y1="12.5" x2="31.5" y2="31.5"/><line x1="31.5" y1="12.5" x2="12.5" y2="31.5"/><line x1="19" y1="8" x2="25" y2="8"/><line x1="19" y1="36" x2="25" y2="36"/><line x1="8" y1="19" x2="8" y2="25"/><line x1="36" y1="19" x2="36" y2="25"/></g></svg>
+              <div style="flex:1;min-width:0">
+                <div style="font-size:13.5px;font-weight:500;color:#16202e;line-height:1.35">SnowPro Advanced: Architect Certification</div>
+                <div style="font-size:11px;color:#8a93a3;margin-top:3px;font-family:'IBM Plex Mono',monospace">Snowflake · Jul 2025</div>
+              </div>
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+
+            <!-- SnowPro Data Engineer -->
+            <a href="https://achieve.snowflake.com/5dd1ae95-a699-4be3-b6db-cc95c82f1044" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid #e4e9f0;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.72'" onmouseout="this.style.opacity='1'">
+              <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:8px"><rect width="44" height="44" rx="8" fill="#29B5E8"/><g stroke="white" stroke-width="2.2" stroke-linecap="round"><line x1="22" y1="8" x2="22" y2="36"/><line x1="8" y1="22" x2="36" y2="22"/><line x1="12.5" y1="12.5" x2="31.5" y2="31.5"/><line x1="31.5" y1="12.5" x2="12.5" y2="31.5"/><line x1="19" y1="8" x2="25" y2="8"/><line x1="19" y1="36" x2="25" y2="36"/><line x1="8" y1="19" x2="8" y2="25"/><line x1="36" y1="19" x2="36" y2="25"/></g></svg>
+              <div style="flex:1;min-width:0">
+                <div style="font-size:13.5px;font-weight:500;color:#16202e;line-height:1.35">SnowPro Advanced: Data Engineer Certification</div>
+                <div style="font-size:11px;color:#8a93a3;margin-top:3px;font-family:'IBM Plex Mono',monospace">Snowflake · Jul 2025</div>
+              </div>
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+
+            <!-- AWS -->
+            <a href="https://www.credly.com/badges/6e5f6cdf-bb63-478d-8fa5-f5a29844361b" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid #e4e9f0;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.72'" onmouseout="this.style.opacity='1'">
+              <img src="https://images.credly.com/images/e5c85d7f-4e50-431e-b5af-fa9d9b0596e7/linkedin_thumb_image.png" alt="AWS badge" width="44" height="44" style="flex-shrink:0;border-radius:8px;display:block;object-fit:cover">
+              <div style="flex:1;min-width:0">
+                <div style="font-size:13.5px;font-weight:500;color:#16202e;line-height:1.35">AWS Certified Data Engineer — Associate</div>
+                <div style="font-size:11px;color:#8a93a3;margin-top:3px;font-family:'IBM Plex Mono',monospace">Amazon Web Services</div>
+              </div>
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+
+            <!-- DeepLearning.AI Data Engineering -->
+            <div style="display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid #e4e9f0">
+              <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:8px"><rect width="44" height="44" rx="8" fill="#0D0D0D"/><circle cx="14" cy="22" r="3" fill="#EE4C2C"/><circle cx="22" cy="15" r="3" fill="#EE4C2C"/><circle cx="22" cy="29" r="3" fill="#EE4C2C"/><circle cx="30" cy="22" r="3" fill="#EE4C2C"/><line x1="17" y1="21" x2="19" y2="16.5" stroke="#EE4C2C" stroke-width="1.2"/><line x1="17" y1="23" x2="19" y2="27.5" stroke="#EE4C2C" stroke-width="1.2"/><line x1="25" y1="16.5" x2="27" y2="21" stroke="#EE4C2C" stroke-width="1.2"/><line x1="25" y1="27.5" x2="27" y2="23" stroke="#EE4C2C" stroke-width="1.2"/></svg>
+              <div style="flex:1;min-width:0">
+                <div style="font-size:13.5px;font-weight:500;color:#16202e;line-height:1.35">DeepLearning.AI — Data Engineering</div>
+                <div style="font-size:11px;color:#8a93a3;margin-top:3px;font-family:'IBM Plex Mono',monospace">DeepLearning.AI</div>
+              </div>
+            </div>
+
+            <!-- Deep Learning Specialization -->
+            <div style="display:flex;align-items:center;gap:13px;padding:12px 0">
+              <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:8px"><rect width="44" height="44" rx="8" fill="#0D0D0D"/><circle cx="14" cy="22" r="3" fill="#EE4C2C"/><circle cx="22" cy="15" r="3" fill="#EE4C2C"/><circle cx="22" cy="29" r="3" fill="#EE4C2C"/><circle cx="30" cy="22" r="3" fill="#EE4C2C"/><line x1="17" y1="21" x2="19" y2="16.5" stroke="#EE4C2C" stroke-width="1.2"/><line x1="17" y1="23" x2="19" y2="27.5" stroke="#EE4C2C" stroke-width="1.2"/><line x1="25" y1="16.5" x2="27" y2="21" stroke="#EE4C2C" stroke-width="1.2"/><line x1="25" y1="27.5" x2="27" y2="23" stroke="#EE4C2C" stroke-width="1.2"/></svg>
+              <div style="flex:1;min-width:0">
+                <div style="font-size:13.5px;font-weight:500;color:#16202e;line-height:1.35">Deep Learning Specialization</div>
+                <div style="font-size:11px;color:#8a93a3;margin-top:3px;font-family:'IBM Plex Mono',monospace">DeepLearning.AI · Coursera</div>
+              </div>
+            </div>
+
           </div>
         </div>
         <div>
@@ -350,6 +415,123 @@
       </div>
     </div>
   </section>
+
+  <!-- ============ BOOKS ============ -->
+  <section id="books" style="scroll-margin-top:80px;border-top:1px solid #e1e7ef">
+    <div class="section-inner">
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);margin-bottom:48px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">04 / Reading</div>
+        <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">Books I recommend.</h2>
+        <p style="margin:20px 0 0;max-width:620px;font-size:16px;line-height:1.7;color:#465264">A short shelf on stoicism, mindset, and the practice of staying present.</p>
+      </div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1) .06s,transform .8s cubic-bezier(.2,.7,.2,1) .06s;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px">
+        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">01</span>
+          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Meditations</h3>
+          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Marcus Aurelius</div>
+          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Stoicism</span>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">02</span>
+          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Ego Is the Enemy</h3>
+          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Ryan Holiday</div>
+          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Humility</span>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">03</span>
+          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">The Power of Now</h3>
+          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Eckhart Tolle</div>
+          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Presence</span>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">04</span>
+          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Mindset</h3>
+          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Carol S. Dweck</div>
+          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Growth</span>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">05</span>
+          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">The Courage to Be Disliked</h3>
+          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Kishimi &amp; Koga</div>
+          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Freedom</span>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">06</span>
+          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Blitzscaling</h3>
+          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Reid Hoffman &amp; Chris Yeh</div>
+          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Scale</span>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">07</span>
+          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Nexus</h3>
+          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Yuval Noah Harari</div>
+          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Information</span>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">08</span>
+          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">The One Thing</h3>
+          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Gary Keller &amp; Jay Papasan</div>
+          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Focus</span>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">09</span>
+          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">The Stoic Virtues</h3>
+          <div style="font-size:13px;color:#6b7686;margin-bottom:6px">Ryan Holiday</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2;margin-bottom:auto">Courage · Temperance · Justice · Wisdom</div>
+          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Virtue</span>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">10</span>
+          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Business 101 for the Data Professional</h3>
+          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Jordan Morrow</div>
+          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Literacy</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HORIZON ============ -->
+  <section id="horizon" style="scroll-margin-top:80px;border-top:1px solid #e1e7ef;background:#f4f6fa">
+    <div class="section-inner">
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">05 / Horizon</div>
+        <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">Eyes on what's next.</h2>
+        <p style="margin:24px 0 48px;max-width:760px;font-size:16px;line-height:1.75;color:#465264">Beyond the data stack, I follow the frontiers that will reshape how we live and work — from autonomous machines to the expansion of human presence beyond Earth. The same mindset that drives good engineering drives curiosity about what comes next.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px">
+          <div style="background:#fff;border:1px solid #e4e9f0;border-radius:10px;padding:28px 26px;display:flex;flex-direction:column;gap:12px">
+            <div style="font-size:26px">🤖</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Robotics</div>
+            <p style="margin:0;font-size:14.5px;line-height:1.65;color:#465264">Humanoid and industrial robots moving from labs into real supply chains. I track embodied AI, locomotion breakthroughs, and the data infrastructure these machines will demand at scale.</p>
+          </div>
+          <div style="background:#fff;border:1px solid #e4e9f0;border-radius:10px;padding:28px 26px;display:flex;flex-direction:column;gap:12px">
+            <div style="font-size:26px">🚀</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Space Exploration</div>
+            <p style="margin:0;font-size:14.5px;line-height:1.65;color:#465264">Return to the Moon, Mars ambitions, reusable launch vehicles — science fiction becoming engineering timelines. Mission telemetry and deep-space data pipelines are among the hardest problems in the field.</p>
+          </div>
+          <div style="background:#fff;border:1px solid #e4e9f0;border-radius:10px;padding:28px 26px;display:flex;flex-direction:column;gap:12px">
+            <div style="font-size:26px">⚡</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Energy & Climate Tech</div>
+            <p style="margin:0;font-size:14.5px;line-height:1.65;color:#465264">Fusion, next-gen batteries, smart grids. Energy is foundational infrastructure, and the transition to cleaner systems generates genuinely hard real-time data problems worth solving.</p>
+          </div>
+          <div style="background:#fff;border:1px solid #e4e9f0;border-radius:10px;padding:28px 26px;display:flex;flex-direction:column;gap:12px">
+            <div style="font-size:26px">⚛️</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Quantum Computing</div>
+            <p style="margin:0;font-size:14.5px;line-height:1.65;color:#465264">Qubits, superposition, and entanglement are moving from physics papers into early commercial hardware. Quantum's implications for cryptography, optimization, and eventually data processing make it one of the most consequential bets of the decade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- dusk back into space -->
@@ -360,7 +542,7 @@
   <div id="footStars" style="position:absolute;inset:0;background-image:radial-gradient(1.0px 1.0px at 366px 316px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 310px 102px, rgba(255,255,255,.6), transparent),radial-gradient(1.4px 1.4px at 426px 584px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 173px 522px, rgba(255,255,255,.6), transparent),radial-gradient(1.3px 1.3px at 58px 475px, rgba(255,255,255,.6), transparent),radial-gradient(1.2px 1.2px at 138px 182px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 290px 74px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 244px 517px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 151px 354px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 22px 538px, rgba(200,220,255,.5), transparent),radial-gradient(1.5px 1.5px at 64px 507px, rgba(200,220,255,.5), transparent),radial-gradient(1.3px 1.3px at 77px 412px, rgba(255,255,255,.6), transparent),radial-gradient(1.3px 1.3px at 444px 373px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 507px 418px, rgba(255,255,255,.6), transparent),radial-gradient(1.4px 1.4px at 285px 268px, rgba(255,255,255,.6), transparent),radial-gradient(1.3px 1.3px at 216px 152px, rgba(255,255,255,.6), transparent),radial-gradient(1.0px 1.0px at 160px 133px, rgba(200,220,255,.5), transparent),radial-gradient(1.0px 1.0px at 574px 422px, rgba(255,255,255,.6), transparent),radial-gradient(1.2px 1.2px at 533px 565px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 335px 99px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 296px 236px, rgba(255,255,255,.6), transparent),radial-gradient(1.4px 1.4px at 86px 145px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 422px 40px, rgba(255,255,255,.6), transparent),radial-gradient(1.0px 1.0px at 438px 315px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 192px 3px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 103px 210px, rgba(200,220,255,.5), transparent),radial-gradient(1.5px 1.5px at 94px 87px, rgba(200,220,255,.5), transparent),radial-gradient(1.3px 1.3px at 177px 196px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 172px 389px, rgba(200,220,255,.5), transparent),radial-gradient(1.3px 1.3px at 198px 59px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 221px 26px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 198px 404px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 332px 200px, rgba(255,255,255,.6), transparent),radial-gradient(1.0px 1.0px at 117px 149px, rgba(255,255,255,.6), transparent),radial-gradient(1.2px 1.2px at 409px 124px, rgba(200,220,255,.5), transparent),radial-gradient(1.3px 1.3px at 186px 136px, rgba(255,255,255,.6), transparent),radial-gradient(1.3px 1.3px at 107px 555px, rgba(255,255,255,.6), transparent),radial-gradient(1.0px 1.0px at 295px 307px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 82px 137px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 566px 467px, rgba(255,255,255,.6), transparent),radial-gradient(1.4px 1.4px at 426px 569px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 155px 271px, rgba(200,220,255,.5), transparent),radial-gradient(1.0px 1.0px at 377px 443px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 102px 227px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 396px 239px, rgba(200,220,255,.5), transparent),radial-gradient(1.0px 1.0px at 346px 583px, rgba(200,220,255,.5), transparent),radial-gradient(1.9px 1.9px at 420px 544px, rgba(255,255,255,.9), transparent),radial-gradient(1.6px 1.6px at 231px 235px, rgba(255,255,255,.9), transparent),radial-gradient(1.6px 1.6px at 480px 180px, rgba(210,225,255,.75), transparent),radial-gradient(1.5px 1.5px at 554px 97px, rgba(210,225,255,.75), transparent),radial-gradient(1.4px 1.4px at 387px 267px, rgba(210,225,255,.75), transparent),radial-gradient(1.4px 1.4px at 199px 467px, rgba(210,225,255,.75), transparent),radial-gradient(1.9px 1.9px at 433px 342px, rgba(210,225,255,.75), transparent),radial-gradient(1.6px 1.6px at 508px 562px, rgba(255,255,255,.9), transparent),radial-gradient(1.4px 1.4px at 543px 142px, rgba(255,255,255,.9), transparent),radial-gradient(1.5px 1.5px at 246px 48px, rgba(210,225,255,.75), transparent),radial-gradient(1.3px 1.3px at 328px 324px, rgba(255,255,255,.9), transparent),radial-gradient(1.4px 1.4px at 546px 50px, rgba(210,225,255,.75), transparent),radial-gradient(1.5px 1.5px at 125px 581px, rgba(210,225,255,.75), transparent),radial-gradient(1.5px 1.5px at 596px 81px, rgba(255,255,255,.9), transparent),radial-gradient(1.8px 1.8px at 358px 598px, rgba(210,225,255,.75), transparent),radial-gradient(1.7px 1.7px at 33px 94px, rgba(210,225,255,.75), transparent),radial-gradient(2.4px 2.4px at 310px 529px, #ffffff, transparent),radial-gradient(2.2px 2.2px at 201px 15px, #ffffff, transparent),radial-gradient(2.1px 2.1px at 387px 267px, rgba(220,235,255,.95), transparent),radial-gradient(2.1px 2.1px at 244px 287px, #ffffff, transparent),radial-gradient(2.0px 2.0px at 453px 183px, rgba(220,235,255,.95), transparent);background-size:600px 600px;background-repeat:repeat;opacity:.9"></div>
   <div style="position:absolute;left:-6%;right:-6%;bottom:30px;height:200px;background:radial-gradient(60% 130% at 50% 100%, rgba(120,175,255,.42),transparent 70%);filter:blur(10px);pointer-events:none"></div>
   <div style="position:absolute;width:3200px;height:3200px;left:50%;bottom:-3090px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 50% 50%, #060c1c 0%, #0a1530 88%, rgba(64,120,220,.45) 94%, rgba(150,200,255,.9) 97.5%, rgba(130,185,255,.3) 99.5%, transparent 100%);box-shadow:0 -4px 90px 8px rgba(90,150,255,.35)"></div>
-  <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 40px">
+  <div data-reveal class="contact-inner" style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 clamp(16px,5vw,40px)">
     <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(150,185,255,.9);margin-bottom:20px">Get in touch</div>
     <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(32px,5vw,60px);line-height:1.02;letter-spacing:-.02em;color:#eef4ff;max-width:780px">Let's check your data architecture to implement AI effectively or Let's build platforms that run in minutes.</h2>
     <p style="margin:22px 0 0;max-width:600px;font-size:16px;line-height:1.7;color:rgba(200,215,245,.72)">Eager to shape the future with data.</p>
@@ -378,15 +560,32 @@
         <span style="font-family:'Space Grotesk',sans-serif;font-size:17px;color:#eaf1ff">rcamilo1526</span>
       </a>
     </div>
-    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;margin-top:80px;padding:26px 0 30px;border-top:1px solid rgba(120,160,230,.16);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;color:rgba(170,200,245,.55)">
+    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;margin-top:80px;padding:26px 0 18px;border-top:1px solid rgba(120,160,230,.16);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;color:rgba(170,200,245,.55)">
       <span>Raúl Camilo Martín Bernal — Senior Data Engineer</span>
       <span>4°35′N 74°04′W · Colombia · Remote · © 2026</span>
     </div>
+    <div style="padding-bottom:30px"></div>
   </div>
 </footer>
 
 <script>
 (function () {
+  /* Hamburger menu */
+  var hbBtn = document.getElementById('hamburger');
+  var navLinks = document.getElementById('navLinks');
+  if (hbBtn && navLinks) {
+    hbBtn.addEventListener('click', function () {
+      var open = navLinks.classList.toggle('open');
+      hbBtn.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        hbBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
   function reveal(el) {
     el.style.opacity = '1';
     el.style.transform = 'none';
@@ -436,6 +635,8 @@
       var brand = a.getAttribute('data-brand');
       a.style.color = scrolled ? (brand ? '#16202e' : '#41506a') : (brand ? '#eaf1ff' : 'rgba(210,225,255,.72)');
     });
+    var hbColor = scrolled ? 'rgba(65,80,106,.9)' : 'rgba(210,225,255,.8)';
+    document.querySelectorAll('.hamburger span').forEach(function(s){ s.style.background = hbColor; });
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
