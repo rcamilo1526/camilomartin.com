@@ -13,19 +13,19 @@
 </head>
 <body>
 
-<header id="nav" style="position:fixed;top:0;left:0;right:0;z-index:50;transition:background .45s,box-shadow .45s,border-color .45s;border-bottom:1px solid transparent">
+<header id="nav">
   <div class="nav-inner">
-    <a href="#hero" data-nav="1" data-brand="1" style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.22em;color:#eaf1ff;text-decoration:none;transition:color .45s">RCMB</a>
+    <a href="#hero" data-nav="1" data-brand="1" class="nav-brand">RCMB</a>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
       <span id="hb1"></span><span id="hb2"></span><span id="hb3"></span>
     </button>
     <nav class="nav-links" id="navLinks">
-      <a href="#professional" data-nav="1" data-i18n="nav.professional" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Professional</a>
-      <a href="#about" data-nav="1" data-i18n="nav.about" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">About</a>
-      <a href="#skills" data-nav="1" data-i18n="nav.skills" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Skills</a>
-      <a href="#books" data-nav="1" data-i18n="nav.books" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Books</a>
-      <a href="#horizon" data-nav="1" data-i18n="nav.horizon" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Horizon</a>
-      <a href="#contact" data-nav="1" data-i18n="nav.contact" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Contact</a>
+      <a href="#professional" data-nav="1" data-i18n="nav.professional" class="nav-link">Professional</a>
+      <a href="#about" data-nav="1" data-i18n="nav.about" class="nav-link">About</a>
+      <a href="#skills" data-nav="1" data-i18n="nav.skills" class="nav-link">Skills</a>
+      <a href="#books" data-nav="1" data-i18n="nav.books" class="nav-link">Books</a>
+      <a href="#horizon" data-nav="1" data-i18n="nav.horizon" class="nav-link">Horizon</a>
+      <a href="#contact" data-nav="1" data-i18n="nav.contact" class="nav-link">Contact</a>
     </nav>
     <div id="langToggle" role="group" aria-label="Language">
       <button id="lt-en" class="lt-active" onclick="setLang('en')">EN</button>
@@ -36,136 +36,136 @@
 </header>
 
 <!-- ================= HERO ================= -->
-<section id="hero" style="position:relative;min-height:100vh;overflow:hidden;background:radial-gradient(120% 90% at 50% -8%, #0b1428 0%, #05080f 50%, #020308 100%)">
-  <div id="heroStars" style="position:absolute;inset:0;background-image:radial-gradient(1.0px 1.0px at 366px 316px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 310px 102px, rgba(255,255,255,.6), transparent),radial-gradient(1.4px 1.4px at 426px 584px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 173px 522px, rgba(255,255,255,.6), transparent),radial-gradient(1.3px 1.3px at 58px 475px, rgba(255,255,255,.6), transparent),radial-gradient(1.2px 1.2px at 138px 182px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 290px 74px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 244px 517px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 151px 354px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 22px 538px, rgba(200,220,255,.5), transparent),radial-gradient(1.5px 1.5px at 64px 507px, rgba(200,220,255,.5), transparent),radial-gradient(1.3px 1.3px at 77px 412px, rgba(255,255,255,.6), transparent),radial-gradient(1.3px 1.3px at 444px 373px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 507px 418px, rgba(255,255,255,.6), transparent),radial-gradient(1.4px 1.4px at 285px 268px, rgba(255,255,255,.6), transparent),radial-gradient(1.3px 1.3px at 216px 152px, rgba(255,255,255,.6), transparent),radial-gradient(1.0px 1.0px at 160px 133px, rgba(200,220,255,.5), transparent),radial-gradient(1.0px 1.0px at 574px 422px, rgba(255,255,255,.6), transparent),radial-gradient(1.2px 1.2px at 533px 565px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 335px 99px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 296px 236px, rgba(255,255,255,.6), transparent),radial-gradient(1.4px 1.4px at 86px 145px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 422px 40px, rgba(255,255,255,.6), transparent),radial-gradient(1.0px 1.0px at 438px 315px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 192px 3px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 103px 210px, rgba(200,220,255,.5), transparent),radial-gradient(1.5px 1.5px at 94px 87px, rgba(200,220,255,.5), transparent),radial-gradient(1.3px 1.3px at 177px 196px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 172px 389px, rgba(200,220,255,.5), transparent),radial-gradient(1.3px 1.3px at 198px 59px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 221px 26px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 198px 404px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 332px 200px, rgba(255,255,255,.6), transparent),radial-gradient(1.0px 1.0px at 117px 149px, rgba(255,255,255,.6), transparent),radial-gradient(1.2px 1.2px at 409px 124px, rgba(200,220,255,.5), transparent),radial-gradient(1.3px 1.3px at 186px 136px, rgba(255,255,255,.6), transparent),radial-gradient(1.3px 1.3px at 107px 555px, rgba(255,255,255,.6), transparent),radial-gradient(1.0px 1.0px at 295px 307px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 82px 137px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 566px 467px, rgba(255,255,255,.6), transparent),radial-gradient(1.4px 1.4px at 426px 569px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 155px 271px, rgba(200,220,255,.5), transparent),radial-gradient(1.0px 1.0px at 377px 443px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 102px 227px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 396px 239px, rgba(200,220,255,.5), transparent),radial-gradient(1.0px 1.0px at 346px 583px, rgba(200,220,255,.5), transparent),radial-gradient(1.9px 1.9px at 420px 544px, rgba(255,255,255,.9), transparent),radial-gradient(1.6px 1.6px at 231px 235px, rgba(255,255,255,.9), transparent),radial-gradient(1.6px 1.6px at 480px 180px, rgba(210,225,255,.75), transparent),radial-gradient(1.5px 1.5px at 554px 97px, rgba(210,225,255,.75), transparent),radial-gradient(1.4px 1.4px at 387px 267px, rgba(210,225,255,.75), transparent),radial-gradient(1.4px 1.4px at 199px 467px, rgba(210,225,255,.75), transparent),radial-gradient(1.9px 1.9px at 433px 342px, rgba(210,225,255,.75), transparent),radial-gradient(1.6px 1.6px at 508px 562px, rgba(255,255,255,.9), transparent),radial-gradient(1.4px 1.4px at 543px 142px, rgba(255,255,255,.9), transparent),radial-gradient(1.5px 1.5px at 246px 48px, rgba(210,225,255,.75), transparent),radial-gradient(1.3px 1.3px at 328px 324px, rgba(255,255,255,.9), transparent),radial-gradient(1.4px 1.4px at 546px 50px, rgba(210,225,255,.75), transparent),radial-gradient(1.5px 1.5px at 125px 581px, rgba(210,225,255,.75), transparent),radial-gradient(1.5px 1.5px at 596px 81px, rgba(255,255,255,.9), transparent),radial-gradient(1.8px 1.8px at 358px 598px, rgba(210,225,255,.75), transparent),radial-gradient(1.7px 1.7px at 33px 94px, rgba(210,225,255,.75), transparent),radial-gradient(2.4px 2.4px at 310px 529px, #ffffff, transparent),radial-gradient(2.2px 2.2px at 201px 15px, #ffffff, transparent),radial-gradient(2.1px 2.1px at 387px 267px, rgba(220,235,255,.95), transparent),radial-gradient(2.1px 2.1px at 244px 287px, #ffffff, transparent),radial-gradient(2.0px 2.0px at 453px 183px, rgba(220,235,255,.95), transparent);background-size:600px 600px;background-repeat:repeat;animation:twinkle 6s ease-in-out infinite;will-change:transform"></div>
-  <div style="position:absolute;left:-6%;right:-6%;top:calc(60vh - 54px);height:180px;background:radial-gradient(60% 130% at 50% 120%, rgba(120,175,255,.5),rgba(90,150,255,.12) 46%,transparent 72%);filter:blur(8px);pointer-events:none"></div>
-  <div id="heroEarth" style="position:absolute;width:2600px;height:2600px;left:50%;top:60vh;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 50% 50%, #060c1c 0%, #0a1530 86%, rgba(64,120,220,.45) 93%, rgba(150,200,255,.95) 97%, rgba(130,185,255,.4) 99.4%, rgba(130,185,255,0) 100%);box-shadow:0 -4px 100px 10px rgba(90,150,255,.4);will-change:transform"></div>
-  <div style="position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,40px);min-height:100vh;display:flex;flex-direction:column;color:#eaf1ff">
-    <div style="padding-top:110px"></div>
-    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding-bottom:70px">
-      <div data-i18n="hero.label" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:rgba(150,185,255,.9);margin-bottom:22px">// senior data engineer</div>
-      <h1 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(54px,9vw,116px);line-height:.92;letter-spacing:-.02em;color:#eef4ff">Raúl Camilo<br>Martín Bernal</h1>
-      <div style="margin-top:20px;font-family:'IBM Plex Mono',monospace;font-size:clamp(11px,1.4vw,14px);letter-spacing:.18em;color:rgba(150,185,255,.55)">/ rah-OOL · kah-MEE-loh · mar-TEEN · ber-NAL /</div>
-      <div style="margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:clamp(10px,1.1vw,12px);letter-spacing:.12em;color:rgba(150,185,255,.32);display:flex;align-items:center;gap:6px">Made with ♥ and Claude<img src="images/anthropic.png" alt="Claude" width="14" height="14" style="display:inline-block;vertical-align:middle;border-radius:3px;opacity:.45;filter:brightness(1.8)"> — Code · Design · Cowork</div>
+<section id="hero">
+  <div id="heroStars"></div>
+  <div class="hero-atmosphere"></div>
+  <div id="heroEarth"></div>
+  <div class="hero-content">
+    <div class="hero-spacer"></div>
+    <div class="hero-main">
+      <div data-i18n="hero.label" class="hero-label">// senior data engineer</div>
+      <h1 class="hero-h1">Raúl Camilo<br>Martín Bernal</h1>
+      <div class="hero-pronunciation">/ rah-OOL · kah-MEE-loh · mar-TEEN · ber-NAL /</div>
+      <div class="hero-made-with">Made with ♥ and Claude<img src="images/anthropic.png" alt="Claude" width="14" height="14"> — Code · Design · Cowork</div>
     </div>
-    <div style="padding-bottom:30px;display:flex;justify-content:center">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.25em;color:rgba(190,210,245,.6);text-align:center;animation:floaty 2.4s ease-in-out infinite">SCROLL<div style="margin-top:6px;font-size:16px">⌄</div></div>
+    <div class="hero-scroll">
+      <div class="hero-scroll-text">SCROLL<div class="hero-scroll-arrow">⌄</div></div>
     </div>
   </div>
-  <div style="position:absolute;left:22px;bottom:20px;width:20px;height:20px;border-left:1px solid rgba(120,160,230,.4);border-bottom:1px solid rgba(120,160,230,.4);z-index:2"></div>
-  <div style="position:absolute;right:22px;bottom:20px;width:20px;height:20px;border-right:1px solid rgba(120,160,230,.4);border-bottom:1px solid rgba(120,160,230,.4);z-index:2"></div>
+  <div class="hero-corner-bl"></div>
+  <div class="hero-corner-br"></div>
 </section>
 
 <!-- rise into daylight -->
-<div aria-hidden="true" style="height:440px;background:linear-gradient(180deg,#03060f 0%,#0a1426 15%,#16263f 31%,#33507e 49%,#6f8db8 66%,#a9bdd9 80%,#d7deea 92%,#eef1f6 100%)"></div>
+<div aria-hidden="true" class="day-rise"></div>
 
-<main style="background:#eef1f6;color:#16202e">
+<main>
 
   <!-- ============ PROFESSIONAL ============ -->
-  <section id="professional" style="scroll-margin-top:80px;max-width:1180px;margin:0 auto;padding:30px 40px 110px">
-    <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)">
-      <div data-i18n="pro.label" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">01 / Professional life</div>
-      <h2 data-i18n="pro.h2" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(30px,4.4vw,48px);line-height:1.04;letter-spacing:-.018em;max-width:820px">From legacy bottlenecks to platforms that move in minutes.</h2>
-      <p data-i18n="pro.desc" style="margin:22px 0 0;max-width:760px;font-size:16px;line-height:1.7;color:#48536580">Senior Data Engineer with 5+ years designing and delivering end-to-end data platforms across fintech, e-commerce, and enterprise environments — scalable, cost-efficient pipelines on AWS, Snowflake, Spark, dbt &amp; Python, with a consistent track record of turning slow, legacy processes into fast, reliable ones.</p>
+  <section id="professional">
+    <div data-reveal>
+      <div data-i18n="pro.label" class="section-label">01 / Professional life</div>
+      <h2 data-i18n="pro.h2" class="pro-h2">From legacy bottlenecks to platforms that move in minutes.</h2>
+      <p data-i18n="pro.desc" class="pro-desc">Senior Data Engineer with 5+ years designing and delivering end-to-end data platforms across fintech, e-commerce, and enterprise environments — scalable, cost-efficient pipelines on AWS, Snowflake, Spark, dbt &amp; Python, with a consistent track record of turning slow, legacy processes into fast, reliable ones.</p>
     </div>
 
     <!-- stats -->
-    <div data-reveal class="stats-grid" style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1) .08s,transform .8s cubic-bezier(.2,.7,.2,1) .08s">
-      <div style="background:#f7f9fc;padding:26px 24px">
-        <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:40px;letter-spacing:-.02em;color:#16202e">5+</div>
-        <div data-i18n="stat.years" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a93a3;margin-top:8px">Years engineering data</div>
+    <div data-reveal data-delay="0.08" class="stats-grid">
+      <div class="stat-cell">
+        <div class="stat-value">5+</div>
+        <div data-i18n="stat.years" class="stat-label">Years engineering data</div>
       </div>
-      <div style="background:#f7f9fc;padding:26px 24px">
-        <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:40px;letter-spacing:-.02em;color:#16202e">16×</div>
-        <div data-i18n="stat.speed" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a93a3;margin-top:8px">Pipeline speed-up · 8h→30m</div>
+      <div class="stat-cell">
+        <div class="stat-value">16×</div>
+        <div data-i18n="stat.speed" class="stat-label">Pipeline speed-up · 8h→30m</div>
       </div>
-      <div style="background:#f7f9fc;padding:26px 24px">
-        <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:40px;letter-spacing:-.02em;color:#16202e">3 TB</div>
-        <div data-i18n="stat.tables" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a93a3;margin-top:8px">Largest tables consolidated</div>
+      <div class="stat-cell">
+        <div class="stat-value">3 TB</div>
+        <div data-i18n="stat.tables" class="stat-label">Largest tables consolidated</div>
       </div>
-      <div style="background:#f7f9fc;padding:26px 24px">
-        <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:40px;letter-spacing:-.02em;color:#16202e">50M+</div>
-        <div data-i18n="stat.records" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a93a3;margin-top:8px">Records processed daily</div>
+      <div class="stat-cell">
+        <div class="stat-value">50M+</div>
+        <div data-i18n="stat.records" class="stat-label">Records processed daily</div>
       </div>
     </div>
 
     <!-- timeline -->
-    <div style="max-width:820px">
+    <div class="timeline-wrap">
 
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);position:relative;padding-left:36px;padding-bottom:48px">
-        <div style="position:absolute;left:0;top:6px;width:11px;height:11px;border-radius:50%;background:#2f6fe0;box-shadow:0 0 0 4px rgba(47,111,224,.12)"></div>
-        <div style="position:absolute;left:5px;top:22px;bottom:0;width:1px;background:#d9dfe8"></div>
-        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:6px">
-          <span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">EPAM Systems</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#2f6fe0">Senior Data Integration Engineer</span>
+      <div data-reveal class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+        <div class="timeline-header">
+          <span class="timeline-company">EPAM Systems</span>
+          <span class="timeline-role">Senior Data Integration Engineer</span>
         </div>
-        <div data-i18n="epam.date" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#8a93a3;margin-bottom:4px">Nov 2025 – Present · Remote</div>
-        <div data-i18n="epam.client" style="font-size:13px;color:#6b7686;font-style:italic;margin-bottom:16px">Client: foodservice equipment &amp; supplies distribution (USA)</div>
-        <div style="display:flex;flex-direction:column;gap:11px">
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="epam.b1" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Leading the modernization of a business-critical platform — migrating ELT from Spark-based AWS Glue to <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">Airbyte + dbt + Redshift</span>, integrating ~10 GB/day from Oracle, SQL Server, OpenEdge &amp; IBM DB2.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="epam.b2" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Re-engineered legacy Spark pipelines to eliminate memory bottlenecks — cutting a critical pipeline from <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">8 h → 30 min</span> <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">16× faster</span>.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="epam.b3" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Replaced legacy SSIS packages with <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">Airflow DAGs</span> for observability, maintainability &amp; scheduling control.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="epam.b4" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Rolling out <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">Claude — skills, agents &amp; MCP servers</span> as a developer-productivity and incident-response accelerator across dbt, Terraform, SQL &amp; Airflow.</p></div>
+        <div data-i18n="epam.date" class="timeline-date">Nov 2025 – Present · Remote</div>
+        <div data-i18n="epam.client" class="timeline-client">Client: foodservice equipment &amp; supplies distribution (USA)</div>
+        <div class="timeline-bullets">
+          <div class="timeline-bullet"><span class="timeline-diamond"></span><p data-i18n-html="epam.b1" class="timeline-p">Leading the modernization of a business-critical platform — migrating ELT from Spark-based AWS Glue to <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">Airbyte + dbt + Redshift</span>, integrating ~10 GB/day from Oracle, SQL Server, OpenEdge &amp; IBM DB2.</p></div>
+          <div class="timeline-bullet"><span class="timeline-diamond"></span><p data-i18n-html="epam.b2" class="timeline-p">Re-engineered legacy Spark pipelines to eliminate memory bottlenecks — cutting a critical pipeline from <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">8 h → 30 min</span> <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">16× faster</span>.</p></div>
+          <div class="timeline-bullet"><span class="timeline-diamond"></span><p data-i18n-html="epam.b3" class="timeline-p">Replaced legacy SSIS packages with <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">Airflow DAGs</span> for observability, maintainability &amp; scheduling control.</p></div>
+          <div class="timeline-bullet"><span class="timeline-diamond"></span><p data-i18n-html="epam.b4" class="timeline-p">Rolling out <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">Claude — skills, agents &amp; MCP servers</span> as a developer-productivity and incident-response accelerator across dbt, Terraform, SQL &amp; Airflow.</p></div>
         </div>
       </div>
 
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);position:relative;padding-left:36px;padding-bottom:48px">
-        <div style="position:absolute;left:0;top:6px;width:11px;height:11px;border-radius:50%;background:#2f6fe0;box-shadow:0 0 0 4px rgba(47,111,224,.12)"></div>
-        <div style="position:absolute;left:5px;top:22px;bottom:0;width:1px;background:#d9dfe8"></div>
-        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:6px">
-          <span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Globant</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#2f6fe0">Semi Senior Advanced Data Engineer</span>
+      <div data-reveal class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+        <div class="timeline-header">
+          <span class="timeline-company">Globant</span>
+          <span class="timeline-role">Semi Senior Advanced Data Engineer</span>
         </div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#8a93a3;margin-bottom:4px">Mar 2024 – Nov 2025</div>
-        <div data-i18n="glob1.client" style="font-size:13px;color:#6b7686;font-style:italic;margin-bottom:16px">Enterprise data consolidation into Snowflake</div>
-        <div style="display:flex;flex-direction:column;gap:11px">
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="glob1.b1" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Consolidated large on-prem &amp; Amazon RDS Oracle databases into Snowflake — including <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">~3 TB tables · 50M+ rows/day</span> — via ETL, ELT &amp; Reverse-ETL.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="glob1.b2" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Redesigned the data model from scratch (~20 models across ~50 tables) — reporting <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">10 h → 5 min</span>.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n="glob1.b3" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Built Snowflake stored procedures and high-volume load patterns with Snowflake + Airflow + Airbyte; enhanced pipelines with SnowPark via Notebooks, Worksheets &amp; Streamlit.</p></div>
-        </div>
-      </div>
-
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);position:relative;padding-left:36px;padding-bottom:48px">
-        <div style="position:absolute;left:0;top:6px;width:11px;height:11px;border-radius:50%;background:#2f6fe0;box-shadow:0 0 0 4px rgba(47,111,224,.12)"></div>
-        <div style="position:absolute;left:5px;top:22px;bottom:0;width:1px;background:#d9dfe8"></div>
-        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:6px">
-          <span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Globant</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#2f6fe0">Semi Senior Data Engineer</span>
-        </div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#8a93a3;margin-bottom:4px">Dec 2022 – Mar 2024</div>
-        <div data-i18n="glob2.client" style="font-size:13px;color:#6b7686;font-style:italic;margin-bottom:16px">End-to-end data lakehouse on AWS</div>
-        <div style="display:flex;flex-direction:column;gap:11px">
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="glob2.b1" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Built end-to-end pipelines for a conflict-of-interest application — ~10 sources at <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">~40 GB/day</span> into a .NET app.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n="glob2.b2" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Architected the data layer with AWS Neptune (entity-relationship logic) and OpenSearch (fast per-company lookups).</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n="glob2.b3" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Implemented a data lake with Apache Spark + Iceberg on AWS Glue &amp; Athena; orchestrated with Step Functions, Glue &amp; Lambda. Earlier: documented IBM DataStage ETL and automated XML extraction in Python.</p></div>
+        <div class="timeline-date">Mar 2024 – Nov 2025</div>
+        <div data-i18n="glob1.client" class="timeline-client">Enterprise data consolidation into Snowflake</div>
+        <div class="timeline-bullets">
+          <div class="timeline-bullet"><span class="timeline-diamond"></span><p data-i18n-html="glob1.b1" class="timeline-p">Consolidated large on-prem &amp; Amazon RDS Oracle databases into Snowflake — including <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">~3 TB tables · 50M+ rows/day</span> — via ETL, ELT &amp; Reverse-ETL.</p></div>
+          <div class="timeline-bullet"><span class="timeline-diamond"></span><p data-i18n-html="glob1.b2" class="timeline-p">Redesigned the data model from scratch (~20 models across ~50 tables) — reporting <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">10 h → 5 min</span>.</p></div>
+          <div class="timeline-bullet"><span class="timeline-diamond"></span><p data-i18n="glob1.b3" class="timeline-p">Built Snowflake stored procedures and high-volume load patterns with Snowflake + Airflow + Airbyte; enhanced pipelines with SnowPark via Notebooks, Worksheets &amp; Streamlit.</p></div>
         </div>
       </div>
 
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);position:relative;padding-left:36px;padding-bottom:48px">
-        <div style="position:absolute;left:0;top:6px;width:11px;height:11px;border-radius:50%;background:#2f6fe0;box-shadow:0 0 0 4px rgba(47,111,224,.12)"></div>
-        <div style="position:absolute;left:5px;top:22px;bottom:0;width:1px;background:#d9dfe8"></div>
-        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:6px">
-          <span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Rappi</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#2f6fe0">Data Engineer · RappiPay</span>
+      <div data-reveal class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+        <div class="timeline-header">
+          <span class="timeline-company">Globant</span>
+          <span class="timeline-role">Semi Senior Data Engineer</span>
         </div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#8a93a3;margin-bottom:16px">Oct 2021 – Dec 2022</div>
-        <div style="display:flex;flex-direction:column;gap:11px">
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="rappi.b1" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Built data marts in Snowflake for BI, Data Science &amp; Operations — <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">~60 GB/day · peak ~150M rows</span>.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="rappi.b2" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Migrated batch ingestion from Apache NiFi to Spark on AWS Glue — <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">6 h → 20 min</span>.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n="rappi.b3" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Built ETL/ELT for the legal &amp; regulatory reporting behind RappiPay's banking-license process in Colombia — contributing to a new bank that remains in operation today. Added Apache Kafka streaming for near-real-time statements.</p></div>
+        <div class="timeline-date">Dec 2022 – Mar 2024</div>
+        <div data-i18n="glob2.client" class="timeline-client">End-to-end data lakehouse on AWS</div>
+        <div class="timeline-bullets">
+          <div class="timeline-bullet"><span class="timeline-diamond"></span><p data-i18n-html="glob2.b1" class="timeline-p">Built end-to-end pipelines for a conflict-of-interest application — ~10 sources at <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">~40 GB/day</span> into a .NET app.</p></div>
+          <div class="timeline-bullet"><span class="timeline-diamond"></span><p data-i18n="glob2.b2" class="timeline-p">Architected the data layer with AWS Neptune (entity-relationship logic) and OpenSearch (fast per-company lookups).</p></div>
+          <div class="timeline-bullet"><span class="timeline-diamond"></span><p data-i18n="glob2.b3" class="timeline-p">Implemented a data lake with Apache Spark + Iceberg on AWS Glue &amp; Athena; orchestrated with Step Functions, Glue &amp; Lambda. Earlier: documented IBM DataStage ETL and automated XML extraction in Python.</p></div>
         </div>
       </div>
 
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);position:relative;padding-left:36px">
-        <div style="position:absolute;left:0;top:6px;width:11px;height:11px;border-radius:50%;background:#9aa6b8;box-shadow:0 0 0 4px rgba(154,166,184,.14)"></div>
-        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:6px">
-          <span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Esri Colombia</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#647187">Technical Marketing Engineer · GIS Advisor</span>
+      <div data-reveal class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+        <div class="timeline-header">
+          <span class="timeline-company">Rappi</span>
+          <span class="timeline-role">Data Engineer · RappiPay</span>
         </div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#8a93a3;margin-bottom:16px">Feb 2019 – Sep 2021 · Bogotá, Colombia</div>
-        <div style="display:flex;flex-direction:column;gap:11px">
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="esri.b1" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Built Python, R &amp; Bash geospatial pipelines — a census-cleaning script that did in <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">1 day what took weeks</span>, and COVID-19 automation <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">15 h → 15 min</span>.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n="esri.b2" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Developed on-demand geospatial tooling for internal clients and supported ArcGIS / ArcGIS Online through demos and technical talks.</p></div>
+        <div class="timeline-date-b16">Oct 2021 – Dec 2022</div>
+        <div class="timeline-bullets">
+          <div class="timeline-bullet"><span class="timeline-diamond"></span><p data-i18n-html="rappi.b1" class="timeline-p">Built data marts in Snowflake for BI, Data Science &amp; Operations — <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">~60 GB/day · peak ~150M rows</span>.</p></div>
+          <div class="timeline-bullet"><span class="timeline-diamond"></span><p data-i18n-html="rappi.b2" class="timeline-p">Migrated batch ingestion from Apache NiFi to Spark on AWS Glue — <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">6 h → 20 min</span>.</p></div>
+          <div class="timeline-bullet"><span class="timeline-diamond"></span><p data-i18n="rappi.b3" class="timeline-p">Built ETL/ELT for the legal &amp; regulatory reporting behind RappiPay's banking-license process in Colombia — contributing to a new bank that remains in operation today. Added Apache Kafka streaming for near-real-time statements.</p></div>
+        </div>
+      </div>
+
+      <div data-reveal class="timeline-item-last">
+        <div class="timeline-dot-muted"></div>
+        <div class="timeline-header">
+          <span class="timeline-company">Esri Colombia</span>
+          <span class="timeline-role-muted">Technical Marketing Engineer · GIS Advisor</span>
+        </div>
+        <div class="timeline-date-b16">Feb 2019 – Sep 2021 · Bogotá, Colombia</div>
+        <div class="timeline-bullets">
+          <div class="timeline-bullet"><span class="timeline-diamond"></span><p data-i18n-html="esri.b1" class="timeline-p">Built Python, R &amp; Bash geospatial pipelines — a census-cleaning script that did in <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">1 day what took weeks</span>, and COVID-19 automation <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">15 h → 15 min</span>.</p></div>
+          <div class="timeline-bullet"><span class="timeline-diamond"></span><p data-i18n="esri.b2" class="timeline-p">Developed on-demand geospatial tooling for internal clients and supported ArcGIS / ArcGIS Online through demos and technical talks.</p></div>
         </div>
       </div>
 
@@ -173,38 +173,38 @@
   </section>
 
   <!-- ============ ABOUT ============ -->
-  <section id="about" style="scroll-margin-top:80px;border-top:1px solid #e1e7ef;background:#f4f6fa">
+  <section id="about" class="section-alt">
     <div class="section-inner">
-      <div data-reveal class="about-grid" style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)">
+      <div data-reveal class="about-grid">
         <div>
-          <div data-i18n="about.label" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">02 / About me</div>
-          <h2 data-i18n="about.h2" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">Beyond the pipelines.</h2>
-          <p data-i18n-html="about.desc" style="margin:24px 0 0;font-size:16px;line-height:1.75;color:#465264">Away from the data platforms, I'm happiest in motion — traveling to new places, hiking trails, and playing sport. I currently train <strong style="color:#16202e;font-weight:500">CrossFit at an intermediate level</strong> and run regularly. Sport keeps the same discipline I bring to engineering: show up, measure, improve.</p>
-          <div data-i18n="about.lang" style="margin-top:30px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a93a3;margin-bottom:12px">Languages</div>
-          <div style="display:flex;flex-wrap:wrap;gap:22px">
-            <div><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;color:#16202e">Spanish</div><div data-i18n="about.lang.native" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8a93a3;margin-top:2px">Native</div></div>
-            <div><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;color:#16202e">English</div><div data-i18n="about.lang.fullpro" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8a93a3;margin-top:2px">Full Professional</div></div>
-            <div><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;color:#16202e">Portuguese</div><div data-i18n="about.lang.elem" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8a93a3;margin-top:2px">Elementary</div></div>
+          <div data-i18n="about.label" class="section-label">02 / About me</div>
+          <h2 data-i18n="about.h2" class="section-h2">Beyond the pipelines.</h2>
+          <p data-i18n-html="about.desc" class="about-desc-p">Away from the data platforms, I'm happiest in motion — traveling to new places, hiking trails, and playing sport. I currently train <strong style="color:#16202e;font-weight:500">CrossFit at an intermediate level</strong> and run regularly. Sport keeps the same discipline I bring to engineering: show up, measure, improve.</p>
+          <div data-i18n="about.lang" class="about-lang-hdr">Languages</div>
+          <div class="about-lang-list">
+            <div><div class="about-lang-name">Spanish</div><div data-i18n="about.lang.native" class="about-lang-level">Native</div></div>
+            <div><div class="about-lang-name">English</div><div data-i18n="about.lang.fullpro" class="about-lang-level">Full Professional</div></div>
+            <div><div class="about-lang-name">Portuguese</div><div data-i18n="about.lang.elem" class="about-lang-level">Elementary</div></div>
           </div>
         </div>
         <div>
-          <div data-i18n="about.sports" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a93a3;margin-bottom:16px">Sports I play</div>
-          <div style="display:flex;flex-wrap:wrap;gap:10px">
-            <span style="display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:500;color:#fff;background:#2f6fe0;border-radius:5px;padding:9px 15px">CrossFit <span data-i18n="about.intermediate" style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:400;opacity:.85;letter-spacing:.06em">INTERMEDIATE</span></span>
-            <span style="display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:500;color:#fff;background:#2f6fe0;border-radius:5px;padding:9px 15px">Running <span data-i18n="about.current" style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:400;opacity:.85;letter-spacing:.06em">CURRENT</span></span>
-            <span data-i18n="sport.swim" style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#34404f;background:#fff;border:1px solid #dde3ec;border-radius:5px;padding:9px 15px">Swimming</span>
-            <span data-i18n="sport.tennis" style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#34404f;background:#fff;border:1px solid #dde3ec;border-radius:5px;padding:9px 15px">Tennis</span>
-            <span data-i18n="sport.basketball" style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#34404f;background:#fff;border:1px solid #dde3ec;border-radius:5px;padding:9px 15px">Basketball</span>
-            <span data-i18n="sport.pingpong" style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#34404f;background:#fff;border:1px solid #dde3ec;border-radius:5px;padding:9px 15px">Ping Pong</span>
+          <div data-i18n="about.sports" class="about-sports-hdr">Sports I play</div>
+          <div class="about-sports-list">
+            <span class="sport-active">CrossFit <span data-i18n="about.intermediate" class="sport-active-sub">INTERMEDIATE</span></span>
+            <span class="sport-active">Running <span data-i18n="about.current" class="sport-active-sub">CURRENT</span></span>
+            <span data-i18n="sport.swim" class="sport-inactive">Swimming</span>
+            <span data-i18n="sport.tennis" class="sport-inactive">Tennis</span>
+            <span data-i18n="sport.basketball" class="sport-inactive">Basketball</span>
+            <span data-i18n="sport.pingpong" class="sport-inactive">Ping Pong</span>
           </div>
-          <div style="margin-top:30px;display:flex;gap:18px;flex-wrap:wrap">
-            <div style="flex:1;min-width:150px;background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:20px 22px">
-              <div data-i18n="about.travel" style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:26px;color:#16202e">Travel</div>
-              <div data-i18n="about.travel.desc" style="font-size:13px;color:#6b7686;margin-top:6px;line-height:1.55">New places, new perspectives.</div>
+          <div class="about-hobbies">
+            <div class="about-hobby-card">
+              <div data-i18n="about.travel" class="about-hobby-title">Travel</div>
+              <div data-i18n="about.travel.desc" class="about-hobby-desc">New places, new perspectives.</div>
             </div>
-            <div style="flex:1;min-width:150px;background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:20px 22px">
-              <div data-i18n="about.hiking" style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:26px;color:#16202e">Hiking</div>
-              <div data-i18n="about.hiking.desc" style="font-size:13px;color:#6b7686;margin-top:6px;line-height:1.55">Trails, elevation, quiet.</div>
+            <div class="about-hobby-card">
+              <div data-i18n="about.hiking" class="about-hobby-title">Hiking</div>
+              <div data-i18n="about.hiking.desc" class="about-hobby-desc">Trails, elevation, quiet.</div>
             </div>
           </div>
         </div>
@@ -213,159 +213,159 @@
   </section>
 
   <!-- ============ SKILLS ============ -->
-  <section id="skills" style="scroll-margin-top:80px;border-top:1px solid #e1e7ef;background:#f4f6fa">
+  <section id="skills" class="section-alt">
     <div class="section-inner">
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);margin-bottom:48px">
-        <div data-i18n="skills.label" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">03 / Skills</div>
-        <h2 data-i18n="skills.h2" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">The stack I build on.</h2>
+      <div data-reveal style="margin-bottom:48px">
+        <div data-i18n="skills.label" class="section-label">03 / Skills</div>
+        <h2 data-i18n="skills.h2" class="section-h2">The stack I build on.</h2>
       </div>
-      <div data-reveal class="skills-grid" style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1) .06s,transform .8s cubic-bezier(.2,.7,.2,1) .06s">
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:24px 24px 26px">
-          <div data-i18n="skill.de" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">Data Engineering</div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px">
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">ETL / ELT / Reverse-ETL</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Dimensional Modeling</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Data Lakehouse</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Data Governance</span>
+      <div data-reveal data-delay="0.06" class="skills-grid">
+        <div class="skill-card">
+          <div data-i18n="skill.de" class="skill-card-label">Data Engineering</div>
+          <div class="skill-tags">
+            <span class="skill-tag">ETL / ELT / Reverse-ETL</span>
+            <span class="skill-tag">Dimensional Modeling</span>
+            <span class="skill-tag">Data Lakehouse</span>
+            <span class="skill-tag">Data Governance</span>
           </div>
         </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:24px 24px 26px">
-          <div data-i18n="skill.cloud" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">Cloud &amp; Warehouses</div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px">
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">AWS Glue</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Athena</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Redshift</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Step Functions</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Neptune</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">OpenSearch</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Snowflake</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">SnowPark</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Streamlit</span>
+        <div class="skill-card">
+          <div data-i18n="skill.cloud" class="skill-card-label">Cloud &amp; Warehouses</div>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS Glue</span>
+            <span class="skill-tag">Athena</span>
+            <span class="skill-tag">Redshift</span>
+            <span class="skill-tag">Step Functions</span>
+            <span class="skill-tag">Neptune</span>
+            <span class="skill-tag">OpenSearch</span>
+            <span class="skill-tag">Snowflake</span>
+            <span class="skill-tag">SnowPark</span>
+            <span class="skill-tag">Streamlit</span>
           </div>
         </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:24px 24px 26px">
-          <div data-i18n="skill.proc" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">Processing &amp; Orchestration</div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px">
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Apache Spark</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Iceberg</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Airflow</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Kafka</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">NiFi</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Airbyte</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">dbt</span>
+        <div class="skill-card">
+          <div data-i18n="skill.proc" class="skill-card-label">Processing &amp; Orchestration</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Apache Spark</span>
+            <span class="skill-tag">Iceberg</span>
+            <span class="skill-tag">Airflow</span>
+            <span class="skill-tag">Kafka</span>
+            <span class="skill-tag">NiFi</span>
+            <span class="skill-tag">Airbyte</span>
+            <span class="skill-tag">dbt</span>
           </div>
         </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:24px 24px 26px">
-          <div data-i18n="skill.langs" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">Languages &amp; Tooling</div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px">
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Python</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">SQL</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Bash</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">R</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Terraform</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Git</span>
+        <div class="skill-card">
+          <div data-i18n="skill.langs" class="skill-card-label">Languages &amp; Tooling</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Bash</span>
+            <span class="skill-tag">R</span>
+            <span class="skill-tag">Terraform</span>
+            <span class="skill-tag">Git</span>
           </div>
         </div>
-        <div class="ai-card" style="background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:24px 24px 26px">
-          <div data-i18n="skill.ai" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">AI / ML</div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px">
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Agentic AI — Claude (skills, agents, MCP)</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">LLM Integration</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Generative AI</span>
-            <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Deep Learning</span>
+        <div class="skill-card ai-card">
+          <div data-i18n="skill.ai" class="skill-card-label">AI / ML</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Agentic AI — Claude (skills, agents, MCP)</span>
+            <span class="skill-tag">LLM Integration</span>
+            <span class="skill-tag">Generative AI</span>
+            <span class="skill-tag">Deep Learning</span>
           </div>
         </div>
       </div>
 
       <!-- credentials -->
-      <div data-reveal class="creds-grid" style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)">
+      <div data-reveal class="creds-grid">
         <div>
-          <div data-i18n="creds.certs" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a93a3;margin-bottom:14px">Certifications</div>
-          <div style="display:flex;flex-direction:column">
+          <div data-i18n="creds.certs" class="creds-col-hdr">Certifications</div>
+          <div class="cert-list">
 
             <!-- Claude / Anthropic -->
-            <a href="https://verify.skilljar.com/c/i6dit8ytcfc9" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid #e4e9f0;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.72'" onmouseout="this.style.opacity='1'">
-              <img src="images/anthropic.png" alt="Anthropic" width="44" height="44" style="flex-shrink:0;border-radius:8px;display:block;object-fit:contain;background:#fff;border:1px solid #e4e9f0;padding:5px">
-              <div style="flex:1;min-width:0">
-                <div style="font-size:13.5px;font-weight:500;color:#16202e;line-height:1.35">Claude Certified Architect — Foundations</div>
-                <div style="font-size:11px;color:#8a93a3;margin-top:3px;font-family:'IBM Plex Mono',monospace">Anthropic · Apr 2026</div>
+            <a href="https://verify.skilljar.com/c/i6dit8ytcfc9" target="_blank" rel="noopener" class="cert-row">
+              <img src="images/anthropic.png" alt="Anthropic" width="44" height="44" class="cert-icon">
+              <div class="cert-meta">
+                <div class="cert-name">Claude Certified Architect — Foundations</div>
+                <div class="cert-issuer">Anthropic · Apr 2026</div>
               </div>
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="cert-arrow" width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
 
             <!-- Astronomer -->
-            <a href="https://www.credly.com/badges/3c2ef8ec-fe45-4e38-9d30-ba26e6f722ef" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid #e4e9f0;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.72'" onmouseout="this.style.opacity='1'">
-              <img src="images/astronomer_logo.jpeg" alt="Astronomer" width="44" height="44" style="flex-shrink:0;border-radius:8px;display:block;object-fit:cover">
-              <div style="flex:1;min-width:0">
-                <div style="font-size:13.5px;font-weight:500;color:#16202e;line-height:1.35">Astronomer Certification DAG Authoring for Apache Airflow 3</div>
-                <div style="font-size:11px;color:#8a93a3;margin-top:3px;font-family:'IBM Plex Mono',monospace">Astronomer · Oct 2025</div>
+            <a href="https://www.credly.com/badges/3c2ef8ec-fe45-4e38-9d30-ba26e6f722ef" target="_blank" rel="noopener" class="cert-row">
+              <img src="images/astronomer_logo.jpeg" alt="Astronomer" width="44" height="44" class="cert-icon-cover">
+              <div class="cert-meta">
+                <div class="cert-name">Astronomer Certification DAG Authoring for Apache Airflow 3</div>
+                <div class="cert-issuer">Astronomer · Oct 2025</div>
               </div>
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="cert-arrow" width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
 
             <!-- SnowPro Architect -->
-            <a href="https://achieve.snowflake.com/c1849df5-78ad-4b27-bdc5-08a939c80b91" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid #e4e9f0;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.72'" onmouseout="this.style.opacity='1'">
-              <img src="images/snowflake-color.png" alt="Snowflake" width="44" height="44" style="flex-shrink:0;border-radius:8px;display:block;object-fit:contain;background:#fff;border:1px solid #e4e9f0;padding:5px">
-              <div style="flex:1;min-width:0">
-                <div style="font-size:13.5px;font-weight:500;color:#16202e;line-height:1.35">SnowPro Advanced: Architect Certification</div>
-                <div style="font-size:11px;color:#8a93a3;margin-top:3px;font-family:'IBM Plex Mono',monospace">Snowflake · Jul 2025</div>
+            <a href="https://achieve.snowflake.com/c1849df5-78ad-4b27-bdc5-08a939c80b91" target="_blank" rel="noopener" class="cert-row">
+              <img src="images/snowflake-color.png" alt="Snowflake" width="44" height="44" class="cert-icon">
+              <div class="cert-meta">
+                <div class="cert-name">SnowPro Advanced: Architect Certification</div>
+                <div class="cert-issuer">Snowflake · Jul 2025</div>
               </div>
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="cert-arrow" width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
 
             <!-- SnowPro Data Engineer -->
-            <a href="https://achieve.snowflake.com/5dd1ae95-a699-4be3-b6db-cc95c82f1044" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid #e4e9f0;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.72'" onmouseout="this.style.opacity='1'">
-              <img src="images/snowflake-color.png" alt="Snowflake" width="44" height="44" style="flex-shrink:0;border-radius:8px;display:block;object-fit:contain;background:#fff;border:1px solid #e4e9f0;padding:5px">
-              <div style="flex:1;min-width:0">
-                <div style="font-size:13.5px;font-weight:500;color:#16202e;line-height:1.35">SnowPro Advanced: Data Engineer Certification</div>
-                <div style="font-size:11px;color:#8a93a3;margin-top:3px;font-family:'IBM Plex Mono',monospace">Snowflake · Jul 2025</div>
+            <a href="https://achieve.snowflake.com/5dd1ae95-a699-4be3-b6db-cc95c82f1044" target="_blank" rel="noopener" class="cert-row">
+              <img src="images/snowflake-color.png" alt="Snowflake" width="44" height="44" class="cert-icon">
+              <div class="cert-meta">
+                <div class="cert-name">SnowPro Advanced: Data Engineer Certification</div>
+                <div class="cert-issuer">Snowflake · Jul 2025</div>
               </div>
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="cert-arrow" width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
 
             <!-- AWS -->
-            <a href="https://www.credly.com/badges/6e5f6cdf-bb63-478d-8fa5-f5a29844361b" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid #e4e9f0;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.72'" onmouseout="this.style.opacity='1'">
-              <img src="images/amazon-web-services-light.png" alt="AWS" width="44" height="44" style="flex-shrink:0;border-radius:8px;display:block;object-fit:contain;background:#232f3e;border:1px solid #e4e9f0;padding:5px">
-              <div style="flex:1;min-width:0">
-                <div style="font-size:13.5px;font-weight:500;color:#16202e;line-height:1.35">AWS Certified Data Engineer — Associate</div>
-                <div style="font-size:11px;color:#8a93a3;margin-top:3px;font-family:'IBM Plex Mono',monospace">Amazon Web Services</div>
+            <a href="https://www.credly.com/badges/6e5f6cdf-bb63-478d-8fa5-f5a29844361b" target="_blank" rel="noopener" class="cert-row">
+              <img src="images/amazon-web-services-light.png" alt="AWS" width="44" height="44" class="cert-icon-dark">
+              <div class="cert-meta">
+                <div class="cert-name">AWS Certified Data Engineer — Associate</div>
+                <div class="cert-issuer">Amazon Web Services</div>
               </div>
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="cert-arrow" width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
 
             <!-- DeepLearning.AI Data Engineering -->
-            <a href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/YXX7TP455MNX" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid #e4e9f0;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.72'" onmouseout="this.style.opacity='1'">
-              <img src="images/deeplearningicon.png" alt="DeepLearning.AI" width="44" height="44" style="flex-shrink:0;border-radius:8px;display:block;object-fit:contain;background:#fff;border:1px solid #e4e9f0;padding:5px">
-              <div style="flex:1;min-width:0">
-                <div style="font-size:13.5px;font-weight:500;color:#16202e;line-height:1.35">DeepLearning.AI — Data Engineering</div>
-                <div style="font-size:11px;color:#8a93a3;margin-top:3px;font-family:'IBM Plex Mono',monospace">DeepLearning.AI · Coursera</div>
+            <a href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/YXX7TP455MNX" target="_blank" rel="noopener" class="cert-row">
+              <img src="images/deeplearningicon.png" alt="DeepLearning.AI" width="44" height="44" class="cert-icon">
+              <div class="cert-meta">
+                <div class="cert-name">DeepLearning.AI — Data Engineering</div>
+                <div class="cert-issuer">DeepLearning.AI · Coursera</div>
               </div>
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="cert-arrow" width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
 
             <!-- Deep Learning Specialization -->
-            <a href="https://www.coursera.org/account/accomplishments/specialization/T27BHCW876BJ" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:13px;padding:12px 0;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.72'" onmouseout="this.style.opacity='1'">
-              <img src="images/deeplearningicon.png" alt="DeepLearning.AI" width="44" height="44" style="flex-shrink:0;border-radius:8px;display:block;object-fit:contain;background:#fff;border:1px solid #e4e9f0;padding:5px">
-              <div style="flex:1;min-width:0">
-                <div style="font-size:13.5px;font-weight:500;color:#16202e;line-height:1.35">Deep Learning Specialization</div>
-                <div style="font-size:11px;color:#8a93a3;margin-top:3px;font-family:'IBM Plex Mono',monospace">DeepLearning.AI · Coursera</div>
+            <a href="https://www.coursera.org/account/accomplishments/specialization/T27BHCW876BJ" target="_blank" rel="noopener" class="cert-row-last">
+              <img src="images/deeplearningicon.png" alt="DeepLearning.AI" width="44" height="44" class="cert-icon">
+              <div class="cert-meta">
+                <div class="cert-name">Deep Learning Specialization</div>
+                <div class="cert-issuer">DeepLearning.AI · Coursera</div>
               </div>
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="cert-arrow" width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 12L12 2M12 2H5.5M12 2V8.5" stroke="#c2cad6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
 
           </div>
         </div>
         <div>
-          <div data-i18n="creds.edu" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a93a3;margin-bottom:6px">Education</div>
-          <div style="padding:15px 0;border-bottom:1px solid #e4e9f0">
-            <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:16px;color:#16202e">Ingeniero Catastral y Geodesta</div>
-            <div style="font-size:13.5px;color:#6b7686;margin-top:4px;line-height:1.5">Universidad Distrital Francisco José de Caldas · <span data-i18n="edu.degree1">Cadastral &amp; Geodetic Engineering</span></div>
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2;margin-top:5px">Aug 2021</div>
+          <div data-i18n="creds.edu" class="edu-hdr">Education</div>
+          <div class="edu-entry">
+            <div class="edu-degree">Ingeniero Catastral y Geodesta</div>
+            <div class="edu-institution">Universidad Distrital Francisco José de Caldas · <span data-i18n="edu.degree1">Cadastral &amp; Geodetic Engineering</span></div>
+            <div class="edu-date">Aug 2021</div>
           </div>
-          <div style="padding:15px 0">
-            <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:16px;color:#16202e">Técnico de Sistemas</div>
-            <div style="font-size:13.5px;color:#6b7686;margin-top:4px;line-height:1.5">SENA · <span data-i18n="edu.degree2">Software Systems Technician</span></div>
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2;margin-top:5px">2014</div>
+          <div class="edu-entry-last">
+            <div class="edu-degree">Técnico de Sistemas</div>
+            <div class="edu-institution">SENA · <span data-i18n="edu.degree2">Software Systems Technician</span></div>
+            <div class="edu-date">2014</div>
           </div>
         </div>
       </div>
@@ -373,116 +373,116 @@
   </section>
 
   <!-- ============ BOOKS ============ -->
-  <section id="books" style="scroll-margin-top:80px;border-top:1px solid #e1e7ef">
+  <section id="books" class="section-plain">
     <div class="section-inner">
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);margin-bottom:48px">
-        <div data-i18n="books.label" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">04 / Reading</div>
-        <h2 data-i18n="books.h2" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">Books I recommend.</h2>
-        <p data-i18n="books.desc" style="margin:20px 0 0;max-width:620px;font-size:16px;line-height:1.7;color:#465264">A short shelf on stoicism, mindset, and the practice of staying present.</p>
+      <div data-reveal style="margin-bottom:48px">
+        <div data-i18n="books.label" class="section-label">04 / Reading</div>
+        <h2 data-i18n="books.h2" class="section-h2">Books I recommend.</h2>
+        <p data-i18n="books.desc" class="section-desc">A short shelf on stoicism, mindset, and the practice of staying present.</p>
       </div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1) .06s,transform .8s cubic-bezier(.2,.7,.2,1) .06s;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px">
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
-          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">01</span>
-          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Meditations</h3>
-          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Marcus Aurelius</div>
-          <span data-i18n="book.tag.stoicism" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Stoicism</span>
+      <div data-reveal data-delay="0.06" class="books-grid">
+        <div class="book-card">
+          <div class="book-stripe"></div>
+          <span class="book-num">01</span>
+          <h3 class="book-title">Meditations</h3>
+          <div class="book-author">Marcus Aurelius</div>
+          <span data-i18n="book.tag.stoicism" class="book-tag">Stoicism</span>
         </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
-          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">02</span>
-          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Ego Is the Enemy</h3>
-          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Ryan Holiday</div>
-          <span data-i18n="book.tag.humility" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Humility</span>
+        <div class="book-card">
+          <div class="book-stripe"></div>
+          <span class="book-num">02</span>
+          <h3 class="book-title">Ego Is the Enemy</h3>
+          <div class="book-author">Ryan Holiday</div>
+          <span data-i18n="book.tag.humility" class="book-tag">Humility</span>
         </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
-          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">03</span>
-          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">The Power of Now</h3>
-          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Eckhart Tolle</div>
-          <span data-i18n="book.tag.presence" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Presence</span>
+        <div class="book-card">
+          <div class="book-stripe"></div>
+          <span class="book-num">03</span>
+          <h3 class="book-title">The Power of Now</h3>
+          <div class="book-author">Eckhart Tolle</div>
+          <span data-i18n="book.tag.presence" class="book-tag">Presence</span>
         </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
-          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">04</span>
-          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Mindset</h3>
-          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Carol S. Dweck</div>
-          <span data-i18n="book.tag.growth" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Growth</span>
+        <div class="book-card">
+          <div class="book-stripe"></div>
+          <span class="book-num">04</span>
+          <h3 class="book-title">Mindset</h3>
+          <div class="book-author">Carol S. Dweck</div>
+          <span data-i18n="book.tag.growth" class="book-tag">Growth</span>
         </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
-          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">05</span>
-          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">The Courage to Be Disliked</h3>
-          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Kishimi &amp; Koga</div>
-          <span data-i18n="book.tag.freedom" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Freedom</span>
+        <div class="book-card">
+          <div class="book-stripe"></div>
+          <span class="book-num">05</span>
+          <h3 class="book-title">The Courage to Be Disliked</h3>
+          <div class="book-author">Kishimi &amp; Koga</div>
+          <span data-i18n="book.tag.freedom" class="book-tag">Freedom</span>
         </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
-          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">06</span>
-          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Blitzscaling</h3>
-          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Reid Hoffman &amp; Chris Yeh</div>
-          <span data-i18n="book.tag.scale" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Scale</span>
+        <div class="book-card">
+          <div class="book-stripe"></div>
+          <span class="book-num">06</span>
+          <h3 class="book-title">Blitzscaling</h3>
+          <div class="book-author">Reid Hoffman &amp; Chris Yeh</div>
+          <span data-i18n="book.tag.scale" class="book-tag">Scale</span>
         </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
-          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">07</span>
-          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Nexus</h3>
-          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Yuval Noah Harari</div>
-          <span data-i18n="book.tag.info" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Information</span>
+        <div class="book-card">
+          <div class="book-stripe"></div>
+          <span class="book-num">07</span>
+          <h3 class="book-title">Nexus</h3>
+          <div class="book-author">Yuval Noah Harari</div>
+          <span data-i18n="book.tag.info" class="book-tag">Information</span>
         </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
-          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">08</span>
-          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">The One Thing</h3>
-          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Gary Keller &amp; Jay Papasan</div>
-          <span data-i18n="book.tag.focus" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Focus</span>
+        <div class="book-card">
+          <div class="book-stripe"></div>
+          <span class="book-num">08</span>
+          <h3 class="book-title">The One Thing</h3>
+          <div class="book-author">Gary Keller &amp; Jay Papasan</div>
+          <span data-i18n="book.tag.focus" class="book-tag">Focus</span>
         </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
-          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">09</span>
-          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">The Stoic Virtues</h3>
-          <div style="font-size:13px;color:#6b7686;margin-bottom:6px">Ryan Holiday</div>
-          <div data-i18n="book.stoic.sub" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2;margin-bottom:auto">Courage · Temperance · Justice · Wisdom</div>
-          <span data-i18n="book.tag.virtue" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Virtue</span>
+        <div class="book-card">
+          <div class="book-stripe"></div>
+          <span class="book-num">09</span>
+          <h3 class="book-title">The Stoic Virtues</h3>
+          <div class="book-author-mb">Ryan Holiday</div>
+          <div data-i18n="book.stoic.sub" class="book-sub">Courage · Temperance · Justice · Wisdom</div>
+          <span data-i18n="book.tag.virtue" class="book-tag">Virtue</span>
         </div>
-        <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
-          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">10</span>
-          <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Business 101 for the Data Professional</h3>
-          <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Jordan Morrow</div>
-          <span data-i18n="book.tag.literacy" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Literacy</span>
+        <div class="book-card">
+          <div class="book-stripe"></div>
+          <span class="book-num">10</span>
+          <h3 class="book-title">Business 101 for the Data Professional</h3>
+          <div class="book-author">Jordan Morrow</div>
+          <span data-i18n="book.tag.literacy" class="book-tag">Literacy</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ HORIZON ============ -->
-  <section id="horizon" style="scroll-margin-top:80px;border-top:1px solid #e1e7ef;background:#f4f6fa">
+  <section id="horizon" class="section-alt">
     <div class="section-inner">
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)">
-        <div data-i18n="horizon.label" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">05 / Horizon</div>
-        <h2 data-i18n="horizon.h2" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">Eyes on what's next.</h2>
-        <p data-i18n="horizon.desc" style="margin:24px 0 48px;max-width:760px;font-size:16px;line-height:1.75;color:#465264">Beyond the data stack, I follow the frontiers that will reshape how we live and work — from autonomous machines to the expansion of human presence beyond Earth. The same mindset that drives good engineering drives curiosity about what comes next.</p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px">
-          <div style="background:#fff;border:1px solid #e4e9f0;border-radius:10px;padding:28px 26px;display:flex;flex-direction:column;gap:12px">
-            <div style="font-size:26px">🤖</div>
-            <div data-i18n="hz.rob.title" style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Robotics</div>
-            <p data-i18n="hz.rob.desc" style="margin:0;font-size:14.5px;line-height:1.65;color:#465264">Humanoid and industrial robots moving from labs into real supply chains. I track embodied AI, locomotion breakthroughs, and the data infrastructure these machines will demand at scale.</p>
+      <div data-reveal>
+        <div data-i18n="horizon.label" class="section-label">05 / Horizon</div>
+        <h2 data-i18n="horizon.h2" class="section-h2">Eyes on what's next.</h2>
+        <p data-i18n="horizon.desc" class="hz-intro-desc">Beyond the data stack, I follow the frontiers that will reshape how we live and work — from autonomous machines to the expansion of human presence beyond Earth. The same mindset that drives good engineering drives curiosity about what comes next.</p>
+        <div class="hz-grid">
+          <div class="hz-card">
+            <div class="hz-icon">🤖</div>
+            <div data-i18n="hz.rob.title" class="hz-title">Robotics</div>
+            <p data-i18n="hz.rob.desc" class="hz-desc">Humanoid and industrial robots moving from labs into real supply chains. I track embodied AI, locomotion breakthroughs, and the data infrastructure these machines will demand at scale.</p>
           </div>
-          <div style="background:#fff;border:1px solid #e4e9f0;border-radius:10px;padding:28px 26px;display:flex;flex-direction:column;gap:12px">
-            <div style="font-size:26px">🚀</div>
-            <div data-i18n="hz.space.title" style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Space Exploration</div>
-            <p data-i18n="hz.space.desc" style="margin:0;font-size:14.5px;line-height:1.65;color:#465264">Return to the Moon, Mars ambitions, reusable launch vehicles — science fiction becoming engineering timelines. Mission telemetry and deep-space data pipelines are among the hardest problems in the field.</p>
+          <div class="hz-card">
+            <div class="hz-icon">🚀</div>
+            <div data-i18n="hz.space.title" class="hz-title">Space Exploration</div>
+            <p data-i18n="hz.space.desc" class="hz-desc">Return to the Moon, Mars ambitions, reusable launch vehicles — science fiction becoming engineering timelines. Mission telemetry and deep-space data pipelines are among the hardest problems in the field.</p>
           </div>
-          <div style="background:#fff;border:1px solid #e4e9f0;border-radius:10px;padding:28px 26px;display:flex;flex-direction:column;gap:12px">
-            <div style="font-size:26px">⚡</div>
-            <div data-i18n="hz.energy.title" style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Energy &amp; Climate Tech</div>
-            <p data-i18n="hz.energy.desc" style="margin:0;font-size:14.5px;line-height:1.65;color:#465264">Fusion, next-gen batteries, smart grids. Energy is foundational infrastructure, and the transition to cleaner systems generates genuinely hard real-time data problems worth solving.</p>
+          <div class="hz-card">
+            <div class="hz-icon">⚡</div>
+            <div data-i18n="hz.energy.title" class="hz-title">Energy &amp; Climate Tech</div>
+            <p data-i18n="hz.energy.desc" class="hz-desc">Fusion, next-gen batteries, smart grids. Energy is foundational infrastructure, and the transition to cleaner systems generates genuinely hard real-time data problems worth solving.</p>
           </div>
-          <div style="background:#fff;border:1px solid #e4e9f0;border-radius:10px;padding:28px 26px;display:flex;flex-direction:column;gap:12px">
-            <div style="font-size:26px">⚛️</div>
-            <div data-i18n="hz.quantum.title" style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Quantum Computing</div>
-            <p data-i18n="hz.quantum.desc" style="margin:0;font-size:14.5px;line-height:1.65;color:#465264">Qubits, superposition, and entanglement are moving from physics papers into early commercial hardware. Quantum's implications for cryptography, optimization, and eventually data processing make it one of the most consequential bets of the decade.</p>
+          <div class="hz-card">
+            <div class="hz-icon">⚛️</div>
+            <div data-i18n="hz.quantum.title" class="hz-title">Quantum Computing</div>
+            <p data-i18n="hz.quantum.desc" class="hz-desc">Qubits, superposition, and entanglement are moving from physics papers into early commercial hardware. Quantum's implications for cryptography, optimization, and eventually data processing make it one of the most consequential bets of the decade.</p>
           </div>
         </div>
       </div>
@@ -491,36 +491,36 @@
 </main>
 
 <!-- dusk back into space -->
-<div aria-hidden="true" style="height:380px;background:linear-gradient(180deg,#f4f6fa 0%,#d7deea 12%,#9fb4d2 30%,#5a78a6 48%,#2c466a 66%,#122541 82%,#03060f 100%)"></div>
+<div aria-hidden="true" class="night-fall"></div>
 
 <!-- ============ CONTACT / FOOTER ============ -->
-<footer id="contact" style="position:relative;overflow:hidden;background:#03060f;color:#eaf1ff;padding:118px 0 0">
-  <div id="footStars" style="position:absolute;inset:0;background-image:radial-gradient(1.0px 1.0px at 366px 316px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 310px 102px, rgba(255,255,255,.6), transparent),radial-gradient(1.4px 1.4px at 426px 584px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 173px 522px, rgba(255,255,255,.6), transparent),radial-gradient(1.3px 1.3px at 58px 475px, rgba(255,255,255,.6), transparent),radial-gradient(1.2px 1.2px at 138px 182px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 290px 74px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 244px 517px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 151px 354px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 22px 538px, rgba(200,220,255,.5), transparent),radial-gradient(1.5px 1.5px at 64px 507px, rgba(200,220,255,.5), transparent),radial-gradient(1.3px 1.3px at 77px 412px, rgba(255,255,255,.6), transparent),radial-gradient(1.3px 1.3px at 444px 373px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 507px 418px, rgba(255,255,255,.6), transparent),radial-gradient(1.4px 1.4px at 285px 268px, rgba(255,255,255,.6), transparent),radial-gradient(1.3px 1.3px at 216px 152px, rgba(255,255,255,.6), transparent),radial-gradient(1.0px 1.0px at 160px 133px, rgba(200,220,255,.5), transparent),radial-gradient(1.0px 1.0px at 574px 422px, rgba(255,255,255,.6), transparent),radial-gradient(1.2px 1.2px at 533px 565px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 335px 99px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 296px 236px, rgba(255,255,255,.6), transparent),radial-gradient(1.4px 1.4px at 86px 145px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 422px 40px, rgba(255,255,255,.6), transparent),radial-gradient(1.0px 1.0px at 438px 315px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 192px 3px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 103px 210px, rgba(200,220,255,.5), transparent),radial-gradient(1.5px 1.5px at 94px 87px, rgba(200,220,255,.5), transparent),radial-gradient(1.3px 1.3px at 177px 196px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 172px 389px, rgba(200,220,255,.5), transparent),radial-gradient(1.3px 1.3px at 198px 59px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 221px 26px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 198px 404px, rgba(200,220,255,.5), transparent),radial-gradient(1.2px 1.2px at 332px 200px, rgba(255,255,255,.6), transparent),radial-gradient(1.0px 1.0px at 117px 149px, rgba(255,255,255,.6), transparent),radial-gradient(1.2px 1.2px at 409px 124px, rgba(200,220,255,.5), transparent),radial-gradient(1.3px 1.3px at 186px 136px, rgba(255,255,255,.6), transparent),radial-gradient(1.3px 1.3px at 107px 555px, rgba(255,255,255,.6), transparent),radial-gradient(1.0px 1.0px at 295px 307px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 82px 137px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 566px 467px, rgba(255,255,255,.6), transparent),radial-gradient(1.4px 1.4px at 426px 569px, rgba(200,220,255,.5), transparent),radial-gradient(1.1px 1.1px at 155px 271px, rgba(200,220,255,.5), transparent),radial-gradient(1.0px 1.0px at 377px 443px, rgba(255,255,255,.6), transparent),radial-gradient(1.1px 1.1px at 102px 227px, rgba(200,220,255,.5), transparent),radial-gradient(1.4px 1.4px at 396px 239px, rgba(200,220,255,.5), transparent),radial-gradient(1.0px 1.0px at 346px 583px, rgba(200,220,255,.5), transparent),radial-gradient(1.9px 1.9px at 420px 544px, rgba(255,255,255,.9), transparent),radial-gradient(1.6px 1.6px at 231px 235px, rgba(255,255,255,.9), transparent),radial-gradient(1.6px 1.6px at 480px 180px, rgba(210,225,255,.75), transparent),radial-gradient(1.5px 1.5px at 554px 97px, rgba(210,225,255,.75), transparent),radial-gradient(1.4px 1.4px at 387px 267px, rgba(210,225,255,.75), transparent),radial-gradient(1.4px 1.4px at 199px 467px, rgba(210,225,255,.75), transparent),radial-gradient(1.9px 1.9px at 433px 342px, rgba(210,225,255,.75), transparent),radial-gradient(1.6px 1.6px at 508px 562px, rgba(255,255,255,.9), transparent),radial-gradient(1.4px 1.4px at 543px 142px, rgba(255,255,255,.9), transparent),radial-gradient(1.5px 1.5px at 246px 48px, rgba(210,225,255,.75), transparent),radial-gradient(1.3px 1.3px at 328px 324px, rgba(255,255,255,.9), transparent),radial-gradient(1.4px 1.4px at 546px 50px, rgba(210,225,255,.75), transparent),radial-gradient(1.5px 1.5px at 125px 581px, rgba(210,225,255,.75), transparent),radial-gradient(1.5px 1.5px at 596px 81px, rgba(255,255,255,.9), transparent),radial-gradient(1.8px 1.8px at 358px 598px, rgba(210,225,255,.75), transparent),radial-gradient(1.7px 1.7px at 33px 94px, rgba(210,225,255,.75), transparent),radial-gradient(2.4px 2.4px at 310px 529px, #ffffff, transparent),radial-gradient(2.2px 2.2px at 201px 15px, #ffffff, transparent),radial-gradient(2.1px 2.1px at 387px 267px, rgba(220,235,255,.95), transparent),radial-gradient(2.1px 2.1px at 244px 287px, #ffffff, transparent),radial-gradient(2.0px 2.0px at 453px 183px, rgba(220,235,255,.95), transparent);background-size:600px 600px;background-repeat:repeat;opacity:.9"></div>
-  <div style="position:absolute;left:-6%;right:-6%;bottom:30px;height:200px;background:radial-gradient(60% 130% at 50% 100%, rgba(120,175,255,.42),transparent 70%);filter:blur(10px);pointer-events:none"></div>
-  <div style="position:absolute;width:3200px;height:3200px;left:50%;bottom:-3090px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 50% 50%, #060c1c 0%, #0a1530 88%, rgba(64,120,220,.45) 94%, rgba(150,200,255,.9) 97.5%, rgba(130,185,255,.3) 99.5%, transparent 100%);box-shadow:0 -4px 90px 8px rgba(90,150,255,.35)"></div>
-  <div data-reveal class="contact-inner" style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 clamp(16px,5vw,40px)">
-    <div data-i18n="contact.label" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(150,185,255,.9);margin-bottom:20px">Get in touch</div>
-    <h2 data-i18n="contact.h2" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(32px,5vw,60px);line-height:1.02;letter-spacing:-.02em;color:#eef4ff;max-width:780px">Let's check your data architecture to implement AI effectively or Let's build platforms that run in minutes.</h2>
-    <p data-i18n="contact.sub" style="margin:22px 0 0;max-width:600px;font-size:16px;line-height:1.7;color:rgba(200,215,245,.72)">Eager to shape the future with data.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:44px">
-      <a href="mailto:rcamilo152622@gmail.com" style="display:flex;flex-direction:column;gap:6px;min-width:230px;flex:1;text-decoration:none;background:rgba(255,255,255,.03);border:1px solid rgba(120,160,230,.22);border-radius:8px;padding:20px 22px;transition:border-color .3s,background .3s" onmouseover="this.style.background='rgba(255,255,255,.06)';this.style.borderColor='rgba(120,160,230,.45)'" onmouseout="this.style.background='rgba(255,255,255,.03)';this.style.borderColor='rgba(120,160,230,.22)'">
-        <span data-i18n="contact.email" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(150,185,255,.8)">Email</span>
-        <span style="font-family:'Space Grotesk',sans-serif;font-size:17px;color:#eaf1ff">rcamilo152622@gmail.com</span>
+<footer id="contact">
+  <div id="footStars"></div>
+  <div class="footer-glow"></div>
+  <div class="footer-earth"></div>
+  <div data-reveal class="contact-inner">
+    <div data-i18n="contact.label" class="contact-label">Get in touch</div>
+    <h2 data-i18n="contact.h2" class="contact-h2">Let's check your data architecture to implement AI effectively or Let's build platforms that run in minutes.</h2>
+    <p data-i18n="contact.sub" class="contact-sub">Eager to shape the future with data.</p>
+    <div class="contact-links">
+      <a href="mailto:rcamilo152622@gmail.com" class="contact-link">
+        <span data-i18n="contact.email" class="contact-link-label">Email</span>
+        <span class="contact-link-value">rcamilo152622@gmail.com</span>
       </a>
-      <a href="https://www.linkedin.com/in/raul-camilo-martin-bernal" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:6px;min-width:230px;flex:1;text-decoration:none;background:rgba(255,255,255,.03);border:1px solid rgba(120,160,230,.22);border-radius:8px;padding:20px 22px;transition:border-color .3s,background .3s" onmouseover="this.style.background='rgba(255,255,255,.06)';this.style.borderColor='rgba(120,160,230,.45)'" onmouseout="this.style.background='rgba(255,255,255,.03)';this.style.borderColor='rgba(120,160,230,.22)'">
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(150,185,255,.8)">LinkedIn</span>
-        <span style="font-family:'Space Grotesk',sans-serif;font-size:17px;color:#eaf1ff">raul-camilo-martin-bernal</span>
+      <a href="https://www.linkedin.com/in/raul-camilo-martin-bernal" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link-label">LinkedIn</span>
+        <span class="contact-link-value">raul-camilo-martin-bernal</span>
       </a>
-      <a href="https://github.com/rcamilo1526" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:6px;min-width:230px;flex:1;text-decoration:none;background:rgba(255,255,255,.03);border:1px solid rgba(120,160,230,.22);border-radius:8px;padding:20px 22px;transition:border-color .3s,background .3s" onmouseover="this.style.background='rgba(255,255,255,.06)';this.style.borderColor='rgba(120,160,230,.45)'" onmouseout="this.style.background='rgba(255,255,255,.03)';this.style.borderColor='rgba(120,160,230,.22)'">
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(150,185,255,.8)">GitHub</span>
-        <span style="font-family:'Space Grotesk',sans-serif;font-size:17px;color:#eaf1ff">rcamilo1526</span>
+      <a href="https://github.com/rcamilo1526" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link-label">GitHub</span>
+        <span class="contact-link-value">rcamilo1526</span>
       </a>
     </div>
-    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;margin-top:80px;padding:26px 0 18px;border-top:1px solid rgba(120,160,230,.16);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;color:rgba(170,200,245,.55)">
+    <div class="footer-bottom">
       <span>Raúl Camilo Martín Bernal — <span data-i18n="footer.title">Senior Data Engineer</span></span>
       <span>4°35′N 74°04′W · Colombia · Remote · © 2026</span>
     </div>
-    <div style="padding-bottom:30px"></div>
+    <div class="footer-spacer"></div>
   </div>
 </footer>
 
