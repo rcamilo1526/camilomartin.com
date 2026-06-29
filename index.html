@@ -28,6 +28,14 @@
   .creds-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:64px;padding-top:54px;border-top:1px solid #e1e7ef}
   .section-inner{max-width:1180px;margin:0 auto;padding:110px 40px}
 
+  /* ── Lang toggle ── */
+  #langToggle{display:flex;align-items:center;gap:4px;border:1px solid rgba(210,225,255,.28);border-radius:6px;padding:3px;flex-shrink:0;transition:border-color .45s}
+  #langToggle button{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.13em;text-transform:uppercase;border:none;padding:4px 9px;cursor:pointer;transition:color .3s,background .3s;line-height:1;border-radius:3px}
+  #langToggle .lt-sep{font-size:10px;color:rgba(210,225,255,.18);pointer-events:none;transition:color .45s;line-height:1}
+  #langToggle button.lt-active{color:#fff;background:rgba(255,255,255,.22);font-weight:500}
+  #langToggle button.lt-inactive{color:rgba(210,225,255,.28);background:none}
+  #langToggle button.lt-inactive:hover{color:rgba(210,225,255,.55)}
+
   /* ── Responsive ── */
   @media(max-width:900px){
     .stats-grid{grid-template-columns:repeat(2,1fr)}
@@ -72,13 +80,18 @@
       <span id="hb1"></span><span id="hb2"></span><span id="hb3"></span>
     </button>
     <nav class="nav-links" id="navLinks">
-      <a href="#professional" data-nav="1" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Professional</a>
-      <a href="#about" data-nav="1" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">About</a>
-      <a href="#skills" data-nav="1" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Skills</a>
-      <a href="#books" data-nav="1" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Books</a>
-      <a href="#horizon" data-nav="1" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Horizon</a>
-      <a href="#contact" data-nav="1" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Contact</a>
+      <a href="#professional" data-nav="1" data-i18n="nav.professional" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Professional</a>
+      <a href="#about" data-nav="1" data-i18n="nav.about" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">About</a>
+      <a href="#skills" data-nav="1" data-i18n="nav.skills" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Skills</a>
+      <a href="#books" data-nav="1" data-i18n="nav.books" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Books</a>
+      <a href="#horizon" data-nav="1" data-i18n="nav.horizon" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Horizon</a>
+      <a href="#contact" data-nav="1" data-i18n="nav.contact" style="color:rgba(210,225,255,.72);text-decoration:none;transition:color .45s">Contact</a>
     </nav>
+    <div id="langToggle" role="group" aria-label="Language">
+      <button id="lt-en" class="lt-active" onclick="setLang('en')">EN</button>
+      <span class="lt-sep">|</span>
+      <button id="lt-es" class="lt-inactive" onclick="setLang('es')">ES</button>
+    </div>
   </div>
 </header>
 
@@ -90,7 +103,7 @@
   <div style="position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,40px);min-height:100vh;display:flex;flex-direction:column;color:#eaf1ff">
     <div style="padding-top:110px"></div>
     <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding-bottom:70px">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:rgba(150,185,255,.9);margin-bottom:22px">// senior data engineer</div>
+      <div data-i18n="hero.label" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:rgba(150,185,255,.9);margin-bottom:22px">// senior data engineer</div>
       <h1 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(54px,9vw,116px);line-height:.92;letter-spacing:-.02em;color:#eef4ff">Raúl Camilo<br>Martín Bernal</h1>
       <div style="margin-top:20px;font-family:'IBM Plex Mono',monospace;font-size:clamp(11px,1.4vw,14px);letter-spacing:.18em;color:rgba(150,185,255,.55)">/ rah-OOL · kah-MEE-loh · mar-TEEN · ber-NAL /</div>
     </div>
@@ -110,28 +123,28 @@
   <!-- ============ PROFESSIONAL ============ -->
   <section id="professional" style="scroll-margin-top:80px;max-width:1180px;margin:0 auto;padding:30px 40px 110px">
     <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">01 / Professional life</div>
-      <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(30px,4.4vw,48px);line-height:1.04;letter-spacing:-.018em;max-width:820px">From legacy bottlenecks to platforms that move in minutes.</h2>
-      <p style="margin:22px 0 0;max-width:760px;font-size:16px;line-height:1.7;color:#48536580">Senior Data Engineer with 5+ years designing and delivering end-to-end data platforms across fintech, e-commerce, and enterprise environments — scalable, cost-efficient pipelines on AWS, Snowflake, Spark, dbt &amp; Python, with a consistent track record of turning slow, legacy processes into fast, reliable ones.</p>
+      <div data-i18n="pro.label" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">01 / Professional life</div>
+      <h2 data-i18n="pro.h2" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(30px,4.4vw,48px);line-height:1.04;letter-spacing:-.018em;max-width:820px">From legacy bottlenecks to platforms that move in minutes.</h2>
+      <p data-i18n="pro.desc" style="margin:22px 0 0;max-width:760px;font-size:16px;line-height:1.7;color:#48536580">Senior Data Engineer with 5+ years designing and delivering end-to-end data platforms across fintech, e-commerce, and enterprise environments — scalable, cost-efficient pipelines on AWS, Snowflake, Spark, dbt &amp; Python, with a consistent track record of turning slow, legacy processes into fast, reliable ones.</p>
     </div>
 
     <!-- stats -->
     <div data-reveal class="stats-grid" style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1) .08s,transform .8s cubic-bezier(.2,.7,.2,1) .08s">
       <div style="background:#f7f9fc;padding:26px 24px">
         <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:40px;letter-spacing:-.02em;color:#16202e">5+</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a93a3;margin-top:8px">Years engineering data</div>
+        <div data-i18n="stat.years" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a93a3;margin-top:8px">Years engineering data</div>
       </div>
       <div style="background:#f7f9fc;padding:26px 24px">
         <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:40px;letter-spacing:-.02em;color:#16202e">16×</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a93a3;margin-top:8px">Pipeline speed-up · 8h→30m</div>
+        <div data-i18n="stat.speed" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a93a3;margin-top:8px">Pipeline speed-up · 8h→30m</div>
       </div>
       <div style="background:#f7f9fc;padding:26px 24px">
         <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:40px;letter-spacing:-.02em;color:#16202e">3 TB</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a93a3;margin-top:8px">Largest tables consolidated</div>
+        <div data-i18n="stat.tables" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a93a3;margin-top:8px">Largest tables consolidated</div>
       </div>
       <div style="background:#f7f9fc;padding:26px 24px">
         <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:40px;letter-spacing:-.02em;color:#16202e">50M+</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a93a3;margin-top:8px">Records processed daily</div>
+        <div data-i18n="stat.records" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a93a3;margin-top:8px">Records processed daily</div>
       </div>
     </div>
 
@@ -145,13 +158,13 @@
           <span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">EPAM Systems</span>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#2f6fe0">Senior Data Integration Engineer</span>
         </div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#8a93a3;margin-bottom:4px">Nov 2025 – Present · Remote</div>
-        <div style="font-size:13px;color:#6b7686;font-style:italic;margin-bottom:16px">Client: foodservice equipment &amp; supplies distribution (USA)</div>
+        <div data-i18n="epam.date" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#8a93a3;margin-bottom:4px">Nov 2025 – Present · Remote</div>
+        <div data-i18n="epam.client" style="font-size:13px;color:#6b7686;font-style:italic;margin-bottom:16px">Client: foodservice equipment &amp; supplies distribution (USA)</div>
         <div style="display:flex;flex-direction:column;gap:11px">
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Leading the modernization of a business-critical platform — migrating ELT from Spark-based AWS Glue to <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">Airbyte + dbt + Redshift</span>, integrating ~10 GB/day from Oracle, SQL Server, OpenEdge &amp; IBM DB2.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Re-engineered legacy Spark pipelines to eliminate memory bottlenecks — cutting a critical pipeline from <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">8 h → 30 min</span> <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">16× faster</span>.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Replaced legacy SSIS packages with <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">Airflow DAGs</span> for observability, maintainability &amp; scheduling control.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Rolling out <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">Claude — skills, agents &amp; MCP servers</span> as a developer-productivity and incident-response accelerator across dbt, Terraform, SQL &amp; Airflow.</p></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="epam.b1" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Leading the modernization of a business-critical platform — migrating ELT from Spark-based AWS Glue to <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">Airbyte + dbt + Redshift</span>, integrating ~10 GB/day from Oracle, SQL Server, OpenEdge &amp; IBM DB2.</p></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="epam.b2" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Re-engineered legacy Spark pipelines to eliminate memory bottlenecks — cutting a critical pipeline from <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">8 h → 30 min</span> <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">16× faster</span>.</p></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="epam.b3" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Replaced legacy SSIS packages with <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">Airflow DAGs</span> for observability, maintainability &amp; scheduling control.</p></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="epam.b4" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Rolling out <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">Claude — skills, agents &amp; MCP servers</span> as a developer-productivity and incident-response accelerator across dbt, Terraform, SQL &amp; Airflow.</p></div>
         </div>
       </div>
 
@@ -163,11 +176,11 @@
           <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#2f6fe0">Semi Senior Advanced Data Engineer</span>
         </div>
         <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#8a93a3;margin-bottom:4px">Mar 2024 – Nov 2025</div>
-        <div style="font-size:13px;color:#6b7686;font-style:italic;margin-bottom:16px">Enterprise data consolidation into Snowflake</div>
+        <div data-i18n="glob1.client" style="font-size:13px;color:#6b7686;font-style:italic;margin-bottom:16px">Enterprise data consolidation into Snowflake</div>
         <div style="display:flex;flex-direction:column;gap:11px">
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Consolidated large on-prem &amp; Amazon RDS Oracle databases into Snowflake — including <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">~3 TB tables · 50M+ rows/day</span> — via ETL, ELT &amp; Reverse-ETL.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Redesigned the data model from scratch (~20 models across ~50 tables) — reporting <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">10 h → 5 min</span>.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Built Snowflake stored procedures and high-volume load patterns with Snowflake + Airflow + Airbyte; enhanced pipelines with SnowPark via Notebooks, Worksheets &amp; Streamlit.</p></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="glob1.b1" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Consolidated large on-prem &amp; Amazon RDS Oracle databases into Snowflake — including <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">~3 TB tables · 50M+ rows/day</span> — via ETL, ELT &amp; Reverse-ETL.</p></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="glob1.b2" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Redesigned the data model from scratch (~20 models across ~50 tables) — reporting <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">10 h → 5 min</span>.</p></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n="glob1.b3" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Built Snowflake stored procedures and high-volume load patterns with Snowflake + Airflow + Airbyte; enhanced pipelines with SnowPark via Notebooks, Worksheets &amp; Streamlit.</p></div>
         </div>
       </div>
 
@@ -179,11 +192,11 @@
           <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#2f6fe0">Semi Senior Data Engineer</span>
         </div>
         <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#8a93a3;margin-bottom:4px">Dec 2022 – Mar 2024</div>
-        <div style="font-size:13px;color:#6b7686;font-style:italic;margin-bottom:16px">End-to-end data lakehouse on AWS</div>
+        <div data-i18n="glob2.client" style="font-size:13px;color:#6b7686;font-style:italic;margin-bottom:16px">End-to-end data lakehouse on AWS</div>
         <div style="display:flex;flex-direction:column;gap:11px">
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Built end-to-end pipelines for a conflict-of-interest application — ~10 sources at <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">~40 GB/day</span> into a .NET app.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Architected the data layer with AWS Neptune (entity-relationship logic) and OpenSearch (fast per-company lookups).</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Implemented a data lake with Apache Spark + Iceberg on AWS Glue &amp; Athena; orchestrated with Step Functions, Glue &amp; Lambda. Earlier: documented IBM DataStage ETL and automated XML extraction in Python.</p></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="glob2.b1" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Built end-to-end pipelines for a conflict-of-interest application — ~10 sources at <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">~40 GB/day</span> into a .NET app.</p></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n="glob2.b2" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Architected the data layer with AWS Neptune (entity-relationship logic) and OpenSearch (fast per-company lookups).</p></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n="glob2.b3" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Implemented a data lake with Apache Spark + Iceberg on AWS Glue &amp; Athena; orchestrated with Step Functions, Glue &amp; Lambda. Earlier: documented IBM DataStage ETL and automated XML extraction in Python.</p></div>
         </div>
       </div>
 
@@ -196,9 +209,9 @@
         </div>
         <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#8a93a3;margin-bottom:16px">Oct 2021 – Dec 2022</div>
         <div style="display:flex;flex-direction:column;gap:11px">
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Built data marts in Snowflake for BI, Data Science &amp; Operations — <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">~60 GB/day · peak ~150M rows</span>.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Migrated batch ingestion from Apache NiFi to Spark on AWS Glue — <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">6 h → 20 min</span>.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Built ETL/ELT for the legal &amp; regulatory reporting behind RappiPay's banking-license process in Colombia — contributing to a new bank that remains in operation today. Added Apache Kafka streaming for near-real-time statements.</p></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="rappi.b1" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Built data marts in Snowflake for BI, Data Science &amp; Operations — <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">~60 GB/day · peak ~150M rows</span>.</p></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="rappi.b2" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Migrated batch ingestion from Apache NiFi to Spark on AWS Glue — <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">6 h → 20 min</span>.</p></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n="rappi.b3" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Built ETL/ELT for the legal &amp; regulatory reporting behind RappiPay's banking-license process in Colombia — contributing to a new bank that remains in operation today. Added Apache Kafka streaming for near-real-time statements.</p></div>
         </div>
       </div>
 
@@ -210,8 +223,8 @@
         </div>
         <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#8a93a3;margin-bottom:16px">Feb 2019 – Sep 2021 · Bogotá, Colombia</div>
         <div style="display:flex;flex-direction:column;gap:11px">
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Built Python, R &amp; Bash geospatial pipelines — a census-cleaning script that did in <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">1 day what took weeks</span>, and COVID-19 automation <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">15 h → 15 min</span>.</p></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Developed on-demand geospatial tooling for internal clients and supported ArcGIS / ArcGIS Online through demos and technical talks.</p></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n-html="esri.b1" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Built Python, R &amp; Bash geospatial pipelines — a census-cleaning script that did in <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">1 day what took weeks</span>, and COVID-19 automation <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap">15 h → 15 min</span>.</p></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="margin-top:8px;width:5px;height:5px;flex:0 0 5px;background:#c2cad6;transform:rotate(45deg)"></span><p data-i18n="esri.b2" style="margin:0;font-size:14.5px;line-height:1.6;color:#3a4759">Developed on-demand geospatial tooling for internal clients and supported ArcGIS / ArcGIS Online through demos and technical talks.</p></div>
         </div>
       </div>
 
@@ -223,34 +236,34 @@
     <div class="section-inner">
       <div data-reveal class="about-grid" style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)">
         <div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">02 / About me</div>
-          <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">Beyond the pipelines.</h2>
-          <p style="margin:24px 0 0;font-size:16px;line-height:1.75;color:#465264">Away from the data platforms, I'm happiest in motion — traveling to new places, hiking trails, and playing sport. I currently train <strong style="color:#16202e;font-weight:500">CrossFit at an intermediate level</strong> and run regularly. Sport keeps the same discipline I bring to engineering: show up, measure, improve.</p>
-          <div style="margin-top:30px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a93a3;margin-bottom:12px">Languages</div>
+          <div data-i18n="about.label" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">02 / About me</div>
+          <h2 data-i18n="about.h2" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">Beyond the pipelines.</h2>
+          <p data-i18n-html="about.desc" style="margin:24px 0 0;font-size:16px;line-height:1.75;color:#465264">Away from the data platforms, I'm happiest in motion — traveling to new places, hiking trails, and playing sport. I currently train <strong style="color:#16202e;font-weight:500">CrossFit at an intermediate level</strong> and run regularly. Sport keeps the same discipline I bring to engineering: show up, measure, improve.</p>
+          <div data-i18n="about.lang" style="margin-top:30px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a93a3;margin-bottom:12px">Languages</div>
           <div style="display:flex;flex-wrap:wrap;gap:22px">
-            <div><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;color:#16202e">Spanish</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8a93a3;margin-top:2px">Native</div></div>
-            <div><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;color:#16202e">English</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8a93a3;margin-top:2px">Full Professional</div></div>
-            <div><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;color:#16202e">Portuguese</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8a93a3;margin-top:2px">Elementary</div></div>
+            <div><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;color:#16202e">Spanish</div><div data-i18n="about.lang.native" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8a93a3;margin-top:2px">Native</div></div>
+            <div><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;color:#16202e">English</div><div data-i18n="about.lang.fullpro" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8a93a3;margin-top:2px">Full Professional</div></div>
+            <div><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;color:#16202e">Portuguese</div><div data-i18n="about.lang.elem" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8a93a3;margin-top:2px">Elementary</div></div>
           </div>
         </div>
         <div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a93a3;margin-bottom:16px">Sports I play</div>
+          <div data-i18n="about.sports" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a93a3;margin-bottom:16px">Sports I play</div>
           <div style="display:flex;flex-wrap:wrap;gap:10px">
-            <span style="display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:500;color:#fff;background:#2f6fe0;border-radius:5px;padding:9px 15px">CrossFit <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:400;opacity:.85;letter-spacing:.06em">INTERMEDIATE</span></span>
-            <span style="display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:500;color:#fff;background:#2f6fe0;border-radius:5px;padding:9px 15px">Running <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:400;opacity:.85;letter-spacing:.06em">CURRENT</span></span>
-            <span style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#34404f;background:#fff;border:1px solid #dde3ec;border-radius:5px;padding:9px 15px">Swimming</span>
-            <span style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#34404f;background:#fff;border:1px solid #dde3ec;border-radius:5px;padding:9px 15px">Tennis</span>
-            <span style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#34404f;background:#fff;border:1px solid #dde3ec;border-radius:5px;padding:9px 15px">Basketball</span>
-            <span style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#34404f;background:#fff;border:1px solid #dde3ec;border-radius:5px;padding:9px 15px">Ping Pong</span>
+            <span style="display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:500;color:#fff;background:#2f6fe0;border-radius:5px;padding:9px 15px">CrossFit <span data-i18n="about.intermediate" style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:400;opacity:.85;letter-spacing:.06em">INTERMEDIATE</span></span>
+            <span style="display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:500;color:#fff;background:#2f6fe0;border-radius:5px;padding:9px 15px">Running <span data-i18n="about.current" style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:400;opacity:.85;letter-spacing:.06em">CURRENT</span></span>
+            <span data-i18n="sport.swim" style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#34404f;background:#fff;border:1px solid #dde3ec;border-radius:5px;padding:9px 15px">Swimming</span>
+            <span data-i18n="sport.tennis" style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#34404f;background:#fff;border:1px solid #dde3ec;border-radius:5px;padding:9px 15px">Tennis</span>
+            <span data-i18n="sport.basketball" style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#34404f;background:#fff;border:1px solid #dde3ec;border-radius:5px;padding:9px 15px">Basketball</span>
+            <span data-i18n="sport.pingpong" style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#34404f;background:#fff;border:1px solid #dde3ec;border-radius:5px;padding:9px 15px">Ping Pong</span>
           </div>
           <div style="margin-top:30px;display:flex;gap:18px;flex-wrap:wrap">
             <div style="flex:1;min-width:150px;background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:20px 22px">
-              <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:26px;color:#16202e">Travel</div>
-              <div style="font-size:13px;color:#6b7686;margin-top:6px;line-height:1.55">New places, new perspectives.</div>
+              <div data-i18n="about.travel" style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:26px;color:#16202e">Travel</div>
+              <div data-i18n="about.travel.desc" style="font-size:13px;color:#6b7686;margin-top:6px;line-height:1.55">New places, new perspectives.</div>
             </div>
             <div style="flex:1;min-width:150px;background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:20px 22px">
-              <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:26px;color:#16202e">Hiking</div>
-              <div style="font-size:13px;color:#6b7686;margin-top:6px;line-height:1.55">Trails, elevation, quiet.</div>
+              <div data-i18n="about.hiking" style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:26px;color:#16202e">Hiking</div>
+              <div data-i18n="about.hiking.desc" style="font-size:13px;color:#6b7686;margin-top:6px;line-height:1.55">Trails, elevation, quiet.</div>
             </div>
           </div>
         </div>
@@ -262,12 +275,12 @@
   <section id="skills" style="scroll-margin-top:80px;border-top:1px solid #e1e7ef;background:#f4f6fa">
     <div class="section-inner">
       <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);margin-bottom:48px">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">03 / Skills</div>
-        <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">The stack I build on.</h2>
+        <div data-i18n="skills.label" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">03 / Skills</div>
+        <h2 data-i18n="skills.h2" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">The stack I build on.</h2>
       </div>
       <div data-reveal class="skills-grid" style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1) .06s,transform .8s cubic-bezier(.2,.7,.2,1) .06s">
         <div style="background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:24px 24px 26px">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">Data Engineering</div>
+          <div data-i18n="skill.de" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">Data Engineering</div>
           <div style="display:flex;flex-wrap:wrap;gap:8px">
             <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">ETL / ELT / Reverse-ETL</span>
             <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Dimensional Modeling</span>
@@ -276,7 +289,7 @@
           </div>
         </div>
         <div style="background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:24px 24px 26px">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">Cloud &amp; Warehouses</div>
+          <div data-i18n="skill.cloud" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">Cloud &amp; Warehouses</div>
           <div style="display:flex;flex-wrap:wrap;gap:8px">
             <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">AWS Glue</span>
             <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Athena</span>
@@ -290,7 +303,7 @@
           </div>
         </div>
         <div style="background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:24px 24px 26px">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">Processing &amp; Orchestration</div>
+          <div data-i18n="skill.proc" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">Processing &amp; Orchestration</div>
           <div style="display:flex;flex-wrap:wrap;gap:8px">
             <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Apache Spark</span>
             <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Iceberg</span>
@@ -302,7 +315,7 @@
           </div>
         </div>
         <div style="background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:24px 24px 26px">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">Languages &amp; Tooling</div>
+          <div data-i18n="skill.langs" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">Languages &amp; Tooling</div>
           <div style="display:flex;flex-wrap:wrap;gap:8px">
             <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Python</span>
             <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">SQL</span>
@@ -313,7 +326,7 @@
           </div>
         </div>
         <div class="ai-card" style="background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:24px 24px 26px">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">AI / ML</div>
+          <div data-i18n="skill.ai" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">AI / ML</div>
           <div style="display:flex;flex-wrap:wrap;gap:8px">
             <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">Agentic AI — Claude (skills, agents, MCP)</span>
             <span style="font-size:13px;color:#34404f;background:#f4f6fa;border:1px solid #e1e7ef;border-radius:4px;padding:5px 11px">LLM Integration</span>
@@ -326,7 +339,7 @@
       <!-- credentials -->
       <div data-reveal class="creds-grid" style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)">
         <div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a93a3;margin-bottom:14px">Certifications</div>
+          <div data-i18n="creds.certs" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a93a3;margin-bottom:14px">Certifications</div>
           <div style="display:flex;flex-direction:column">
 
             <!-- Claude / Anthropic -->
@@ -402,15 +415,15 @@
           </div>
         </div>
         <div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a93a3;margin-bottom:6px">Education</div>
+          <div data-i18n="creds.edu" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a93a3;margin-bottom:6px">Education</div>
           <div style="padding:15px 0;border-bottom:1px solid #e4e9f0">
             <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:16px;color:#16202e">Ingeniero Catastral y Geodesta</div>
-            <div style="font-size:13.5px;color:#6b7686;margin-top:4px;line-height:1.5">Universidad Distrital Francisco José de Caldas · Cadastral &amp; Geodetic Engineering</div>
+            <div style="font-size:13.5px;color:#6b7686;margin-top:4px;line-height:1.5">Universidad Distrital Francisco José de Caldas · <span data-i18n="edu.degree1">Cadastral &amp; Geodetic Engineering</span></div>
             <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2;margin-top:5px">Aug 2021</div>
           </div>
           <div style="padding:15px 0">
             <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:16px;color:#16202e">Técnico de Sistemas</div>
-            <div style="font-size:13.5px;color:#6b7686;margin-top:4px;line-height:1.5">SENA · Software Systems Technician</div>
+            <div style="font-size:13.5px;color:#6b7686;margin-top:4px;line-height:1.5">SENA · <span data-i18n="edu.degree2">Software Systems Technician</span></div>
             <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2;margin-top:5px">2014</div>
           </div>
         </div>
@@ -422,9 +435,9 @@
   <section id="books" style="scroll-margin-top:80px;border-top:1px solid #e1e7ef">
     <div class="section-inner">
       <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);margin-bottom:48px">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">04 / Reading</div>
-        <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">Books I recommend.</h2>
-        <p style="margin:20px 0 0;max-width:620px;font-size:16px;line-height:1.7;color:#465264">A short shelf on stoicism, mindset, and the practice of staying present.</p>
+        <div data-i18n="books.label" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">04 / Reading</div>
+        <h2 data-i18n="books.h2" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">Books I recommend.</h2>
+        <p data-i18n="books.desc" style="margin:20px 0 0;max-width:620px;font-size:16px;line-height:1.7;color:#465264">A short shelf on stoicism, mindset, and the practice of staying present.</p>
       </div>
       <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1) .06s,transform .8s cubic-bezier(.2,.7,.2,1) .06s;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px">
         <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
@@ -432,71 +445,71 @@
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">01</span>
           <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Meditations</h3>
           <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Marcus Aurelius</div>
-          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Stoicism</span>
+          <span data-i18n="book.tag.stoicism" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Stoicism</span>
         </div>
         <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
           <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">02</span>
           <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Ego Is the Enemy</h3>
           <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Ryan Holiday</div>
-          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Humility</span>
+          <span data-i18n="book.tag.humility" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Humility</span>
         </div>
         <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
           <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">03</span>
           <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">The Power of Now</h3>
           <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Eckhart Tolle</div>
-          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Presence</span>
+          <span data-i18n="book.tag.presence" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Presence</span>
         </div>
         <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
           <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">04</span>
           <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Mindset</h3>
           <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Carol S. Dweck</div>
-          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Growth</span>
+          <span data-i18n="book.tag.growth" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Growth</span>
         </div>
         <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
           <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">05</span>
           <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">The Courage to Be Disliked</h3>
           <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Kishimi &amp; Koga</div>
-          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Freedom</span>
+          <span data-i18n="book.tag.freedom" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Freedom</span>
         </div>
         <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
           <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">06</span>
           <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Blitzscaling</h3>
           <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Reid Hoffman &amp; Chris Yeh</div>
-          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Scale</span>
+          <span data-i18n="book.tag.scale" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Scale</span>
         </div>
         <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
           <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">07</span>
           <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Nexus</h3>
           <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Yuval Noah Harari</div>
-          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Information</span>
+          <span data-i18n="book.tag.info" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Information</span>
         </div>
         <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
           <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">08</span>
           <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">The One Thing</h3>
           <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Gary Keller &amp; Jay Papasan</div>
-          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Focus</span>
+          <span data-i18n="book.tag.focus" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Focus</span>
         </div>
         <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
           <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">09</span>
           <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">The Stoic Virtues</h3>
           <div style="font-size:13px;color:#6b7686;margin-bottom:6px">Ryan Holiday</div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2;margin-bottom:auto">Courage · Temperance · Justice · Wisdom</div>
-          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Virtue</span>
+          <div data-i18n="book.stoic.sub" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2;margin-bottom:auto">Courage · Temperance · Justice · Wisdom</div>
+          <span data-i18n="book.tag.virtue" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Virtue</span>
         </div>
         <div style="background:#fff;border:1px solid #e4e9f0;border-radius:7px;padding:24px 22px;position:relative;overflow:hidden;min-height:188px;display:flex;flex-direction:column">
           <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#2f6fe0"></div>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa3b2">10</span>
           <h3 style="margin:14px 0 6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;line-height:1.15;color:#16202e">Business 101 for the Data Professional</h3>
           <div style="font-size:13px;color:#6b7686;margin-bottom:auto">Jordan Morrow</div>
-          <span style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Literacy</span>
+          <span data-i18n="book.tag.literacy" style="margin-top:18px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);padding:3px 8px;border-radius:3px">Literacy</span>
         </div>
       </div>
     </div>
@@ -506,29 +519,29 @@
   <section id="horizon" style="scroll-margin-top:80px;border-top:1px solid #e1e7ef;background:#f4f6fa">
     <div class="section-inner">
       <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">05 / Horizon</div>
-        <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">Eyes on what's next.</h2>
-        <p style="margin:24px 0 48px;max-width:760px;font-size:16px;line-height:1.75;color:#465264">Beyond the data stack, I follow the frontiers that will reshape how we live and work — from autonomous machines to the expansion of human presence beyond Earth. The same mindset that drives good engineering drives curiosity about what comes next.</p>
+        <div data-i18n="horizon.label" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2f6fe0;margin-bottom:16px">05 / Horizon</div>
+        <h2 data-i18n="horizon.h2" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.05;letter-spacing:-.018em">Eyes on what's next.</h2>
+        <p data-i18n="horizon.desc" style="margin:24px 0 48px;max-width:760px;font-size:16px;line-height:1.75;color:#465264">Beyond the data stack, I follow the frontiers that will reshape how we live and work — from autonomous machines to the expansion of human presence beyond Earth. The same mindset that drives good engineering drives curiosity about what comes next.</p>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px">
           <div style="background:#fff;border:1px solid #e4e9f0;border-radius:10px;padding:28px 26px;display:flex;flex-direction:column;gap:12px">
             <div style="font-size:26px">🤖</div>
-            <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Robotics</div>
-            <p style="margin:0;font-size:14.5px;line-height:1.65;color:#465264">Humanoid and industrial robots moving from labs into real supply chains. I track embodied AI, locomotion breakthroughs, and the data infrastructure these machines will demand at scale.</p>
+            <div data-i18n="hz.rob.title" style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Robotics</div>
+            <p data-i18n="hz.rob.desc" style="margin:0;font-size:14.5px;line-height:1.65;color:#465264">Humanoid and industrial robots moving from labs into real supply chains. I track embodied AI, locomotion breakthroughs, and the data infrastructure these machines will demand at scale.</p>
           </div>
           <div style="background:#fff;border:1px solid #e4e9f0;border-radius:10px;padding:28px 26px;display:flex;flex-direction:column;gap:12px">
             <div style="font-size:26px">🚀</div>
-            <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Space Exploration</div>
-            <p style="margin:0;font-size:14.5px;line-height:1.65;color:#465264">Return to the Moon, Mars ambitions, reusable launch vehicles — science fiction becoming engineering timelines. Mission telemetry and deep-space data pipelines are among the hardest problems in the field.</p>
+            <div data-i18n="hz.space.title" style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Space Exploration</div>
+            <p data-i18n="hz.space.desc" style="margin:0;font-size:14.5px;line-height:1.65;color:#465264">Return to the Moon, Mars ambitions, reusable launch vehicles — science fiction becoming engineering timelines. Mission telemetry and deep-space data pipelines are among the hardest problems in the field.</p>
           </div>
           <div style="background:#fff;border:1px solid #e4e9f0;border-radius:10px;padding:28px 26px;display:flex;flex-direction:column;gap:12px">
             <div style="font-size:26px">⚡</div>
-            <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Energy & Climate Tech</div>
-            <p style="margin:0;font-size:14.5px;line-height:1.65;color:#465264">Fusion, next-gen batteries, smart grids. Energy is foundational infrastructure, and the transition to cleaner systems generates genuinely hard real-time data problems worth solving.</p>
+            <div data-i18n="hz.energy.title" style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Energy &amp; Climate Tech</div>
+            <p data-i18n="hz.energy.desc" style="margin:0;font-size:14.5px;line-height:1.65;color:#465264">Fusion, next-gen batteries, smart grids. Energy is foundational infrastructure, and the transition to cleaner systems generates genuinely hard real-time data problems worth solving.</p>
           </div>
           <div style="background:#fff;border:1px solid #e4e9f0;border-radius:10px;padding:28px 26px;display:flex;flex-direction:column;gap:12px">
             <div style="font-size:26px">⚛️</div>
-            <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Quantum Computing</div>
-            <p style="margin:0;font-size:14.5px;line-height:1.65;color:#465264">Qubits, superposition, and entanglement are moving from physics papers into early commercial hardware. Quantum's implications for cryptography, optimization, and eventually data processing make it one of the most consequential bets of the decade.</p>
+            <div data-i18n="hz.quantum.title" style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#16202e">Quantum Computing</div>
+            <p data-i18n="hz.quantum.desc" style="margin:0;font-size:14.5px;line-height:1.65;color:#465264">Qubits, superposition, and entanglement are moving from physics papers into early commercial hardware. Quantum's implications for cryptography, optimization, and eventually data processing make it one of the most consequential bets of the decade.</p>
           </div>
         </div>
       </div>
@@ -545,12 +558,12 @@
   <div style="position:absolute;left:-6%;right:-6%;bottom:30px;height:200px;background:radial-gradient(60% 130% at 50% 100%, rgba(120,175,255,.42),transparent 70%);filter:blur(10px);pointer-events:none"></div>
   <div style="position:absolute;width:3200px;height:3200px;left:50%;bottom:-3090px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 50% 50%, #060c1c 0%, #0a1530 88%, rgba(64,120,220,.45) 94%, rgba(150,200,255,.9) 97.5%, rgba(130,185,255,.3) 99.5%, transparent 100%);box-shadow:0 -4px 90px 8px rgba(90,150,255,.35)"></div>
   <div data-reveal class="contact-inner" style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 clamp(16px,5vw,40px)">
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(150,185,255,.9);margin-bottom:20px">Get in touch</div>
-    <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(32px,5vw,60px);line-height:1.02;letter-spacing:-.02em;color:#eef4ff;max-width:780px">Let's check your data architecture to implement AI effectively or Let's build platforms that run in minutes.</h2>
-    <p style="margin:22px 0 0;max-width:600px;font-size:16px;line-height:1.7;color:rgba(200,215,245,.72)">Eager to shape the future with data.</p>
+    <div data-i18n="contact.label" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(150,185,255,.9);margin-bottom:20px">Get in touch</div>
+    <h2 data-i18n="contact.h2" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(32px,5vw,60px);line-height:1.02;letter-spacing:-.02em;color:#eef4ff;max-width:780px">Let's check your data architecture to implement AI effectively or Let's build platforms that run in minutes.</h2>
+    <p data-i18n="contact.sub" style="margin:22px 0 0;max-width:600px;font-size:16px;line-height:1.7;color:rgba(200,215,245,.72)">Eager to shape the future with data.</p>
     <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:44px">
       <a href="mailto:rcamilo152622@gmail.com" style="display:flex;flex-direction:column;gap:6px;min-width:230px;flex:1;text-decoration:none;background:rgba(255,255,255,.03);border:1px solid rgba(120,160,230,.22);border-radius:8px;padding:20px 22px;transition:border-color .3s,background .3s" onmouseover="this.style.background='rgba(255,255,255,.06)';this.style.borderColor='rgba(120,160,230,.45)'" onmouseout="this.style.background='rgba(255,255,255,.03)';this.style.borderColor='rgba(120,160,230,.22)'">
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(150,185,255,.8)">Email</span>
+        <span data-i18n="contact.email" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(150,185,255,.8)">Email</span>
         <span style="font-family:'Space Grotesk',sans-serif;font-size:17px;color:#eaf1ff">rcamilo152622@gmail.com</span>
       </a>
       <a href="https://www.linkedin.com/in/raul-camilo-martin-bernal" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:6px;min-width:230px;flex:1;text-decoration:none;background:rgba(255,255,255,.03);border:1px solid rgba(120,160,230,.22);border-radius:8px;padding:20px 22px;transition:border-color .3s,background .3s" onmouseover="this.style.background='rgba(255,255,255,.06)';this.style.borderColor='rgba(120,160,230,.45)'" onmouseout="this.style.background='rgba(255,255,255,.03)';this.style.borderColor='rgba(120,160,230,.22)'">
@@ -563,7 +576,7 @@
       </a>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;margin-top:80px;padding:26px 0 18px;border-top:1px solid rgba(120,160,230,.16);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;color:rgba(170,200,245,.55)">
-      <span>Raúl Camilo Martín Bernal — Senior Data Engineer</span>
+      <span>Raúl Camilo Martín Bernal — <span data-i18n="footer.title">Senior Data Engineer</span></span>
       <span>4°35′N 74°04′W · Colombia · Remote · © 2026</span>
     </div>
     <div style="padding-bottom:30px"></div>
@@ -572,7 +585,150 @@
 
 <script>
 (function () {
-  /* Hamburger menu */
+
+  /* ── Translations ── */
+  var pill = 'font-family:\'IBM Plex Mono\',monospace;font-size:12px;font-weight:500;color:#2f6fe0;background:rgba(47,111,224,.08);border:1px solid rgba(47,111,224,.18);border-radius:3px;padding:1px 7px;white-space:nowrap';
+  var T = {
+    en: {
+      'nav.professional':'Professional','nav.about':'About','nav.skills':'Skills',
+      'nav.books':'Books','nav.horizon':'Horizon','nav.contact':'Contact',
+      'hero.label':'// senior data engineer',
+      'pro.label':'01 / Professional life',
+      'pro.h2':'From legacy bottlenecks to platforms that move in minutes.',
+      'pro.desc':'Senior Data Engineer with 5+ years designing and delivering end-to-end data platforms across fintech, e-commerce, and enterprise environments — scalable, cost-efficient pipelines on AWS, Snowflake, Spark, dbt & Python, with a consistent track record of turning slow, legacy processes into fast, reliable ones.',
+      'stat.years':'Years engineering data','stat.speed':'Pipeline speed-up · 8h→30m',
+      'stat.tables':'Largest tables consolidated','stat.records':'Records processed daily',
+      'epam.date':'Nov 2025 – Present · Remote',
+      'epam.client':'Client: foodservice equipment & supplies distribution (USA)',
+      'epam.b1':'Leading the modernization of a business-critical platform — migrating ELT from Spark-based AWS Glue to <span style="'+pill+'">Airbyte + dbt + Redshift</span>, integrating ~10 GB/day from Oracle, SQL Server, OpenEdge &amp; IBM DB2.',
+      'epam.b2':'Re-engineered legacy Spark pipelines to eliminate memory bottlenecks — cutting a critical pipeline from <span style="'+pill+'">8 h → 30 min</span> <span style="'+pill+'">16× faster</span>.',
+      'epam.b3':'Replaced legacy SSIS packages with <span style="'+pill+'">Airflow DAGs</span> for observability, maintainability &amp; scheduling control.',
+      'epam.b4':'Rolling out <span style="'+pill+'">Claude — skills, agents &amp; MCP servers</span> as a developer-productivity and incident-response accelerator across dbt, Terraform, SQL &amp; Airflow.',
+      'glob1.client':'Enterprise data consolidation into Snowflake',
+      'glob1.b1':'Consolidated large on-prem &amp; Amazon RDS Oracle databases into Snowflake — including <span style="'+pill+'">~3 TB tables · 50M+ rows/day</span> — via ETL, ELT &amp; Reverse-ETL.',
+      'glob1.b2':'Redesigned the data model from scratch (~20 models across ~50 tables) — reporting <span style="'+pill+'">10 h → 5 min</span>.',
+      'glob1.b3':'Built Snowflake stored procedures and high-volume load patterns with Snowflake + Airflow + Airbyte; enhanced pipelines with SnowPark via Notebooks, Worksheets &amp; Streamlit.',
+      'glob2.client':'End-to-end data lakehouse on AWS',
+      'glob2.b1':'Built end-to-end pipelines for a conflict-of-interest application — ~10 sources at <span style="'+pill+'">~40 GB/day</span> into a .NET app.',
+      'glob2.b2':'Architected the data layer with AWS Neptune (entity-relationship logic) and OpenSearch (fast per-company lookups).',
+      'glob2.b3':'Implemented a data lake with Apache Spark + Iceberg on AWS Glue &amp; Athena; orchestrated with Step Functions, Glue &amp; Lambda. Earlier: documented IBM DataStage ETL and automated XML extraction in Python.',
+      'rappi.b1':'Built data marts in Snowflake for BI, Data Science &amp; Operations — <span style="'+pill+'">~60 GB/day · peak ~150M rows</span>.',
+      'rappi.b2':'Migrated batch ingestion from Apache NiFi to Spark on AWS Glue — <span style="'+pill+'">6 h → 20 min</span>.',
+      'rappi.b3':'Built ETL/ELT for the legal &amp; regulatory reporting behind RappiPay\'s banking-license process in Colombia — contributing to a new bank that remains in operation today. Added Apache Kafka streaming for near-real-time statements.',
+      'esri.b1':'Built Python, R &amp; Bash geospatial pipelines — a census-cleaning script that did in <span style="'+pill+'">1 day what took weeks</span>, and COVID-19 automation <span style="'+pill+'">15 h → 15 min</span>.',
+      'esri.b2':'Developed on-demand geospatial tooling for internal clients and supported ArcGIS / ArcGIS Online through demos and technical talks.',
+      'about.label':'02 / About me','about.h2':'Beyond the pipelines.',
+      'about.desc':'Away from the data platforms, I\'m happiest in motion — traveling to new places, hiking trails, and playing sport. I currently train <strong style="color:#16202e;font-weight:500">CrossFit at an intermediate level</strong> and run regularly. Sport keeps the same discipline I bring to engineering: show up, measure, improve.',
+      'about.lang':'Languages','about.lang.native':'Native','about.lang.fullpro':'Full Professional','about.lang.elem':'Elementary',
+      'about.sports':'Sports I play','about.intermediate':'INTERMEDIATE','about.current':'CURRENT',
+      'sport.swim':'Swimming','sport.tennis':'Tennis','sport.basketball':'Basketball','sport.pingpong':'Ping Pong',
+      'about.travel':'Travel','about.travel.desc':'New places, new perspectives.',
+      'about.hiking':'Hiking','about.hiking.desc':'Trails, elevation, quiet.',
+      'skills.label':'03 / Skills','skills.h2':'The stack I build on.',
+      'skill.de':'Data Engineering','skill.cloud':'Cloud & Warehouses','skill.proc':'Processing & Orchestration','skill.langs':'Languages & Tooling','skill.ai':'AI / ML',
+      'creds.certs':'Certifications','creds.edu':'Education',
+      'edu.degree1':'Cadastral &amp; Geodetic Engineering','edu.degree2':'Software Systems Technician',
+      'books.label':'04 / Reading','books.h2':'Books I recommend.',
+      'books.desc':'A short shelf on stoicism, mindset, and the practice of staying present.',
+      'book.tag.stoicism':'Stoicism','book.tag.humility':'Humility','book.tag.presence':'Presence',
+      'book.tag.growth':'Growth','book.tag.freedom':'Freedom','book.tag.scale':'Scale',
+      'book.tag.info':'Information','book.tag.focus':'Focus','book.tag.virtue':'Virtue','book.tag.literacy':'Literacy',
+      'book.stoic.sub':'Courage · Temperance · Justice · Wisdom',
+      'horizon.label':'05 / Horizon','horizon.h2':'Eyes on what\'s next.',
+      'horizon.desc':'Beyond the data stack, I follow the frontiers that will reshape how we live and work — from autonomous machines to the expansion of human presence beyond Earth. The same mindset that drives good engineering drives curiosity about what comes next.',
+      'hz.rob.title':'Robotics','hz.rob.desc':'Humanoid and industrial robots moving from labs into real supply chains. I track embodied AI, locomotion breakthroughs, and the data infrastructure these machines will demand at scale.',
+      'hz.space.title':'Space Exploration','hz.space.desc':'Return to the Moon, Mars ambitions, reusable launch vehicles — science fiction becoming engineering timelines. Mission telemetry and deep-space data pipelines are among the hardest problems in the field.',
+      'hz.energy.title':'Energy & Climate Tech','hz.energy.desc':'Fusion, next-gen batteries, smart grids. Energy is foundational infrastructure, and the transition to cleaner systems generates genuinely hard real-time data problems worth solving.',
+      'hz.quantum.title':'Quantum Computing','hz.quantum.desc':'Qubits, superposition, and entanglement are moving from physics papers into early commercial hardware. Quantum\'s implications for cryptography, optimization, and eventually data processing make it one of the most consequential bets of the decade.',
+      'contact.label':'Get in touch',
+      'contact.h2':'Let\'s check your data architecture to implement AI effectively or Let\'s build platforms that run in minutes.',
+      'contact.sub':'Eager to shape the future with data.','contact.email':'Email',
+      'footer.title':'Senior Data Engineer'
+    },
+    es: {
+      'nav.professional':'Profesional','nav.about':'Sobre mí','nav.skills':'Habilidades',
+      'nav.books':'Libros','nav.horizon':'Horizonte','nav.contact':'Contacto',
+      'hero.label':'// ingeniero senior de datos',
+      'pro.label':'01 / Vida profesional',
+      'pro.h2':'De cuellos de botella heredados a plataformas que se mueven en minutos.',
+      'pro.desc':'Ingeniero Senior de Datos con más de 5 años diseñando y entregando plataformas de datos end-to-end en fintech, e-commerce y entornos empresariales — pipelines escalables y de bajo costo en AWS, Snowflake, Spark, dbt y Python, con un historial consistente de convertir procesos lentos y obsoletos en sistemas rápidos y confiables.',
+      'stat.years':'Años en ingeniería de datos','stat.speed':'Aceleración de pipeline · 8h→30m',
+      'stat.tables':'Tablas más grandes consolidadas','stat.records':'Registros procesados diariamente',
+      'epam.date':'Nov 2025 – Presente · Remoto',
+      'epam.client':'Cliente: distribución de equipos y suministros para restaurantes (EE.UU.)',
+      'epam.b1':'Liderando la modernización de una plataforma crítica de negocio — migrando ELT de AWS Glue basado en Spark a <span style="'+pill+'">Airbyte + dbt + Redshift</span>, integrando ~10 GB/día desde Oracle, SQL Server, OpenEdge e IBM DB2.',
+      'epam.b2':'Re-ingeniería de pipelines Spark heredados para eliminar cuellos de botella de memoria — reduciendo un pipeline crítico de <span style="'+pill+'">8 h → 30 min</span> <span style="'+pill+'">16× más rápido</span>.',
+      'epam.b3':'Reemplazo de paquetes SSIS heredados con <span style="'+pill+'">DAGs de Airflow</span> para mayor observabilidad, mantenibilidad y control de programación.',
+      'epam.b4':'Implementando <span style="'+pill+'">Claude — skills, agents y MCP servers</span> como acelerador de productividad para desarrolladores y respuesta a incidentes en dbt, Terraform, SQL y Airflow.',
+      'glob1.client':'Consolidación de datos empresariales en Snowflake',
+      'glob1.b1':'Consolidación de grandes bases de datos Oracle on-prem y Amazon RDS en Snowflake — incluyendo <span style="'+pill+'">~3 TB · 50M+ filas/día</span> — vía ETL, ELT y Reverse-ETL.',
+      'glob1.b2':'Rediseño del modelo de datos desde cero (~20 modelos en ~50 tablas) — reportes de <span style="'+pill+'">10 h → 5 min</span>.',
+      'glob1.b3':'Construcción de procedimientos almacenados en Snowflake y patrones de carga de alto volumen con Snowflake + Airflow + Airbyte; mejora de pipelines con SnowPark vía Notebooks, Worksheets y Streamlit.',
+      'glob2.client':'Data lakehouse end-to-end en AWS',
+      'glob2.b1':'Construcción de pipelines end-to-end para una aplicación de conflictos de interés — ~10 fuentes a <span style="'+pill+'">~40 GB/día</span> hacia una app .NET.',
+      'glob2.b2':'Diseño de la capa de datos con AWS Neptune (lógica de relaciones entre entidades) y OpenSearch (búsquedas rápidas por empresa).',
+      'glob2.b3':'Implementación de un data lake con Apache Spark + Iceberg en AWS Glue y Athena; orquestado con Step Functions, Glue y Lambda. Anteriormente: documentación de ETL IBM DataStage y automatización de extracción XML en Python.',
+      'rappi.b1':'Construcción de data marts en Snowflake para BI, Ciencia de Datos y Operaciones — <span style="'+pill+'">~60 GB/día · pico ~150M filas</span>.',
+      'rappi.b2':'Migración de ingestión por lotes de Apache NiFi a Spark en AWS Glue — <span style="'+pill+'">6 h → 20 min</span>.',
+      'rappi.b3':'Construcción de ETL/ELT para los informes legales y regulatorios del proceso de licencia bancaria de RappiPay en Colombia — contribuyendo a un banco que sigue operando hoy. Se añadió streaming con Apache Kafka para estados de cuenta en tiempo casi real.',
+      'esri.b1':'Construcción de pipelines geoespaciales en Python, R y Bash — un script de limpieza censal que hizo en <span style="'+pill+'">1 día lo que tomaba semanas</span>, y automatización COVID-19 <span style="'+pill+'">15 h → 15 min</span>.',
+      'esri.b2':'Desarrollo de herramientas geoespaciales a demanda para clientes internos y soporte a ArcGIS / ArcGIS Online mediante demos y charlas técnicas.',
+      'about.label':'02 / Sobre mí','about.h2':'Más allá de los pipelines.',
+      'about.desc':'Lejos de las plataformas de datos, estoy más feliz en movimiento — viajando a nuevos lugares, recorriendo senderos y practicando deporte. Actualmente entreno <strong style="color:#16202e;font-weight:500">CrossFit a nivel intermedio</strong> y corro regularmente. El deporte mantiene la misma disciplina que traigo a la ingeniería: presentarse, medir, mejorar.',
+      'about.lang':'Idiomas','about.lang.native':'Nativo','about.lang.fullpro':'Profesional completo','about.lang.elem':'Básico',
+      'about.sports':'Deportes que practico','about.intermediate':'INTERMEDIO','about.current':'ACTUAL',
+      'sport.swim':'Natación','sport.tennis':'Tenis','sport.basketball':'Baloncesto','sport.pingpong':'Ping Pong',
+      'about.travel':'Viajes','about.travel.desc':'Nuevos lugares, nuevas perspectivas.',
+      'about.hiking':'Senderismo','about.hiking.desc':'Senderos, altura, silencio.',
+      'skills.label':'03 / Habilidades','skills.h2':'El stack con el que construyo.',
+      'skill.de':'Ingeniería de Datos','skill.cloud':'Nube y Almacenes','skill.proc':'Procesamiento y Orquestación','skill.langs':'Lenguajes y Herramientas','skill.ai':'IA / ML',
+      'creds.certs':'Certificaciones','creds.edu':'Educación',
+      'edu.degree1':'Ingeniería Catastral y Geodésica','edu.degree2':'Técnico en Sistemas de Software',
+      'books.label':'04 / Lecturas','books.h2':'Libros que recomiendo.',
+      'books.desc':'Una pequeña estantería sobre estoicismo, mentalidad y el arte de mantenerse presente.',
+      'book.tag.stoicism':'Estoicismo','book.tag.humility':'Humildad','book.tag.presence':'Presencia',
+      'book.tag.growth':'Crecimiento','book.tag.freedom':'Libertad','book.tag.scale':'Escala',
+      'book.tag.info':'Información','book.tag.focus':'Enfoque','book.tag.virtue':'Virtud','book.tag.literacy':'Cultura empresarial',
+      'book.stoic.sub':'Coraje · Templanza · Justicia · Sabiduría',
+      'horizon.label':'05 / Horizonte','horizon.h2':'Con la vista en lo que viene.',
+      'horizon.desc':'Más allá del stack de datos, sigo las fronteras que van a redefinir cómo vivimos y trabajamos — desde máquinas autónomas hasta la expansión de la presencia humana más allá de la Tierra. La misma mentalidad que impulsa la buena ingeniería impulsa la curiosidad sobre lo que viene.',
+      'hz.rob.title':'Robótica','hz.rob.desc':'Robots humanoides e industriales pasando de los laboratorios a cadenas de suministro reales. Sigo la IA encarnada, los avances en locomoción y la infraestructura de datos que estas máquinas demandarán a escala.',
+      'hz.space.title':'Exploración Espacial','hz.space.desc':'Regreso a la Luna, ambiciones en Marte, vehículos de lanzamiento reutilizables — la ciencia ficción convirtiéndose en plazos de ingeniería. La telemetría de misiones y los pipelines de datos en el espacio profundo están entre los problemas más difíciles del campo.',
+      'hz.energy.title':'Energía y Tecnología Climática','hz.energy.desc':'Fusión, baterías de nueva generación, redes inteligentes. La energía es infraestructura fundamental, y la transición hacia sistemas más limpios genera problemas de datos en tiempo real genuinamente difíciles y que vale la pena resolver.',
+      'hz.quantum.title':'Computación Cuántica','hz.quantum.desc':'Los qubits, la superposición y el entrelazamiento están pasando de los artículos de física al hardware comercial temprano. Las implicaciones de la computación cuántica para la criptografía, la optimización y el procesamiento de datos la convierten en una de las apuestas más trascendentales de la década.',
+      'contact.label':'Contáctame',
+      'contact.h2':'Revisemos tu arquitectura de datos para implementar IA de manera efectiva o construyamos plataformas que se ejecuten en minutos.',
+      'contact.sub':'Con ganas de moldear el futuro con datos.','contact.email':'Correo',
+      'footer.title':'Ingeniero Senior de Datos'
+    }
+  };
+
+  var currentLang = 'en';
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    var dict = T[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n-html');
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    var enBtn = document.getElementById('lt-en');
+    var esBtn = document.getElementById('lt-es');
+    if (enBtn && esBtn) {
+      enBtn.className = lang === 'en' ? 'lt-active' : 'lt-inactive';
+      esBtn.className = lang === 'es' ? 'lt-active' : 'lt-inactive';
+    }
+  }
+
+  window.setLang = setLang;
+  window.toggleLang = function() { setLang(currentLang === 'en' ? 'es' : 'en'); };
+
+  /* ── Hamburger menu ── */
   var hbBtn = document.getElementById('hamburger');
   var navLinks = document.getElementById('navLinks');
   if (hbBtn && navLinks) {
@@ -639,6 +795,20 @@
     });
     var hbColor = scrolled ? 'rgba(65,80,106,.9)' : 'rgba(210,225,255,.8)';
     document.querySelectorAll('.hamburger span').forEach(function(s){ s.style.background = hbColor; });
+    /* Lang toggle color tracks scroll */
+    var lt = document.getElementById('langToggle');
+    if (lt) lt.style.borderColor = scrolled ? 'rgba(65,80,106,.3)' : 'rgba(210,225,255,.28)';
+    document.querySelectorAll('#langToggle button.lt-active').forEach(function(b){
+      b.style.color = scrolled ? '#16202e' : '#fff';
+      b.style.background = scrolled ? 'rgba(22,32,46,.12)' : 'rgba(255,255,255,.22)';
+    });
+    document.querySelectorAll('#langToggle button.lt-inactive').forEach(function(b){
+      b.style.color = scrolled ? 'rgba(65,80,106,.35)' : 'rgba(210,225,255,.28)';
+      b.style.background = '';
+    });
+    document.querySelectorAll('#langToggle .lt-sep').forEach(function(s){
+      s.style.color = scrolled ? 'rgba(65,80,106,.2)' : 'rgba(210,225,255,.18)';
+    });
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
