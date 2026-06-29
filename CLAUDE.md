@@ -2,13 +2,14 @@
 
 Personal portfolio for Raúl Camilo Martín Bernal, Senior Data Engineer.
 
-> **Plain HTML by design.** The entire site is a single `index.html` with no build step, no framework, and no runtime JS dependencies beyond Google Fonts. Every byte that loads is intentional — inline styles, inline SVGs, one `<style>` block, one `<script>` block. Keep it that way.
+> **No build step.** No framework, no bundler, no runtime JS dependencies beyond Google Fonts. Three files, drop anywhere and it works.
 
 ## Stack
 
-- All styles in a `<style>` block at the top (layout classes + responsive media queries)
-- Remaining styles are inline on elements (kept minimal and intentional)
-- All JS in a single `<script>` block at the bottom (scroll effects, parallax, nav state, hamburger menu)
+- `index.html` — all markup and intentional inline element styles
+- `css/styles.css` — layout classes, lang toggle, responsive media queries
+- `js/main.js` — i18n translations (EN/ES), scroll effects, parallax, nav state, hamburger menu
+- `images/` — local logos, icons, favicon
 - Favicon: `images/icon.png`
 
 ## Page Structure
