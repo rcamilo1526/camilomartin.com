@@ -16,8 +16,8 @@
       'hero.label': '// senior data engineer',
 
       'pro.label': '01 / Professional life',
-      'pro.h2': 'From legacy bottlenecks to platforms that move in minutes.',
-      'pro.desc': 'Senior Data Engineer with 5+ years designing and delivering end-to-end data platforms across fintech, e-commerce, and enterprise environments — scalable, cost-efficient pipelines on AWS, Snowflake, Spark, dbt & Python, with a consistent track record of turning slow, legacy processes into fast, reliable ones.',
+      'pro.h2': 'Turning messy data into products teams can trust.',
+      'pro.desc': "Senior Data Engineer with 5+ years designing and delivering end-to-end data platforms across fintech, e-commerce, and enterprise environments. I work as an analytics engineer as much as an engineer — the deliverable isn't the pipeline, it's trustworthy data products teams can act on: governed dbt models, clear SLAs, and self-serve dashboards for BI, Data Science, and Operations. The fast, scalable pipelines on AWS, Snowflake, Spark, dbt & Python are the supporting layer — and I have a consistent track record of turning slow, legacy processes into fast, reliable ones.",
 
       'stat.years': 'Years engineering data',
       'stat.speed': 'Pipeline speed-up · 8h→30m',
@@ -49,8 +49,11 @@
       'esri.b2': 'Developed on-demand geospatial tooling for internal clients and supported ArcGIS / ArcGIS Online through demos and technical talks.',
 
       'about.label': '02 / About me',
-      'about.h2': 'Beyond the pipelines.',
-      'about.desc': "Away from the data platforms, I'm happiest in motion — traveling to new places, hiking trails, and playing sport. I currently train <strong style=\"color:#16202e;font-weight:500\">CrossFit at an intermediate level</strong> and run regularly. Sport keeps the same discipline I bring to engineering: show up, measure, improve.",
+      'about.h2': 'From maps to data products.',
+      'about.desc': "My path into data started with maps. My thesis applied machine learning to satellite radar (SAR) imagery — the first time I saw what these methods could really do, and what pulled me out of pure GIS toward data. I went looking for a data science role, landed in data engineering instead, and that accident became the work I care about most.",
+      'about.desc2': "What actually drives me isn't a tool or a title — it's solving hard problems and shipping solutions that create real value for people. Over the years I've worked as an <strong style=\"color:#16202e;font-weight:500\">analytics engineer as much as a data engineer</strong>: translating stakeholder needs into governed dbt models, enforcing integrity and clear SLAs, and building dashboards teams can self-serve. The pipelines matter, but they're the supporting layer — the important part of a data engineer is the data, not the engineer. The deliverable is trustworthy data products people can act on.",
+      'about.desc3': "That foundation matters more than ever with AI: the better the data products underneath, the better AI works on top of them — reliable, well-governed data is what turns a model into something you can actually trust. I believe AI, done responsibly, can genuinely improve lives — especially in Latin America and communities that have historically received technology built elsewhere rather than helping shape it. I build with agentic AI every day, and I want that leverage to reach far beyond a handful of companies. Helping build that change, not just use it, is the work I think can make a real difference.",
+      'about.desc4': "Away from the data platforms, I'm happiest in motion — traveling, hiking, and training <strong style=\"color:#16202e;font-weight:500\">CrossFit</strong> and running. I still love maps, and lately I'm learning photography.",
       'about.lang': 'Languages',
       'about.lang.native': 'Native',
       'about.lang.fullpro': 'Full Professional',
@@ -66,6 +69,10 @@
       'about.travel.desc': 'New places, new perspectives.',
       'about.hiking': 'Hiking',
       'about.hiking.desc': 'Trails, elevation, quiet.',
+      'about.maps': 'Maps',
+      'about.maps.desc': 'Cartography, where it all began.',
+      'about.photo': 'Photography',
+      'about.photo.desc': 'Learning, one frame at a time.',
 
       'skills.label': '03 / Skills',
       'skills.h2': 'The stack I build on.',
@@ -108,7 +115,7 @@
       'hz.quantum.desc': "Qubits, superposition, and entanglement are moving from physics papers into early commercial hardware. Quantum's implications for cryptography, optimization, and eventually data processing make it one of the most consequential bets of the decade.",
 
       'contact.label': 'Get in touch',
-      'contact.h2': "Let's check your data architecture to implement AI effectively or Let's build platforms that run in minutes.",
+      'contact.h2': "Let's turn your data into products your teams can trust — and put AI to work where it counts.",
       'contact.sub': 'Eager to shape the future with data.',
       'contact.email': 'Email',
       'footer.title': 'Senior Data Engineer'
@@ -125,8 +132,8 @@
       'hero.label': '// ingeniero senior de datos',
 
       'pro.label': '01 / Vida profesional',
-      'pro.h2': 'De cuellos de botella heredados a plataformas que se mueven en minutos.',
-      'pro.desc': 'Ingeniero Senior de Datos con más de 5 años diseñando y entregando plataformas de datos end-to-end en fintech, e-commerce y entornos empresariales — pipelines escalables y de bajo costo en AWS, Snowflake, Spark, dbt y Python, con un historial consistente de convertir procesos lentos y obsoletos en sistemas rápidos y confiables.',
+      'pro.h2': 'Convirtiendo datos desordenados en productos en los que los equipos confían.',
+      'pro.desc': 'Ingeniero Senior de Datos con más de 5 años diseñando y entregando plataformas de datos end-to-end en fintech, e-commerce y entornos empresariales. Trabajo tanto como analytics engineer como ingeniero — el entregable no es el pipeline, son productos de datos confiables sobre los que los equipos pueden actuar: modelos dbt gobernados, SLAs claros y dashboards de autoservicio para BI, Ciencia de Datos y Operaciones. Los pipelines rápidos y escalables en AWS, Snowflake, Spark, dbt y Python son la capa de soporte — y tengo un historial consistente de convertir procesos lentos y obsoletos en sistemas rápidos y confiables.',
 
       'stat.years': 'Años en ingeniería de datos',
       'stat.speed': 'Aceleración de pipeline · 8h→30m',
@@ -158,8 +165,11 @@
       'esri.b2': 'Desarrollo de herramientas geoespaciales a demanda para clientes internos y soporte a ArcGIS / ArcGIS Online mediante demos y charlas técnicas.',
 
       'about.label': '02 / Sobre mí',
-      'about.h2': 'Más allá de los pipelines.',
-      'about.desc': 'Lejos de las plataformas de datos, estoy más feliz en movimiento — viajando a nuevos lugares, recorriendo senderos y practicando deporte. Actualmente entreno <strong style="color:#16202e;font-weight:500">CrossFit a nivel intermedio</strong> y corro regularmente. El deporte mantiene la misma disciplina que traigo a la ingeniería: presentarse, medir, mejorar.',
+      'about.h2': 'De los mapas a los productos de datos.',
+      'about.desc': 'Mi camino hacia los datos empezó con mapas. Mi tesis aplicó machine learning a imágenes de radar satelital (SAR) — la primera vez que vi lo que estos métodos podían lograr de verdad, y lo que me sacó del GIS puro hacia los datos. Salí a buscar un rol de data science, terminé en ingeniería de datos, y ese accidente se convirtió en el trabajo que más me importa.',
+      'about.desc2': 'Lo que realmente me mueve no es una herramienta ni un título — es resolver problemas difíciles y entregar soluciones que crean valor real para las personas. Con los años he trabajado tanto como <strong style="color:#16202e;font-weight:500">analytics engineer como data engineer</strong>: traduciendo necesidades de stakeholders en modelos dbt gobernados, garantizando integridad y SLAs claros, y construyendo dashboards de autoservicio para los equipos. Los pipelines importan, pero son la capa de soporte — lo importante de un ingeniero de datos son los datos, no el ingeniero. El entregable son productos de datos confiables sobre los que la gente puede actuar.',
+      'about.desc3': 'Esa base importa más que nunca con la IA: mientras mejores sean los productos de datos por debajo, mejor funciona la IA por encima — datos confiables y bien gobernados son lo que convierte a un modelo en algo en lo que de verdad puedes confiar. Creo que la IA, hecha con responsabilidad, puede mejorar vidas de verdad — especialmente en Latinoamérica y en comunidades que históricamente han recibido tecnología construida en otros lugares en vez de ayudar a darle forma. Construyo con IA agéntica todos los días, y quiero que ese poder llegue mucho más allá de un puñado de empresas. Ayudar a construir ese cambio, no solo usarlo, es el trabajo que creo que puede marcar una diferencia real.',
+      'about.desc4': 'Lejos de las plataformas de datos, estoy más feliz en movimiento — viajando, recorriendo senderos y entrenando <strong style="color:#16202e;font-weight:500">CrossFit</strong> y running. Sigo amando los mapas, y últimamente estoy aprendiendo fotografía.',
       'about.lang': 'Idiomas',
       'about.lang.native': 'Nativo',
       'about.lang.fullpro': 'Profesional completo',
@@ -175,6 +185,10 @@
       'about.travel.desc': 'Nuevos lugares, nuevas perspectivas.',
       'about.hiking': 'Senderismo',
       'about.hiking.desc': 'Senderos, altura, silencio.',
+      'about.maps': 'Mapas',
+      'about.maps.desc': 'Cartografía, donde todo empezó.',
+      'about.photo': 'Fotografía',
+      'about.photo.desc': 'Aprendiendo, cuadro a cuadro.',
 
       'skills.label': '03 / Habilidades',
       'skills.h2': 'El stack con el que construyo.',
@@ -217,7 +231,7 @@
       'hz.quantum.desc': 'Los qubits, la superposición y el entrelazamiento están pasando de los artículos de física al hardware comercial temprano. Las implicaciones de la computación cuántica para la criptografía, la optimización y el procesamiento de datos la convierten en una de las apuestas más trascendentales de la década.',
 
       'contact.label': 'Contáctame',
-      'contact.h2': 'Revisemos tu arquitectura de datos para implementar IA de manera efectiva o construyamos plataformas que se ejecuten en minutos.',
+      'contact.h2': 'Convirtamos tus datos en productos en los que tus equipos puedan confiar — y pongamos la IA a trabajar donde importa.',
       'contact.sub': 'Con ganas de moldear el futuro con datos.',
       'contact.email': 'Correo',
       'footer.title': 'Ingeniero Senior de Datos'
