@@ -17,7 +17,7 @@
 
       'pro.label': '01 / Professional life',
       'pro.h2': 'Turning messy data into products teams can trust.',
-      'pro.desc': "Senior Data Engineer with 5+ years designing and delivering end-to-end data platforms across fintech, e-commerce, and enterprise environments. I work as an analytics engineer as much as an engineer — the deliverable isn't the pipeline, it's trustworthy data products teams can act on: governed dbt models, clear SLAs, and self-serve dashboards for BI, Data Science, and Operations. The fast, scalable pipelines on AWS, Snowflake, Spark, dbt & Python are the supporting layer — and I have a consistent track record of turning slow, legacy processes into fast, reliable ones.",
+      'pro.desc': "Senior Data Engineer with 5+ years designing and delivering end-to-end data platforms across fintech, e-commerce, and enterprise environments — fast, cost-efficient pipelines on AWS, Snowflake, Spark, dbt & Python that turn slow, legacy processes into trustworthy data products for BI, Data Science, and Operations.",
 
       'stat.years': 'Years engineering data',
       'stat.speed': 'Pipeline speed-up · 8h→30m',
@@ -48,7 +48,7 @@
       'esri.b1': 'Built Python, R &amp; Bash geospatial pipelines — a census-cleaning script that did in <span style="' + pill + '">1 day what took weeks</span>, and COVID-19 automation <span style="' + pill + '">15 h → 15 min</span>.',
       'esri.b2': 'Developed on-demand geospatial tooling for internal clients and supported ArcGIS / ArcGIS Online through demos and technical talks.',
 
-      'about.label': '02 / About me',
+      'about.label': '03 / About me',
       'about.h2': 'From maps to data products.',
       'about.desc': "My path into data started with maps. My thesis applied machine learning to satellite radar (SAR) imagery — the first time I saw what these methods could really do, and what pulled me out of pure GIS toward data. I went looking for a data science role, landed in data engineering instead, and that accident became the work I care about most.",
       'about.desc2': "What actually drives me isn't a tool or a title — it's solving hard problems and shipping solutions that create real value for people. Over the years I've worked as an <strong style=\"color:#16202e;font-weight:500\">analytics engineer as much as a data engineer</strong>: translating stakeholder needs into governed dbt models, enforcing integrity and clear SLAs, and building dashboards teams can self-serve. The pipelines matter, but they're the supporting layer — the important part of a data engineer is the data, not the engineer. The deliverable is trustworthy data products people can act on.",
@@ -58,6 +58,7 @@
       'about.lang.native': 'Native',
       'about.lang.fullpro': 'Full Professional',
       'about.lang.elem': 'Elementary',
+      'about.beyond': 'Beyond work',
       'about.sports': 'Sports I play',
       'about.intermediate': 'INTERMEDIATE',
       'about.current': 'CURRENT',
@@ -74,13 +75,18 @@
       'about.photo': 'Photography',
       'about.photo.desc': 'Learning, one frame at a time.',
 
-      'skills.label': '03 / Skills',
+      'skills.label': '02 / Skills',
       'skills.h2': 'The stack I build on.',
       'skill.de': 'Data Engineering',
       'skill.cloud': 'Cloud & Warehouses',
       'skill.proc': 'Processing & Orchestration',
       'skill.langs': 'Languages & Tooling',
       'skill.ai': 'AI / ML',
+
+      'learning.label': "What I'm Learning Now",
+      'learning.agentic': 'Agentic Engineering',
+      'learning.harness': 'Agent harnesses & loop engineering',
+      'learning.trends': 'Staying current with the field',
 
       'creds.certs': 'Certifications',
       'creds.edu': 'Education',
@@ -117,7 +123,6 @@
       'contact.label': 'Get in touch',
       'contact.h2': "Let's turn your data into products your teams can trust — and put AI to work where it counts.",
       'contact.sub': 'Eager to shape the future with data.',
-      'contact.email': 'Email',
       'footer.title': 'Senior Data Engineer'
     },
 
@@ -133,7 +138,7 @@
 
       'pro.label': '01 / Vida profesional',
       'pro.h2': 'Convirtiendo datos desordenados en productos en los que los equipos confían.',
-      'pro.desc': 'Ingeniero Senior de Datos con más de 5 años diseñando y entregando plataformas de datos end-to-end en fintech, e-commerce y entornos empresariales. Trabajo tanto como analytics engineer como ingeniero — el entregable no es el pipeline, son productos de datos confiables sobre los que los equipos pueden actuar: modelos dbt gobernados, SLAs claros y dashboards de autoservicio para BI, Ciencia de Datos y Operaciones. Los pipelines rápidos y escalables en AWS, Snowflake, Spark, dbt y Python son la capa de soporte — y tengo un historial consistente de convertir procesos lentos y obsoletos en sistemas rápidos y confiables.',
+      'pro.desc': 'Ingeniero Senior de Datos con más de 5 años diseñando y entregando plataformas de datos end-to-end en fintech, e-commerce y entornos empresariales — pipelines rápidos y rentables en AWS, Snowflake, Spark, dbt y Python que convierten procesos lentos y heredados en productos de datos confiables para BI, Ciencia de Datos y Operaciones.',
 
       'stat.years': 'Años en ingeniería de datos',
       'stat.speed': 'Aceleración de pipeline · 8h→30m',
@@ -164,7 +169,7 @@
       'esri.b1': 'Construcción de pipelines geoespaciales en Python, R y Bash — un script de limpieza censal que hizo en <span style="' + pill + '">1 día lo que tomaba semanas</span>, y automatización COVID-19 <span style="' + pill + '">15 h → 15 min</span>.',
       'esri.b2': 'Desarrollo de herramientas geoespaciales a demanda para clientes internos y soporte a ArcGIS / ArcGIS Online mediante demos y charlas técnicas.',
 
-      'about.label': '02 / Sobre mí',
+      'about.label': '03 / Sobre mí',
       'about.h2': 'De los mapas a los productos de datos.',
       'about.desc': 'Mi camino hacia los datos empezó con mapas. Mi tesis aplicó machine learning a imágenes de radar satelital (SAR) — la primera vez que vi lo que estos métodos podían lograr de verdad, y lo que me sacó del GIS puro hacia los datos. Salí a buscar un rol de data science, terminé en ingeniería de datos, y ese accidente se convirtió en el trabajo que más me importa.',
       'about.desc2': 'Lo que realmente me mueve no es una herramienta ni un título — es resolver problemas difíciles y entregar soluciones que crean valor real para las personas. Con los años he trabajado tanto como <strong style="color:#16202e;font-weight:500">analytics engineer como data engineer</strong>: traduciendo necesidades de stakeholders en modelos dbt gobernados, garantizando integridad y SLAs claros, y construyendo dashboards de autoservicio para los equipos. Los pipelines importan, pero son la capa de soporte — lo importante de un ingeniero de datos son los datos, no el ingeniero. El entregable son productos de datos confiables sobre los que la gente puede actuar.',
@@ -174,6 +179,7 @@
       'about.lang.native': 'Nativo',
       'about.lang.fullpro': 'Profesional completo',
       'about.lang.elem': 'Básico',
+      'about.beyond': 'Más allá del trabajo',
       'about.sports': 'Deportes que practico',
       'about.intermediate': 'INTERMEDIO',
       'about.current': 'ACTUAL',
@@ -190,13 +196,18 @@
       'about.photo': 'Fotografía',
       'about.photo.desc': 'Aprendiendo, cuadro a cuadro.',
 
-      'skills.label': '03 / Habilidades',
+      'skills.label': '02 / Habilidades',
       'skills.h2': 'El stack con el que construyo.',
       'skill.de': 'Ingeniería de Datos',
       'skill.cloud': 'Nube y Almacenes',
       'skill.proc': 'Procesamiento y Orquestación',
       'skill.langs': 'Lenguajes y Herramientas',
       'skill.ai': 'IA / ML',
+
+      'learning.label': 'Aprendiendo ahora',
+      'learning.agentic': 'Ingeniería Agéntica',
+      'learning.harness': 'Harnesses de agentes y loop engineering',
+      'learning.trends': 'Al día con las tendencias del campo',
 
       'creds.certs': 'Certificaciones',
       'creds.edu': 'Educación',
@@ -233,7 +244,6 @@
       'contact.label': 'Contáctame',
       'contact.h2': 'Convirtamos tus datos en productos en los que tus equipos puedan confiar — y pongamos la IA a trabajar donde importa.',
       'contact.sub': 'Con ganas de moldear el futuro con datos.',
-      'contact.email': 'Correo',
       'footer.title': 'Ingeniero Senior de Datos'
     }
   };
@@ -266,6 +276,12 @@
 
   window.setLang = setLang;
   window.toggleLang = function () { setLang(currentLang === 'en' ? 'es' : 'en'); };
+
+  /* Lang toggle listeners (no inline handlers — keeps CSP strict) */
+  var ltEn = document.getElementById('lt-en');
+  var ltEs = document.getElementById('lt-es');
+  if (ltEn) ltEn.addEventListener('click', function () { setLang('en'); });
+  if (ltEs) ltEs.addEventListener('click', function () { setLang('es'); });
 
   /* ── Hamburger menu ── */
   var hbBtn = document.getElementById('hamburger');

@@ -11,6 +11,8 @@ Personal portfolio for Raúl Camilo Martín Bernal, Senior Data Engineer.
 - `js/main.js` — i18n translations (EN/ES), scroll effects, parallax, nav state, hamburger menu
 - `images/` — local logos, icons, favicon
 - Favicon: `images/icon.png`
+- `robots.txt` + `sitemap.xml` — SEO crawler files (canonical URL: https://www.camilomartin.com/)
+- `vercel.json` — security headers (strict CSP, HSTS, nosniff, frame denial). No inline event handlers or inline `<script>` allowed — CSP `script-src 'self'` blocks them; use `addEventListener` in `js/main.js`
 
 ## Page Structure
 
@@ -18,8 +20,8 @@ Sections in DOM order:
 
 1. **Hero** — full-viewport dark space scene with parallax earth + stars; name pronunciation subtitle below `<h1>`
 2. **Professional** (`#professional`) — work timeline, stat counters
-3. **About** (`#about`) — personal bio, sports, languages
-4. **Skills** (`#skills`) — tech stack cards + certifications/education
+3. **Skills** (`#skills`) — tech stack cards + certifications/education
+4. **About** (`#about`) — personal bio, sports, languages
 5. **Books** (`#books`) — recommended reading shelf (10 books)
 6. **Horizon** (`#horizon`) — future technology interests (robotics, space, energy, quantum)
 7. **Footer/Contact** (`#contact`) — email, LinkedIn, GitHub links + Flaticon attribution

@@ -84,6 +84,8 @@ main{background:#eef1f6;color:#16202e}
 .timeline-p{margin:0;font-size:14.5px;line-height:1.6;color:#3a4759}
 
 /* ── About ── */
+.about-story{max-width:840px}
+.about-beyond{margin-top:60px;padding-top:52px;border-top:1px solid #e1e7ef}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 .about-desc-p{margin:24px 0 0;font-size:16px;line-height:1.75;color:#465264}
 .about-lang-hdr{margin-top:30px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a93a3;margin-bottom:12px}
