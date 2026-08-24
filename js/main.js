@@ -7,6 +7,7 @@
   var T = {
     en: {
       'nav.professional': 'Professional',
+      'nav.cases': 'Cases',
       'nav.about': 'About',
       'nav.skills': 'Skills',
       'nav.books': 'Books',
@@ -128,6 +129,7 @@
 
     es: {
       'nav.professional': 'Profesional',
+      'nav.cases': 'Casos',
       'nav.about': 'Sobre mí',
       'nav.skills': 'Habilidades',
       'nav.books': 'Libros',

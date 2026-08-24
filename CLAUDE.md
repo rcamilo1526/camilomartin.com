@@ -6,15 +6,17 @@ Personal portfolio for Raúl Camilo Martín Bernal, Senior Data Engineer.
 
 ## Stack
 
-- `index.html` — all markup and intentional inline element styles
-- `css/styles.css` — layout classes, lang toggle, responsive media queries
-- `js/main.js` — i18n translations (EN/ES), scroll effects, parallax, nav state, hamburger menu
+- `index.html` — homepage markup and intentional inline element styles
+- `cases.html` — Success Cases page (six case studies on a logo timeline)
+- `css/styles.css` — layout classes, lang toggle, cases page, responsive media queries (shared by both pages)
+- `js/main.js` — homepage: i18n translations (EN/ES), scroll effects, parallax, nav state, hamburger menu
+- `js/cases.js` — cases page: its own EN/ES dictionary + a copy of the nav/hamburger/reveal behaviour, plus the sticky rail logic. Deliberately self-contained; keep the shared blocks in sync with `main.js` when you change them there.
 - `images/` — local logos, icons, favicon
 - Favicon: `images/icon.png`
-- `robots.txt` + `sitemap.xml` — SEO crawler files (canonical URL: https://www.camilomartin.com/)
-- `vercel.json` — security headers (strict CSP, HSTS, nosniff, frame denial). No inline event handlers or inline `<script>` allowed — CSP `script-src 'self'` blocks them; use `addEventListener` in `js/main.js`
+- `robots.txt` + `sitemap.xml` — SEO crawler files (canonical URLs: https://www.camilomartin.com/ and /cases.html)
+- `vercel.json` — security headers (strict CSP, HSTS, nosniff, frame denial). No inline event handlers or inline `<script>` allowed — CSP `script-src 'self'` blocks them; use `addEventListener` in the page's JS file. `img-src 'self'` also blocks remote images — inline `<svg>` is fine, external logo URLs are not.
 
-## Page Structure
+## Page Structure — index.html
 
 Sections in DOM order:
 
@@ -25,6 +27,33 @@ Sections in DOM order:
 5. **Books** (`#books`) — recommended reading shelf (10 books)
 6. **Horizon** (`#horizon`) — future technology interests (robotics, space, energy, quantum)
 7. **Footer/Contact** (`#contact`) — email, LinkedIn, GitHub links + Flaticon attribution
+
+## Page Structure — cases.html
+
+1. **Hero** (`#casesHero`) — compact dark scene, stars only (no earth)
+2. **Sticky rail** (`#casesRail`) — horizontal logo timeline, sticks under the nav at `top:57px` (`52px` ≤768px). Each `.rail-stop` links to a case anchor; `js/cases.js` adds `.is-active` to the current stop and fills `#railProgress` as you scroll. Horizontally scrollable on mobile, where `.rail-line` is hidden.
+3. **Case flow** (`.cases-flow`) — six `<article class="case">` blocks (`#case-01` … `#case-06`) hung off a gradient vertical spine (`.cases-flow::before`). Each has a brand `.case-marker` tile, a `.case-card` with problem / what-I-built columns, a `.case-result` metric strip and `.case-stack` chips.
+4. **Pattern band** (`.cases-pattern`) — three cards on the throughline across all six cases
+5. **Footer/Contact** (`#contact`) — shared with the homepage, plus a "back to full profile" link
+
+### The six cases
+
+| # | Company | Case | Headline result |
+|---|---|---|---|
+| 01 | Esri Colombia | Geospatial automation at national scale | weeks → 1 day; COVID 15 h → 15 min |
+| 02 | Rappi · RappiPay | NiFi → Spark on Glue + Airflow | 6 h → 20 min (~18×) |
+| 03 | Rappi · RappiPay | Regulatory reporting + Kafka card statements | manual → scheduled; licensed bank |
+| 04 | Globant | Iceberg lakehouse → Neptune + OpenSearch | ~40 GB/day into a .NET app |
+| 05 | Globant | Snowflake facts/dims + Streamlit lineage app | 10 h → 5 min |
+| 06 | EPAM Systems | Glue → Airbyte + dbt + Redshift, Terraform | 8 h → 30 min (16×) |
+
+### Company brand tiles
+
+Logos are inline SVG monograms on a brand-coloured gradient tile — no trademarked logo files, so nothing external to load under CSP. Colour classes live in `styles.css`: `.brand-esri`, `.brand-rappi`, `.brand-globant`, `.brand-epam`.
+
+**To swap in a real logo file:** drop e.g. `images/esri.png` into `images/`, then in `cases.html` replace the inline `<svg>` inside that `.rail-tile` / `.case-marker` with `<img src="images/esri.png" alt="Esri" class="brand-img">` and remove the `brand-*` class from the wrapping element. The `.brand-img` class already handles sizing, `object-fit` and the white backing.
+
+**Add a case** — copy an `<article class="case">` block, bump the id (`#case-07`), add a matching `.rail-stop` to `#casesRail`, and add its `c7.*` keys to both dictionaries in `js/cases.js`.
 
 ## Certifications (in Skills section)
 

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Success Cases — Raúl Camilo Martín Bernal</title>
+<meta name="description" content="Six data engineering case studies by Raúl Camilo Martín Bernal (Camilo Martin) — Esri, Rappi/RappiPay, Globant and EPAM. Migrations, lakehouses, regulatory reporting and ELT platforms, with the results they produced.">
+<meta name="author" content="Raúl Camilo Martín Bernal">
+<meta name="theme-color" content="#03060f">
+<link rel="canonical" href="https://www.camilomartin.com/cases.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.camilomartin.com/cases.html">
+<meta property="og:title" content="Success Cases — Raúl Camilo Martín Bernal">
+<meta property="og:description" content="Six data engineering case studies across Esri, Rappi/RappiPay, Globant and EPAM — from a 6-hour batch cut to 20 minutes to a lakehouse feeding a client-facing app.">
+<meta property="og:image" content="https://www.camilomartin.com/images/icon_full_size.png">
+<meta property="og:site_name" content="camilomartin.com">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_CO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Success Cases — Raúl Camilo Martín Bernal">
+<meta name="twitter:description" content="Six data engineering case studies across Esri, Rappi/RappiPay, Globant and EPAM.">
+<meta name="twitter:image" content="https://www.camilomartin.com/images/icon_full_size.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/icon.png">
+<link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Success Cases",
+  "url": "https://www.camilomartin.com/cases.html",
+  "about": {
+    "@type": "Person",
+    "name": "Raúl Camilo Martín Bernal",
+    "alternateName": "Camilo Martin",
+    "jobTitle": "Senior Data Engineer",
+    "url": "https://www.camilomartin.com/"
+  },
+  "description": "Six data engineering case studies across Esri Colombia, Rappi/RappiPay, Globant and EPAM Systems."
+}
+</script>
+</head>
+<body>
+
+<header id="nav">
+  <div class="nav-inner">
+    <a href="index.html" data-nav="1" data-brand="1" class="nav-brand">RCMB</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#professional" data-nav="1" data-i18n="nav.professional" class="nav-link">Professional</a>
+      <a href="cases.html" data-nav="1" data-i18n="nav.cases" class="nav-link nav-link-current" aria-current="page">Cases</a>
+      <a href="index.html#skills" data-nav="1" data-i18n="nav.skills" class="nav-link">Skills</a>
+      <a href="index.html#about" data-nav="1" data-i18n="nav.about" class="nav-link">About</a>
+      <a href="index.html#books" data-nav="1" data-i18n="nav.books" class="nav-link">Books</a>
+      <a href="#contact" data-nav="1" data-i18n="nav.contact" class="nav-link">Contact</a>
+    </nav>
+    <div id="langToggle" role="group" aria-label="Language">
+      <button id="lt-en" class="lt-active">EN</button>
+      <span class="lt-sep">|</span>
+      <button id="lt-es" class="lt-inactive">ES</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="casesHero">
+  <div id="heroStars" aria-hidden="true"></div>
+  <div class="cases-hero-glow" aria-hidden="true"></div>
+  <div class="cases-hero-inner">
+    <div data-i18n="cases.label" class="hero-label">// success cases · 2019 — 2026</div>
+    <h1 data-i18n="cases.h1" class="cases-h1">Seven years turning slow processes into systems.</h1>
+    <p data-i18n="cases.sub" class="cases-hero-sub">Six projects across five companies. Every one started the same way: something critical was slow, manual, or impossible to trust. Here's what I built — and what changed.</p>
+    <div class="cases-hero-meta">
+      <span data-i18n="cases.meta1">6 cases</span>
+      <span class="cases-meta-dot">·</span>
+      <span data-i18n="cases.meta2">5 companies</span>
+      <span class="cases-meta-dot">·</span>
+      <span>2019 → 2026</span>
+    </div>
+  </div>
+  <div class="hero-corner-bl" aria-hidden="true"></div>
+  <div class="hero-corner-br" aria-hidden="true"></div>
+</section>
+
+<!-- rise into daylight -->
+<div aria-hidden="true" class="day-rise day-rise-short"></div>
+
+<main class="cases-main">
+<div class="cases-track">
+
+<!-- ================= STICKY RAIL ================= -->
+<div id="casesRail" aria-label="Timeline">
+  <div class="rail-inner">
+    <div class="rail-scroll">
+      <div class="rail-line" aria-hidden="true"><span class="rail-progress" id="railProgress"></span></div>
+      <a href="#case-01" class="rail-stop" data-rail="case-01">
+        <span class="rail-tile brand-esri" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="8.6"/><ellipse cx="12" cy="12" rx="3.9" ry="8.6"/><path d="M3.4 12h17.2"/></svg>
+        </span>
+        <span class="rail-meta"><span class="rail-co">Esri</span><span class="rail-year">2019</span></span>
+      </a>
+      <a href="#case-02" class="rail-stop" data-rail="case-02">
+        <span class="rail-tile brand-rappi" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#fff"><path d="M13.4 2 5 13.4h5.3L9.3 22l8.9-11.7h-5.4z"/></svg>
+        </span>
+        <span class="rail-meta"><span class="rail-co">Rappi</span><span class="rail-year">2021</span></span>
+      </a>
+      <a href="#case-03" class="rail-stop" data-rail="case-03">
+        <span class="rail-tile brand-rappi" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><rect x="2.6" y="5.2" width="18.8" height="13.6" rx="2.6"/><path d="M2.6 9.8h18.8M6.4 14.6h4"/></svg>
+        </span>
+        <span class="rail-meta"><span class="rail-co">RappiPay</span><span class="rail-year">2022</span></span>
+      </a>
+      <a href="#case-04" class="rail-stop" data-rail="case-04">
+        <span class="rail-tile brand-globant" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2.9 2.9 7.6 12 12.3l9.1-4.7z"/><path d="M2.9 12.1 12 16.8l9.1-4.7"/><path d="M2.9 16.5 12 21.2l9.1-4.7"/></svg>
+        </span>
+        <span class="rail-meta"><span class="rail-co">Globant</span><span class="rail-year">2022</span></span>
+      </a>
+      <a href="#case-05" class="rail-stop" data-rail="case-05">
+        <span class="rail-tile brand-globant" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2.9 2.9 7.6 12 12.3l9.1-4.7z"/><path d="M2.9 12.1 12 16.8l9.1-4.7"/><path d="M2.9 16.5 12 21.2l9.1-4.7"/></svg>
+        </span>
+        <span class="rail-meta"><span class="rail-co">Globant</span><span class="rail-year">2024</span></span>
+      </a>
+      <a href="#case-06" class="rail-stop" data-rail="case-06">
+        <span class="rail-tile brand-epam" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round"><path d="M4 6.4h15M4 12h9.4M4 17.6h15"/><circle cx="18.4" cy="12" r="2.1" fill="#8CC63F" stroke="none"/></svg>
+        </span>
+        <span class="rail-meta"><span class="rail-co">EPAM</span><span class="rail-year">2025</span></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+  <div class="cases-flow">
+
+    <!-- ============ CASE 01 · ESRI ============ -->
+    <article id="case-01" data-reveal class="case">
+      <div class="case-marker brand-esri" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="8.6"/><ellipse cx="12" cy="12" rx="3.9" ry="8.6"/><path d="M3.4 12h17.2"/></svg>
+      </div>
+      <div class="case-card">
+        <div class="case-head">
+          <div data-i18n="case.n1" class="case-num">Case 01</div>
+          <h2 data-i18n="c1.title" class="case-title">Geospatial automation at national scale</h2>
+          <div class="case-org">
+            <span class="case-co">Esri Colombia</span>
+            <span class="case-sep">·</span>
+            <span class="case-role" data-i18n="c1.role">Technical Marketing Engineer · GIS Advisor</span>
+            <span class="case-sep">·</span>
+            <span class="case-when">Feb 2019 – Sep 2021</span>
+          </div>
+        </div>
+
+        <div class="case-body">
+          <div class="case-block">
+            <div data-i18n="case.problem" class="case-block-hdr">The problem</div>
+            <p data-i18n="c1.problem" class="case-p">Colombia's national census arrived as raw, inconsistent extracts that had to be hand-cleaned and joined to cartography before anyone could put it on a map. Each delivery took weeks, and every refresh started from zero. COVID-19 raised the stakes: case data had to reach a public map every single day.</p>
+          </div>
+          <div class="case-block">
+            <div data-i18n="case.built" class="case-block-hdr">What I built</div>
+            <p data-i18n="c1.built" class="case-p">Python pipelines that normalized the census tables, validated every record-to-geometry join and published map-ready layers automatically — built on ArcPy and the ArcGIS API for Python, with R and Bash handling the heavier reshaping. For COVID-19, a scheduled job read the daily case feed, reshaped it and pushed it straight into a REST feature service with no human in the loop.</p>
+          </div>
+        </div>
+
+        <div class="case-result">
+          <div data-i18n="case.result" class="case-result-hdr">Result</div>
+          <div class="case-metrics">
+            <div class="case-metric"><div data-i18n="c1.mv1" class="case-metric-v">Weeks → 1 day</div><div data-i18n="c1.m1" class="case-metric-l">Census processing</div></div>
+            <div class="case-metric"><div class="case-metric-v">15 h → 15 min</div><div data-i18n="c1.m2" class="case-metric-l">Daily COVID-19 update</div></div>
+            <div class="case-metric"><div class="case-metric-v">0</div><div data-i18n="c1.m3" class="case-metric-l">Manual steps in the refresh</div></div>
+          </div>
+        </div>
+
+        <div class="case-stack">
+          <span class="case-chip">Python</span><span class="case-chip">ArcPy</span><span class="case-chip">ArcGIS API for Python</span><span class="case-chip">ArcGIS Online</span><span class="case-chip">REST APIs</span><span class="case-chip">R</span><span class="case-chip">Bash</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ CASE 02 · RAPPI ============ -->
+    <article id="case-02" data-reveal class="case">
+      <div class="case-marker brand-rappi" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="#fff"><path d="M13.4 2 5 13.4h5.3L9.3 22l8.9-11.7h-5.4z"/></svg>
+      </div>
+      <div class="case-card">
+        <div class="case-head">
+          <div data-i18n="case.n2" class="case-num">Case 02</div>
+          <h2 data-i18n="c2.title" class="case-title">From NiFi to Spark: a six-hour batch in twenty minutes</h2>
+          <div class="case-org">
+            <span class="case-co">Rappi · RappiPay</span>
+            <span class="case-sep">·</span>
+            <span class="case-role" data-i18n="c2.role">Data Engineer</span>
+            <span class="case-sep">·</span>
+            <span class="case-when">Oct 2021 – Dec 2022</span>
+          </div>
+        </div>
+
+        <div class="case-body">
+          <div class="case-block">
+            <div data-i18n="case.problem" class="case-block-hdr">The problem</div>
+            <p data-i18n="c2.problem" class="case-p">Batch ingestion ran on Apache NiFi. A full cycle took around six hours, which meant the business opened its day without fresh data — and the flow-based setup was hard to scale, hard to observe, and hard to reason about when a run failed at 4 a.m.</p>
+          </div>
+          <div class="case-block">
+            <div data-i18n="case.built" class="case-block-hdr">What I built</div>
+            <p data-i18n="c2.built" class="case-p">I migrated the batch path to Apache Spark jobs on AWS Glue, orchestrated by Apache Airflow. That brought partitioned and incremental loads, dependency-aware scheduling, retries, and real visibility into every run — feeding the Snowflake data marts used by BI, Data Science and Operations. NiFi came out of the batch path entirely.</p>
+          </div>
+        </div>
+
+        <div class="case-result">
+          <div data-i18n="case.result" class="case-result-hdr">Result</div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-v">6 h → 20 min</div><div data-i18n="c2.m1" class="case-metric-l">~18× faster ingestion</div></div>
+            <div class="case-metric"><div class="case-metric-v">~60 GB</div><div data-i18n="c2.m2" class="case-metric-l">Processed per day</div></div>
+            <div class="case-metric"><div class="case-metric-v">~150M</div><div data-i18n="c2.m3" class="case-metric-l">Rows on peak days</div></div>
+          </div>
+        </div>
+
+        <div class="case-stack">
+          <span class="case-chip">Apache Spark</span><span class="case-chip">AWS Glue</span><span class="case-chip">Apache Airflow</span><span class="case-chip">Apache NiFi</span><span class="case-chip">Snowflake</span><span class="case-chip">Amazon S3</span><span class="case-chip">Python</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ CASE 03 · RAPPIPAY ============ -->
+    <article id="case-03" data-reveal class="case">
+      <div class="case-marker brand-rappi" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><rect x="2.6" y="5.2" width="18.8" height="13.6" rx="2.6"/><path d="M2.6 9.8h18.8M6.4 14.6h4"/></svg>
+      </div>
+      <div class="case-card">
+        <div class="case-head">
+          <div data-i18n="case.n3" class="case-num">Case 03</div>
+          <h2 data-i18n="c3.title" class="case-title">The data behind a banking license</h2>
+          <div class="case-org">
+            <span class="case-co">Rappi · RappiPay</span>
+            <span class="case-sep">·</span>
+            <span class="case-role" data-i18n="c3.role">Data Engineer</span>
+            <span class="case-sep">·</span>
+            <span class="case-when">Oct 2021 – Dec 2022</span>
+          </div>
+        </div>
+
+        <div class="case-body">
+          <div class="case-block">
+            <div data-i18n="case.problem" class="case-block-hdr">The problem</div>
+            <p data-i18n="c3.problem" class="case-p">RappiPay was applying for a banking license in Colombia. That meant regulatory reports in exactly the formats the regulator expects, on a fixed calendar, assembled by hand every cycle — and cardholders who needed their credit-card statement records in near real time, not the next morning.</p>
+          </div>
+          <div class="case-block">
+            <div data-i18n="case.built" class="case-block-hdr">What I built</div>
+            <p data-i18n="c3.built" class="case-p">I modeled the regulatory reports in Snowflake — dimensional models plus stored procedures — and automated the whole chain end to end: generation, formatting, and delivery of the report files into the government's shared folder. Alongside it, a streaming path built on Apache NiFi and Apache Kafka delivered credit-card statement records in near real time.</p>
+          </div>
+        </div>
+
+        <div class="case-result">
+          <div data-i18n="case.result" class="case-result-hdr">Result</div>
+          <div class="case-metrics">
+            <div class="case-metric"><div data-i18n="c3.mv1" class="case-metric-v">Manual → scheduled</div><div data-i18n="c3.m1" class="case-metric-l">Auditable regulatory reporting</div></div>
+            <div class="case-metric"><div data-i18n="c3.mv2" class="case-metric-v">Near real time</div><div data-i18n="c3.m2" class="case-metric-l">Card statement records</div></div>
+            <div class="case-metric"><div data-i18n="c3.mv3" class="case-metric-v">A licensed bank</div><div data-i18n="c3.m3" class="case-metric-l">Still operating today</div></div>
+          </div>
+        </div>
+
+        <div class="case-stack">
+          <span class="case-chip">Snowflake</span><span class="case-chip">SQL</span><span class="case-chip">Apache Kafka</span><span class="case-chip">Apache NiFi</span><span class="case-chip">Apache Airflow</span><span class="case-chip">Python</span><span class="case-chip">Dimensional modeling</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ CASE 04 · GLOBANT ============ -->
+    <article id="case-04" data-reveal class="case">
+      <div class="case-marker brand-globant" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2.9 2.9 7.6 12 12.3l9.1-4.7z"/><path d="M2.9 12.1 12 16.8l9.1-4.7"/><path d="M2.9 16.5 12 21.2l9.1-4.7"/></svg>
+      </div>
+      <div class="case-card">
+        <div class="case-head">
+          <div data-i18n="case.n4" class="case-num">Case 04</div>
+          <h2 data-i18n="c4.title" class="case-title">A lakehouse that feeds a client-facing app</h2>
+          <div class="case-org">
+            <span class="case-co">Globant</span>
+            <span class="case-sep">·</span>
+            <span class="case-role" data-i18n="c4.role">Semi Senior Data Engineer</span>
+            <span class="case-sep">·</span>
+            <span class="case-when">Dec 2022 – Mar 2024</span>
+          </div>
+        </div>
+
+        <div class="case-body">
+          <div class="case-block">
+            <div data-i18n="case.problem" class="case-block-hdr">The problem</div>
+            <p data-i18n="c4.problem" class="case-p">A conflict-of-interest application needed to answer questions spanning around ten disconnected sources — Oracle, PostgreSQL and flat files — with relationship traversal between entities and instant per-company lookup. None of that infrastructure existed yet.</p>
+          </div>
+          <div class="case-block">
+            <div data-i18n="case.built" class="case-block-hdr">What I built</div>
+            <p data-i18n="c4.built" class="case-p">The first end-to-end pipeline on the account: ingestion from every source into a multi-layer data lake on Apache Iceberg — raw, curated and consumption — processed with Spark on AWS Glue, queried through Athena and orchestrated with Step Functions, Glue and Lambda. From the consumption layer I bulk-loaded into Amazon Neptune for the relationship graph and OpenSearch for fast per-company lookups: the two engines the .NET application reads from.</p>
+          </div>
+        </div>
+
+        <div class="case-result">
+          <div data-i18n="case.result" class="case-result-hdr">Result</div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-v">~40 GB/day</div><div data-i18n="c4.m1" class="case-metric-l">Ingested from ~10 sources</div></div>
+            <div class="case-metric"><div data-i18n="c4.mv2" class="case-metric-v">Graph + search</div><div data-i18n="c4.m2" class="case-metric-l">Serving a live product</div></div>
+            <div class="case-metric"><div data-i18n="c4.mv3" class="case-metric-v">First of its kind</div><div data-i18n="c4.m3" class="case-metric-l">End-to-end pipeline on the account</div></div>
+          </div>
+        </div>
+
+        <div class="case-stack">
+          <span class="case-chip">Apache Iceberg</span><span class="case-chip">Apache Spark</span><span class="case-chip">AWS Glue</span><span class="case-chip">Athena</span><span class="case-chip">Step Functions</span><span class="case-chip">Lambda</span><span class="case-chip">Amazon Neptune</span><span class="case-chip">OpenSearch</span><span class="case-chip">Oracle</span><span class="case-chip">PostgreSQL</span><span class="case-chip">Amazon S3</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ CASE 05 · GLOBANT ============ -->
+    <article id="case-05" data-reveal class="case">
+      <div class="case-marker brand-globant" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2.9 2.9 7.6 12 12.3l9.1-4.7z"/><path d="M2.9 12.1 12 16.8l9.1-4.7"/><path d="M2.9 16.5 12 21.2l9.1-4.7"/></svg>
+      </div>
+      <div class="case-card">
+        <div class="case-head">
+          <div data-i18n="case.n5" class="case-num">Case 05</div>
+          <h2 data-i18n="c5.title" class="case-title">A services model built — and traceable — inside Snowflake</h2>
+          <div class="case-org">
+            <span class="case-co">Globant</span>
+            <span class="case-sep">·</span>
+            <span class="case-role" data-i18n="c5.role">Semi Senior Advanced Data Engineer</span>
+            <span class="case-sep">·</span>
+            <span class="case-when">Mar 2024 – Nov 2025</span>
+          </div>
+        </div>
+
+        <div class="case-body">
+          <div class="case-block">
+            <div data-i18n="case.problem" class="case-block-hdr">The problem</div>
+            <p data-i18n="c5.problem" class="case-p">A consultancy's services business had no shared data model. Every report was rebuilt from scratch, a full reporting run took around ten hours, and when a number looked wrong nobody could trace where it came from.</p>
+          </div>
+          <div class="case-block">
+            <div data-i18n="case.built" class="case-block-hdr">What I built</div>
+            <p data-i18n="c5.built" class="case-p">I designed and developed the facts and dimensions for the services model natively in Snowflake — roughly 20 models across ~50 tables — with ingestion automated through Airbyte, orchestration in Airflow, and transformation in Snowpark scripts and stored procedures, all inside the Snowflake ecosystem. Then I built a Streamlit app that renders lineage, so an analyst can trace any metric back to its source table instead of asking an engineer.</p>
+          </div>
+        </div>
+
+        <div class="case-result">
+          <div data-i18n="case.result" class="case-result-hdr">Result</div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-v">10 h → 5 min</div><div data-i18n="c5.m1" class="case-metric-l">Reporting run time</div></div>
+            <div class="case-metric"><div class="case-metric-v">~3 TB</div><div data-i18n="c5.m2" class="case-metric-l">Largest tables consolidated</div></div>
+            <div class="case-metric"><div class="case-metric-v">50M+</div><div data-i18n="c5.m3" class="case-metric-l">Rows loaded per day</div></div>
+          </div>
+        </div>
+
+        <div class="case-stack">
+          <span class="case-chip">Snowflake</span><span class="case-chip">Snowpark</span><span class="case-chip">Streamlit</span><span class="case-chip">Airbyte</span><span class="case-chip">Apache Airflow</span><span class="case-chip">SQL</span><span class="case-chip">Python</span><span class="case-chip">Dimensional modeling</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ CASE 06 · EPAM ============ -->
+    <article id="case-06" data-reveal class="case">
+      <div class="case-marker brand-epam" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round"><path d="M4 6.4h15M4 12h9.4M4 17.6h15"/><circle cx="18.4" cy="12" r="2.1" fill="#8CC63F" stroke="none"/></svg>
+      </div>
+      <div class="case-card">
+        <div class="case-head">
+          <div class="case-num-row">
+            <span data-i18n="case.n6" class="case-num">Case 06</span>
+            <span data-i18n="case.current" class="case-badge">Current</span>
+          </div>
+          <h2 data-i18n="c6.title" class="case-title">Glue scripts out, governed ELT in</h2>
+          <div class="case-org">
+            <span class="case-co">EPAM Systems</span>
+            <span class="case-sep">·</span>
+            <span class="case-role" data-i18n="c6.role">Senior Data Integration Engineer</span>
+            <span class="case-sep">·</span>
+            <span class="case-when">Nov 2025 – Present</span>
+          </div>
+        </div>
+
+        <div class="case-body">
+          <div class="case-block">
+            <div data-i18n="case.problem" class="case-block-hdr">The problem</div>
+            <p data-i18n="c6.problem" class="case-p">A business-critical platform ran its ELT as hand-written Spark jobs on AWS Glue, with legacy SSIS packages still sitting in the path. It was expensive, memory-bound, opaque when it broke — and one critical pipeline took eight hours to finish.</p>
+          </div>
+          <div class="case-block">
+            <div data-i18n="case.built" class="case-block-hdr">What I built</div>
+            <p data-i18n="c6.built" class="case-p">I completed the migration to a governed ELT stack: Airbyte for extract and load, dbt for transformation, Amazon Redshift as the warehouse — infrastructure deployed with Terraform and everything orchestrated by Airflow. Around 10 GB/day now flows in from Oracle, SQL Server, OpenEdge and IBM DB2. SSIS packages were replaced with Airflow DAGs, and the Spark pipelines that stayed were re-engineered to eliminate memory bottlenecks.</p>
+          </div>
+        </div>
+
+        <div class="case-result">
+          <div data-i18n="case.result" class="case-result-hdr">Result</div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-v">8 h → 30 min</div><div data-i18n="c6.m1" class="case-metric-l">16× faster critical pipeline</div></div>
+            <div class="case-metric"><div class="case-metric-v">~10 GB/day</div><div data-i18n="c6.m2" class="case-metric-l">From 4 source systems</div></div>
+            <div class="case-metric"><div data-i18n="c6.mv3" class="case-metric-v">Fully as code</div><div data-i18n="c6.m3" class="case-metric-l">Infrastructure via Terraform</div></div>
+          </div>
+        </div>
+
+        <div class="case-stack">
+          <span class="case-chip">Amazon Redshift</span><span class="case-chip">dbt</span><span class="case-chip">Airbyte</span><span class="case-chip">Apache Airflow</span><span class="case-chip">Terraform</span><span class="case-chip">AWS Glue</span><span class="case-chip">Apache Spark</span><span class="case-chip">Oracle</span><span class="case-chip">SQL Server</span><span class="case-chip">IBM DB2</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</div><!-- /.cases-track -->
+
+  <!-- ============ PATTERN ============ -->
+  <section class="cases-pattern">
+    <div class="section-inner">
+      <div data-reveal>
+        <div data-i18n="pattern.label" class="section-label">The throughline</div>
+        <h2 data-i18n="pattern.h2" class="section-h2">What repeats across all six.</h2>
+        <div class="pattern-grid">
+          <div class="pattern-card">
+            <div class="pattern-num">01</div>
+            <div data-i18n="pattern.t1" class="pattern-title">Migrations that pay for themselves</div>
+            <p data-i18n="pattern.d1" class="pattern-desc">NiFi to Spark, Glue to dbt, SSIS to Airflow. The pattern isn't chasing new tools — it's finding the bottleneck that costs hours every day and removing it, then proving the number.</p>
+          </div>
+          <div class="pattern-card">
+            <div class="pattern-num">02</div>
+            <div data-i18n="pattern.t2" class="pattern-title">Models people can trace</div>
+            <p data-i18n="pattern.d2" class="pattern-desc">A pipeline nobody trusts is worse than no pipeline. Dimensional models, tested transformations, lineage an analyst can read without opening a ticket — that's what makes the data a product.</p>
+          </div>
+          <div class="pattern-card">
+            <div class="pattern-num">03</div>
+            <div data-i18n="pattern.t3" class="pattern-title">Automation that removes the human</div>
+            <p data-i18n="pattern.d3" class="pattern-desc">Census cleaning, COVID-19 publishing, regulatory filings, infrastructure deploys. If a person does it every cycle by hand, it's a script waiting to be written.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- dusk back into space -->
+<div aria-hidden="true" class="night-fall"></div>
+
+<!-- ============ CONTACT / FOOTER ============ -->
+<footer id="contact">
+  <div id="footStars" aria-hidden="true"></div>
+  <div class="footer-glow" aria-hidden="true"></div>
+  <div class="footer-earth" aria-hidden="true"></div>
+  <div data-reveal class="contact-inner">
+    <div data-i18n="contact.label" class="contact-label">Get in touch</div>
+    <h2 data-i18n="cases.contact.h2" class="contact-h2">If one of these looks like the problem you're facing, let's talk.</h2>
+    <p data-i18n="cases.contact.sub" class="contact-sub">Happy to walk through the architecture behind any of them in detail.</p>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/raul-camilo-martin-bernal" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link-label">LinkedIn</span>
+        <span class="contact-link-value">raul-camilo-martin-bernal</span>
+      </a>
+      <a href="https://github.com/rcamilo1526" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link-label">GitHub</span>
+        <span class="contact-link-value">rcamilo1526</span>
+      </a>
+      <a href="index.html" class="contact-link">
+        <span data-i18n="cases.back.label" class="contact-link-label">Back to</span>
+        <span data-i18n="cases.back.value" class="contact-link-value">Full profile</span>
+      </a>
+    </div>
+    <div class="footer-bottom">
+      <span>Raúl Camilo Martín Bernal — <span data-i18n="footer.title">Senior Data Engineer</span></span>
+      <span>4°35′N 74°04′W · Colombia · Remote · © 2026</span>
+    </div>
+    <div class="footer-spacer"></div>
+  </div>
+</footer>
+
+<script src="js/cases.js"></script>
+</body>
+</html>
